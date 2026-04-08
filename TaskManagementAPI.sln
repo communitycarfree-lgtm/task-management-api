@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagementAPI", "src\TaskManagementAPI\TaskManagementAPI.csproj", "{D79F759B-9CAB-4080-BC36-36B51ECEC6A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagementAPI", "TaskManagementAPI\TaskManagementAPI.csproj", "{D79F759B-9CAB-4080-BC36-36B51ECEC6A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagementAPI.Tests.Unit", "tests\TaskManagementAPI.Tests.Unit\TaskManagementAPI.Tests.Unit.csproj", "{9A5F4A74-10FB-42A1-A30A-ADEA188186E0}"
 EndProject
