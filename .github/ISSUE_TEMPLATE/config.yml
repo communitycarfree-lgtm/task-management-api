@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: GitHub Discussions
+    url: https://github.com/yourusername/task-management-api/discussions
+    about: Ask questions and discuss ideas
+  - name: Documentation
+    url: https://github.com/yourusername/task-management-api/blob/main/README.md
+    about: Read the documentation
+  - name: Code of Conduct
+    url: https://github.com/yourusername/task-management-api/blob/main/CODE_OF_CONDUCT.md
+    about: Our community guidelines

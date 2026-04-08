@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  # SQL Server Database
+  sql-server:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: task-management-db
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "YourPassword123!"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+    networks:
+      - task-management-network
+    healthcheck:
+      test: ["CMD", "/opt/mssql-tools/bin/sqlcmd", "-S", "localhost", "-U", "sa", "-P", "YourPassword123!", "-Q", "SELECT 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Task Management API
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: task-management-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+      ConnectionStrings__DefaultConnection: "Server=sql-server,1433;Database=TaskManagementAPI;User Id=sa;Password=YourPassword123!;TrustServerCertificate=true;"
+      Jwt__Secret: "your-super-secret-key-that-is-at-least-32-characters-long-for-hs256"
+      Jwt__Issuer: "TaskManagementAPI"
+      Jwt__Audience: "TaskManagementAPI"
+      Jwt__ExpirationMinutes: "60"
+      Logging__LogLevel__Default: "Information"
+      Logging__LogLevel__Microsoft: "Warning"
+    ports:
+      - "5000:80"
+    depends_on:
+      sql-server:
+        condition: service_healthy
+    networks:
+      - task-management-network
+    volumes:
+      - ./TaskManagementAPI:/app/src
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  sqlserver-data:
+    driver: local
+
+networks:
+  task-management-network:
+    driver: bridge

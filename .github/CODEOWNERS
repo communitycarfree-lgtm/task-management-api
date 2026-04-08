@@ -1,0 +1,32 @@
+# Code Owners for Task Management API
+# This file defines who should review pull requests for different parts of the codebase
+
+# Default owners for all files
+* @yourusername
+
+# Projects Module
+TaskManagementAPI/Modules/Projects/ @yourusername
+
+# Tasks Module
+TaskManagementAPI/Modules/Tasks/ @yourusername
+
+# Users Module
+TaskManagementAPI/Modules/Users/ @yourusername
+
+# Notifications Module
+TaskManagementAPI/Modules/Notifications/ @yourusername
+
+# Shared Infrastructure
+TaskManagementAPI/Shared/ @yourusername
+
+# Tests
+tests/ @yourusername
+
+# Documentation
+docs/ @yourusername
+README.md @yourusername
+
+# DevOps
+Dockerfile @yourusername
+docker-compose.yml @yourusername
+.github/ @yourusername
