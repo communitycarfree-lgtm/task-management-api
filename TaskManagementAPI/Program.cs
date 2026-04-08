@@ -50,41 +50,41 @@ try
         var usersContext = scope.ServiceProvider.GetRequiredService<UsersDbContext>();
         var notificationsContext = scope.ServiceProvider.GetRequiredService<NotificationsDbContext>();
 
-        // Using EnsureCreatedAsync for idempotent database creation
+        // Using MigrateAsync to ensure correct tracking via __EFMigrationsHistory
         try
         {
-            await projectsContext.Database.EnsureCreatedAsync();
+            await projectsContext.Database.MigrateAsync();
         }
         catch (Exception ex)
         {
-            Log.Warning(ex, "Error ensuring ProjectsDbContext database created");
+            Log.Warning(ex, "Error migrating ProjectsDbContext");
         }
 
         try
         {
-            await tasksContext.Database.EnsureCreatedAsync();
+            await tasksContext.Database.MigrateAsync();
         }
         catch (Exception ex)
         {
-            Log.Warning(ex, "Error ensuring TasksDbContext database created");
+            Log.Warning(ex, "Error migrating TasksDbContext");
         }
 
         try
         {
-            await usersContext.Database.EnsureCreatedAsync();
+            await usersContext.Database.MigrateAsync();
         }
         catch (Exception ex)
         {
-            Log.Warning(ex, "Error ensuring UsersDbContext database created");
+            Log.Warning(ex, "Error migrating UsersDbContext");
         }
 
         try
         {
-            await notificationsContext.Database.EnsureCreatedAsync();
+            await notificationsContext.Database.MigrateAsync();
         }
         catch (Exception ex)
         {
-            Log.Warning(ex, "Error ensuring NotificationsDbContext database created");
+            Log.Warning(ex, "Error migrating NotificationsDbContext");
         }
     }
 }

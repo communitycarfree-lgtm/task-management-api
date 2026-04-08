@@ -145,19 +145,56 @@ public class UserService
 
     /// <summary>
     /// Validates password complexity requirements.
+    /// Requirements: minimum 12 characters, uppercase, lowercase, digit, special character,
+    /// and no common patterns.
     /// </summary>
     /// <param name="password">The password to validate.</param>
     /// <returns>True if password meets requirements; otherwise false.</returns>
     private static bool ValidatePasswordComplexity(string password)
     {
-        if (string.IsNullOrEmpty(password) || password.Length < 8)
+        // Minimum length check
+        if (string.IsNullOrEmpty(password) || password.Length < 12)
             return false;
 
+        // Character type checks
         bool hasUpperCase = password.Any(char.IsUpper);
         bool hasLowerCase = password.Any(char.IsLower);
         bool hasDigit = password.Any(char.IsDigit);
         bool hasSpecialChar = password.Any(c => !char.IsLetterOrDigit(c));
 
-        return hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar;
+        if (!(hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar))
+            return false;
+
+        // Reject common patterns
+        var commonPatterns = new[] 
+        { 
+            "password", "123456", "qwerty", "abc123", "letmein", "welcome",
+            "monkey", "dragon", "master", "sunshine", "princess", "admin"
+        };
+
+        string lowerPassword = password.ToLowerInvariant();
+        if (commonPatterns.Any(pattern => lowerPassword.Contains(pattern)))
+            return false;
+
+        // Reject sequential characters
+        for (int i = 0; i < password.Length - 2; i++)
+        {
+            if (char.IsLetterOrDigit(password[i]) && 
+                char.IsLetterOrDigit(password[i + 1]) && 
+                char.IsLetterOrDigit(password[i + 2]))
+            {
+                if ((password[i] + 1 == password[i + 1] && password[i + 1] + 1 == password[i + 2]) ||
+                    (password[i] - 1 == password[i + 1] && password[i + 1] - 1 == password[i + 2]))
+                {
+                    return false;
+                }
+            }
+        }
+
+        // Reject repeated characters
+        if (password.GroupBy(c => c).Any(g => g.Count() >= 3))
+            return false;
+
+        return true;
     }
 }

@@ -12,6 +12,7 @@ public static class SharedServicesExtensions
 {
     /// <summary>
     /// Registers all shared infrastructure services including middleware, logging, and common utilities.
+    /// Configures CORS with environment-specific policies for security.
     /// </summary>
     /// <param name="services">The service collection.</param>
     /// <returns>The service collection for chaining.</returns>
@@ -20,15 +21,30 @@ public static class SharedServicesExtensions
         // Register notification service
         services.AddScoped<INotificationService, NotificationService>();
 
-        // Add CORS
+        // Add CORS with environment-specific configuration
         services.AddCors(options =>
         {
+            // Development policy - allows all origins for easier testing
             options.AddPolicy("AllowAll", builder =>
             {
                 builder
                     .AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader();
+            });
+
+            // Production policy - restrict to specific origins
+            options.AddPolicy("AllowSpecificOrigins", builder =>
+            {
+                builder
+                    .WithOrigins(
+                        "https://yourdomain.com",
+                        "https://www.yourdomain.com",
+                        "https://app.yourdomain.com"
+                    )
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials();
             });
         });
 
@@ -45,8 +61,8 @@ public static class SharedServicesExtensions
     /// <returns>The application builder for chaining.</returns>
     public static IApplicationBuilder UseSharedMiddleware(this IApplicationBuilder app)
     {
+        app.UseMiddleware<ExceptionHandlingMiddleware>();
         app.UseCors("AllowAll");
-        // TODO: Add exception handling and logging middleware when properly configured
         return app;
     }
 }

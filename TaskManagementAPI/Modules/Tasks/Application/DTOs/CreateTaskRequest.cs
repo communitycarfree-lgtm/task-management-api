@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using TaskManagementAPI.Modules.Tasks.Domain.Enums;
 
 namespace TaskManagementAPI.Modules.Tasks.Application.DTOs;
@@ -10,25 +11,44 @@ public class CreateTaskRequest
     /// <summary>
     /// The project ID.
     /// </summary>
+    [Required(ErrorMessage = "Project ID is required.")]
     public Guid ProjectId { get; set; }
 
     /// <summary>
-    /// The task title.
+    /// The task title (3-200 characters).
     /// </summary>
+    [Required(ErrorMessage = "Task title is required.")]
+    [StringLength(200, MinimumLength = 3, ErrorMessage = "Title must be between 3 and 200 characters.")]
     public string Title { get; set; } = string.Empty;
 
     /// <summary>
-    /// The task description.
+    /// The task description (optional, max 2000 characters).
     /// </summary>
+    [StringLength(2000, ErrorMessage = "Description cannot exceed 2000 characters.")]
     public string? Description { get; set; }
 
     /// <summary>
     /// The task priority.
     /// </summary>
+    [EnumDataType(typeof(TaskPriority), ErrorMessage = "Invalid task priority.")]
     public TaskPriority Priority { get; set; } = TaskPriority.Medium;
 
     /// <summary>
-    /// The task due date.
+    /// The task due date (must be in the future).
     /// </summary>
+    [DataType(DataType.DateTime)]
+    [CustomValidation(typeof(CreateTaskRequest), nameof(ValidateDueDate))]
     public DateTime? DueDate { get; set; }
+
+    /// <summary>
+    /// Validates that the due date is not in the past.
+    /// </summary>
+    public static ValidationResult? ValidateDueDate(DateTime? dueDate, ValidationContext context)
+    {
+        if (dueDate.HasValue && dueDate.Value < DateTime.UtcNow)
+        {
+            return new ValidationResult("Due date cannot be in the past.");
+        }
+        return ValidationResult.Success;
+    }
 }

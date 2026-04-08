@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Logging;
 using TaskManagementAPI.Modules.Tasks.Domain.Entities;
 using TaskManagementAPI.Modules.Tasks.Domain.Enums;
 using TaskManagementAPI.Modules.Tasks.Infrastructure.Services;
@@ -7,21 +8,25 @@ namespace TaskManagementAPI.Modules.Tasks.Application.Services;
 
 /// <summary>
 /// Service for managing tasks and task-related operations.
+/// Handles business logic for task creation, updates, deletion, and queries.
 /// </summary>
 public class TaskService
 {
     private readonly ITaskRepository _taskRepository;
     private readonly INotificationService _notificationService;
+    private readonly ILogger<TaskService> _logger;
 
     /// <summary>
     /// Initializes a new instance of the TaskService class.
     /// </summary>
     /// <param name="taskRepository">The task repository.</param>
     /// <param name="notificationService">The notification service.</param>
-    public TaskService(ITaskRepository taskRepository, INotificationService notificationService)
+    /// <param name="logger">The logger instance.</param>
+    public TaskService(ITaskRepository taskRepository, INotificationService notificationService, ILogger<TaskService> logger)
     {
         _taskRepository = taskRepository;
         _notificationService = notificationService;
+        _logger = logger;
     }
 
     /// <summary>
@@ -33,13 +38,19 @@ public class TaskService
     /// <param name="priority">The task priority.</param>
     /// <param name="dueDate">The task due date.</param>
     /// <returns>The created task.</returns>
+    /// <exception cref="ArgumentException">Thrown when due date is in the past.</exception>
     public async System.Threading.Tasks.Task<WorkTask> CreateTaskAsync(
         Guid projectId, string title, string? description = null,
         TaskPriority priority = TaskPriority.Medium, DateTime? dueDate = null)
     {
+        _logger.LogInformation("Creating task for project {ProjectId} with title '{Title}'", projectId, title);
+
         // Validate due date is not in the past
         if (dueDate.HasValue && dueDate.Value < DateTime.UtcNow)
+        {
+            _logger.LogWarning("Task creation failed: due date {DueDate} is in the past", dueDate);
             throw new ArgumentException("Due date cannot be in the past.");
+        }
 
         var task = new WorkTask
         {
