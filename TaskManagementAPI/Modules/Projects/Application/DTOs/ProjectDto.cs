@@ -18,6 +18,11 @@ public class ProjectDto
     public string Name { get; set; } = string.Empty;
 
     /// <summary>
+    /// The SEO-friendly URL slug for the project.
+    /// </summary>
+    public string Slug { get; set; } = string.Empty;
+
+    /// <summary>
     /// The project description.
     /// </summary>
     public string? Description { get; set; }

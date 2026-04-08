@@ -122,4 +122,24 @@ public class TaskRepository : GenericRepository<WorkTask>, ITaskRepository
                           d.BlockedByTask.Status != TaskManagementAPI.Modules.Tasks.Domain.Enums.TaskStatus.Completed &&
                           d.BlockedByTask.Status != TaskManagementAPI.Modules.Tasks.Domain.Enums.TaskStatus.Cancelled);
     }
+
+    /// <summary>
+    /// Gets a task by its SEO-friendly slug within a project.
+    /// </summary>
+    public async System.Threading.Tasks.Task<WorkTask?> GetBySlugAsync(Guid projectId, string slug)
+    {
+        return await _context.Tasks
+            .FirstOrDefaultAsync(t => t.ProjectId == projectId && t.Slug == slug);
+    }
+
+    /// <summary>
+    /// Gets all slugs for tasks in a specific project.
+    /// </summary>
+    public async System.Threading.Tasks.Task<IEnumerable<string>> GetProjectTaskSlugsAsync(Guid projectId)
+    {
+        return await _context.Tasks
+            .Where(t => t.ProjectId == projectId)
+            .Select(t => t.Slug)
+            .ToListAsync();
+    }
 }

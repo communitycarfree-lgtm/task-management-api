@@ -66,4 +66,27 @@ public class ProjectRepository : GenericRepository<Project>, IProjectRepository
 
         return (projects, totalCount);
     }
+
+    /// <summary>
+    /// Gets a project by its SEO-friendly slug.
+    /// </summary>
+    /// <param name="slug">The project slug.</param>
+    /// <returns>The project, or null if not found.</returns>
+    public async Task<Project?> GetBySlugAsync(string slug)
+    {
+        return await _dbContext.Projects
+            .Include(p => p.Members)
+            .FirstOrDefaultAsync(p => p.Slug == slug);
+    }
+
+    /// <summary>
+    /// Gets all project slugs.
+    /// </summary>
+    /// <returns>A collection of all project slugs.</returns>
+    public async Task<IEnumerable<string>> GetAllSlugsAsync()
+    {
+        return await _dbContext.Projects
+            .Select(p => p.Slug)
+            .ToListAsync();
+    }
 }

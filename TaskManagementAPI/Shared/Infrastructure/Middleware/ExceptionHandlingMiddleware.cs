@@ -2,6 +2,7 @@ using System.Net;
 using System.Text.Json;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using TaskManagementAPI.Shared.Application.DTOs;
 
 namespace TaskManagementAPI.Shared.Infrastructure.Middleware;
 
@@ -49,23 +50,20 @@ public class ExceptionHandlingMiddleware
     private Task HandleExceptionAsync(HttpContext context, Exception exception)
     {
         var traceId = context.TraceIdentifier;
-        var requestId = context.Request.Headers.TryGetValue("X-Request-ID", out var requestIdHeader)
-            ? requestIdHeader.ToString()
-            : traceId;
 
-        _logger.LogError(exception, "Unhandled exception occurred. TraceId: {TraceId}, RequestId: {RequestId}",
-            traceId, requestId);
+        _logger.LogError(exception, "Unhandled exception occurred. TraceId: {TraceId}", traceId);
 
         var response = context.Response;
         response.ContentType = "application/json";
 
         var errorResponse = new ErrorResponse
         {
-            ErrorCode = "INTERNAL_SERVER_ERROR",
+            Code = "INTERNAL_SERVER_ERROR",
             Message = "An unexpected error occurred. Please try again later.",
+            StatusCode = (int)HttpStatusCode.InternalServerError,
             Timestamp = DateTime.UtcNow,
             TraceId = traceId,
-            RequestId = requestId
+            Path = context.Request.Path
         };
 
         response.StatusCode = (int)HttpStatusCode.InternalServerError;
@@ -75,56 +73,4 @@ public class ExceptionHandlingMiddleware
 
         return response.WriteAsync(json);
     }
-}
-
-/// <summary>
-/// Standard error response format for all API errors.
-/// </summary>
-public class ErrorResponse
-{
-    /// <summary>
-    /// Machine-readable error code for programmatic handling.
-    /// </summary>
-    public string ErrorCode { get; set; } = string.Empty;
-
-    /// <summary>
-    /// Human-readable error message.
-    /// </summary>
-    public string Message { get; set; } = string.Empty;
-
-    /// <summary>
-    /// Validation errors if applicable.
-    /// </summary>
-    public List<ValidationError>? Errors { get; set; }
-
-    /// <summary>
-    /// UTC timestamp when the error occurred.
-    /// </summary>
-    public DateTime Timestamp { get; set; }
-
-    /// <summary>
-    /// Trace ID for error correlation.
-    /// </summary>
-    public string TraceId { get; set; } = string.Empty;
-
-    /// <summary>
-    /// Request ID for error correlation.
-    /// </summary>
-    public string RequestId { get; set; } = string.Empty;
-}
-
-/// <summary>
-/// Represents a single validation error.
-/// </summary>
-public class ValidationError
-{
-    /// <summary>
-    /// The field name that failed validation.
-    /// </summary>
-    public string Field { get; set; } = string.Empty;
-
-    /// <summary>
-    /// The validation error message.
-    /// </summary>
-    public string Message { get; set; } = string.Empty;
 }

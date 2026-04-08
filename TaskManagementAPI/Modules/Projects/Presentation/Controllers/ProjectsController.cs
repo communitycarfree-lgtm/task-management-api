@@ -174,12 +174,29 @@ public class ProjectsController : ControllerBase
         return NoContent();
     }
 
+    /// <summary>
+    /// Gets a project by its SEO-friendly slug.
+    /// </summary>
+    /// <param name="slug">The project slug.</param>
+    /// <returns>The project.</returns>
+    [HttpGet("slug/{slug}")]
+    [AllowAnonymous]  // Allow anonymous for SEO purposes
+    public async Task<ActionResult<ProjectDto>> GetProjectBySlug(string slug)
+    {
+        var project = await _projectService.GetProjectBySlugAsync(slug);
+        if (project == null)
+            return NotFound(new { error = "Project not found." });
+
+        return Ok(MapToDto(project));
+    }
+
     private ProjectDto MapToDto(Domain.Entities.Project project)
     {
         return new ProjectDto
         {
             Id = project.Id,
             Name = project.Name,
+            Slug = project.Slug,
             Description = project.Description,
             Status = project.Status,
             CreatedAt = project.CreatedAt,

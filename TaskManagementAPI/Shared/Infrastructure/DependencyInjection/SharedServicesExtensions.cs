@@ -62,6 +62,7 @@ public static class SharedServicesExtensions
     public static IApplicationBuilder UseSharedMiddleware(this IApplicationBuilder app)
     {
         app.UseMiddleware<ExceptionHandlingMiddleware>();
+        app.UseMiddleware<RateLimitingMiddleware>();
         app.UseCors("AllowAll");
         return app;
     }

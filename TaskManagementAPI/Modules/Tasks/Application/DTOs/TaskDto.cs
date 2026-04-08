@@ -23,6 +23,11 @@ public class TaskDto
     public string Title { get; set; } = string.Empty;
 
     /// <summary>
+    /// The SEO-friendly URL slug for the task.
+    /// </summary>
+    public string Slug { get; set; } = string.Empty;
+
+    /// <summary>
     /// The task description.
     /// </summary>
     public string? Description { get; set; }

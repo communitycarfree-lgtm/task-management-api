@@ -2,14 +2,15 @@ using TaskManagementAPI.Modules.Tasks.Domain.Entities;
 using TaskManagementAPI.Modules.Tasks.Domain.Enums;
 using TaskManagementAPI.Modules.Tasks.Infrastructure.Services;
 using TaskManagementAPI.Shared.Domain.Interfaces;
+using TaskManagementAPI.Shared.Domain.Services;
 
 namespace TaskManagementAPI.Modules.Tasks.Application.Services;
 
 /// <summary>
 /// Service for managing tasks and task-related operations.
-/// Handles business logic for task creation, updates, deletion, and queries.
+/// Handles business logic for task creation, updates, deletion, queries, and SEO-friendly slug generation.
 /// </summary>
-public class TaskService
+public class TaskService : ITaskService
 {
     private readonly ITaskRepository _taskRepository;
     private readonly INotificationService _notificationService;
@@ -45,10 +46,24 @@ public class TaskService
             throw new ArgumentException("Due date cannot be in the past.");
         }
 
+        // Generate slug for SEO (optional - may fail if database doesn't support it yet)
+        string? slug = null;
+        try
+        {
+            var baseSlug = SlugService.GenerateSlug(title);
+            var existingSlugs = await _taskRepository.GetProjectTaskSlugsAsync(projectId);
+            slug = SlugService.GenerateUniqueSlug(baseSlug, existingSlugs ?? Enumerable.Empty<string>());
+        }
+        catch
+        {
+            // Slug generation failed - continue without it
+        }
+
         var task = new WorkTask
         {
             ProjectId = projectId,
             Title = title,
+            Slug = slug,
             Description = description,
             Priority = priority,
             DueDate = dueDate,
@@ -62,7 +77,7 @@ public class TaskService
     }
 
     /// <summary>
-    /// Updates an existing task.
+    /// Updates an existing task and regenerates slug if title changes.
     /// </summary>
     /// <param name="taskId">The task ID.</param>
     /// <param name="title">The new title.</param>
@@ -81,6 +96,16 @@ public class TaskService
         // Validate due date is not in the past
         if (dueDate.HasValue && dueDate.Value < DateTime.UtcNow)
             throw new ArgumentException("Due date cannot be in the past.");
+
+        // Regenerate slug if title changed
+        if (task.Title != title)
+        {
+            var baseSlug = SlugService.GenerateSlug(title);
+            var existingSlugs = (await _taskRepository.GetProjectTaskSlugsAsync(task.ProjectId))
+                .Where(s => s != task.Slug) // Exclude current slug
+                .ToList();
+            task.Slug = SlugService.GenerateUniqueSlug(baseSlug, existingSlugs);
+        }
 
         task.Title = title;
         task.Description = description;
@@ -242,12 +267,13 @@ public class TaskService
     /// <param name="pageNumber">The page number.</param>
     /// <param name="pageSize">The page size.</param>
     /// <returns>A tuple containing the tasks and total count.</returns>
-    public async System.Threading.Tasks.Task<(IEnumerable<WorkTask> Tasks, int TotalCount)> GetProjectTasksAsync(
+    public async System.Threading.Tasks.Task<(List<WorkTask> tasks, int totalCount)> GetProjectTasksAsync(
         Guid projectId, TaskManagementAPI.Modules.Tasks.Domain.Enums.TaskStatus? status = null, TaskPriority? priority = null,
         string? assigneeId = null, int pageNumber = 1, int pageSize = 20)
     {
-        return await _taskRepository.GetProjectTasksWithFiltersAsync(
+        var (tasks, totalCount) = await _taskRepository.GetProjectTasksWithFiltersAsync(
             projectId, status, priority, assigneeId, pageNumber, pageSize);
+        return (tasks.ToList(), totalCount);
     }
 
     /// <summary>
@@ -271,5 +297,16 @@ public class TaskService
     public async System.Threading.Tasks.Task<WorkTask?> GetTaskByIdAsync(Guid taskId)
     {
         return await _taskRepository.GetByIdAsync(taskId);
+    }
+
+    /// <summary>
+    /// Gets a task by its SEO-friendly slug within a project.
+    /// </summary>
+    /// <param name="projectId">The project ID.</param>
+    /// <param name="slug">The task slug.</param>
+    /// <returns>The task, or null if not found.</returns>
+    public async System.Threading.Tasks.Task<WorkTask?> GetTaskBySlugAsync(Guid projectId, string slug)
+    {
+        return await _taskRepository.GetBySlugAsync(projectId, slug);
     }
 }

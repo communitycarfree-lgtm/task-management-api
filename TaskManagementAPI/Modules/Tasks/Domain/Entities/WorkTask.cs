@@ -19,6 +19,12 @@ public class WorkTask : BaseEntity
     public string Title { get; set; } = string.Empty;
 
     /// <summary>
+    /// The URL-friendly slug for the task (SEO-optimized).
+    /// Used for human-readable URLs like /projects/my-project/tasks/implement-feature
+    /// </summary>
+    public string? Slug { get; set; }
+
+    /// <summary>
     /// The description of the task.
     /// </summary>
     public string? Description { get; set; }

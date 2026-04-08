@@ -29,4 +29,17 @@ public interface IProjectRepository : IRepository<Project>
     /// <param name="pageSize">The page size.</param>
     /// <returns>A tuple containing the projects and total count.</returns>
     Task<(IEnumerable<Project> Projects, int TotalCount)> GetProjectsPagedAsync(int pageNumber, int pageSize);
+
+    /// <summary>
+    /// Gets a project by its SEO-friendly slug.
+    /// </summary>
+    /// <param name="slug">The project slug.</param>
+    /// <returns>The project, or null if not found.</returns>
+    Task<Project?> GetBySlugAsync(string slug);
+
+    /// <summary>
+    /// Gets all project slugs.
+    /// </summary>
+    /// <returns>A collection of all project slugs.</returns>
+    Task<IEnumerable<string>> GetAllSlugsAsync();
 }

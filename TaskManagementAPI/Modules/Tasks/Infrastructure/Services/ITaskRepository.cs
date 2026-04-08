@@ -76,4 +76,19 @@ public interface ITaskRepository : IRepository<WorkTask>
     /// <param name="taskId">The task ID.</param>
     /// <returns>True if the task has incomplete blocking tasks; otherwise false.</returns>
     System.Threading.Tasks.Task<bool> HasIncompleteBlockingTasksAsync(Guid taskId);
+
+    /// <summary>
+    /// Gets a task by its SEO-friendly slug within a project.
+    /// </summary>
+    /// <param name="projectId">The project ID.</param>
+    /// <param name="slug">The task slug.</param>
+    /// <returns>The task, or null if not found.</returns>
+    System.Threading.Tasks.Task<WorkTask?> GetBySlugAsync(Guid projectId, string slug);
+
+    /// <summary>
+    /// Gets all slugs for tasks in a specific project.
+    /// </summary>
+    /// <param name="projectId">The project ID.</param>
+    /// <returns>A collection of task slugs.</returns>
+    System.Threading.Tasks.Task<IEnumerable<string>> GetProjectTaskSlugsAsync(Guid projectId);
 }

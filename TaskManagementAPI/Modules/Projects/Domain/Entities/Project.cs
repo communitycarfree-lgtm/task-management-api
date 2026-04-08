@@ -14,6 +14,12 @@ public class Project : BaseEntity
     public string Name { get; set; } = string.Empty;
 
     /// <summary>
+    /// The URL-friendly slug for the project (SEO-optimized).
+    /// Used for human-readable URLs like /projects/my-awesome-project
+    /// </summary>
+    public string? Slug { get; set; }
+
+    /// <summary>
     /// The description of the project.
     /// </summary>
     public string? Description { get; set; }

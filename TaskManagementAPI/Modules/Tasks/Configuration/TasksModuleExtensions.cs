@@ -33,7 +33,7 @@ public static class TasksModuleExtensions
         services.AddScoped<ITaskRepository, TaskRepository>();
 
         // Register services
-        services.AddScoped<TaskService>();
+        services.AddScoped<ITaskService, TaskService>();
 
         return services;
     }
