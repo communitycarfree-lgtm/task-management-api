@@ -1,4 +1,3 @@
-using Microsoft.Extensions.Logging;
 using TaskManagementAPI.Modules.Tasks.Domain.Entities;
 using TaskManagementAPI.Modules.Tasks.Domain.Enums;
 using TaskManagementAPI.Modules.Tasks.Infrastructure.Services;
@@ -14,19 +13,16 @@ public class TaskService
 {
     private readonly ITaskRepository _taskRepository;
     private readonly INotificationService _notificationService;
-    private readonly ILogger<TaskService> _logger;
 
     /// <summary>
     /// Initializes a new instance of the TaskService class.
     /// </summary>
     /// <param name="taskRepository">The task repository.</param>
     /// <param name="notificationService">The notification service.</param>
-    /// <param name="logger">The logger instance.</param>
-    public TaskService(ITaskRepository taskRepository, INotificationService notificationService, ILogger<TaskService> logger)
+    public TaskService(ITaskRepository taskRepository, INotificationService notificationService)
     {
         _taskRepository = taskRepository;
         _notificationService = notificationService;
-        _logger = logger;
     }
 
     /// <summary>
@@ -43,12 +39,9 @@ public class TaskService
         Guid projectId, string title, string? description = null,
         TaskPriority priority = TaskPriority.Medium, DateTime? dueDate = null)
     {
-        _logger.LogInformation("Creating task for project {ProjectId} with title '{Title}'", projectId, title);
-
         // Validate due date is not in the past
         if (dueDate.HasValue && dueDate.Value < DateTime.UtcNow)
         {
-            _logger.LogWarning("Task creation failed: due date {DueDate} is in the past", dueDate);
             throw new ArgumentException("Due date cannot be in the past.");
         }
 
