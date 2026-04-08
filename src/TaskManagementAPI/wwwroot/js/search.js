@@ -1,4 +1,4 @@
-// Search functionality for Bookstore API Documentation
+// Search functionality for Task Management API Documentation
 
 class DocumentationSearch {
     constructor() {
@@ -89,7 +89,7 @@ class DocumentationSearch {
                 const text = para.textContent;
                 if (text.toLowerCase().includes(searchTerm)) {
                     const regex = new RegExp(`(${query})`, 'gi');
-                    para.innerHTML = text.replace(regex, '<mark style="background-color: rgba(30, 144, 255, 0.3); padding: 2px 4px; border-radius: 3px;">$1</mark>');
+                    para.innerHTML = text.replace(regex, '<mark style="background-color: var(--color-primary); color: white; opacity: 0.8; padding: 2px 4px; border-radius: 3px;">$1</mark>');
                 }
             });
         });

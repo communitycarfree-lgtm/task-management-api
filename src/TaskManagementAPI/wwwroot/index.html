@@ -37,7 +37,7 @@
                     <a href="api-docs.html" class="home-btn">
                         <i class="fas fa-code"></i> Explore API
                     </a>
-                    <a href="http://localhost:5120/swagger" target="_blank" class="home-btn home-btn-secondary">
+                    <a href="http://localhost:5120/swagger" target="_blank" class="home-btn ">
                         <i class="fas fa-flask"></i> Try Swagger
                     </a>
                 </div>
@@ -103,38 +103,13 @@
                             <li><strong>Role-based Access:</strong> Fine-grained permission control with multiple roles</li>
                             <li><strong>Soft Delete:</strong> Safe data deletion with restoration capabilities</li>
                             <li><strong>Audit Logging:</strong> Complete audit trail for compliance and tracking</li>
+                            <li><strong>Caching:</strong> Redis-backed caching for optimal performance</li>
+                            <li><strong>Logging:</strong> Comprehensive structured logging with Serilog</li>
+                            <li><strong>Performance Monitoring:</strong> Real-time performance metrics</li>
+                            <li><strong>Error Handling:</strong> Consistent error responses with detailed messages</li>
+                            <li><strong>Pagination:</strong> Efficient data retrieval with pagination support</li>
+                            <li><strong>Docker Support:</strong> Ready for containerized deployment</li>
                         </ul>
-
-                        <h3>Core Modules</h3>
-                        <div class="getting-started-grid">
-                            <div class="getting-started-card">
-                                <h3><i class="fas fa-folder"></i> Projects Module</h3>
-                                <p>Manage projects and team members with role-based access control.</p>
-                                <ul>
-                                    <li>Create and manage projects</li>
-                                    <li>Add team members with roles</li>
-                                    <li>Track project status</li>
-                                </ul>
-                            </div>
-                            <div class="getting-started-card">
-                                <h3><i class="fas fa-tasks"></i> Tasks Module</h3>
-                                <p>Organize and track tasks with priorities and dependencies.</p>
-                                <ul>
-                                    <li>Create tasks with priorities</li>
-                                    <li>Manage task dependencies</li>
-                                    <li>Track time entries</li>
-                                </ul>
-                            </div>
-                            <div class="getting-started-card">
-                                <h3><i class="fas fa-bell"></i> Notifications Module</h3>
-                                <p>Real-time notifications and updates via SignalR.</p>
-                                <ul>
-                                    <li>Task assignments</li>
-                                    <li>Status changes</li>
-                                    <li>Due date alerts</li>
-                                </ul>
-                            </div>
-                        </div>
                     </section>
 
                     <section id="quick-start">
@@ -211,125 +186,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...</code></pre>
                         <h3>Token Expiration</h3>
                         <p>Tokens expire after 1 hour. When a token expires, you'll receive a 401 Unauthorized response. Simply login again to get a new token.</p>
                     </section>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <div class="footer-content">
-                <div class="footer-left">
-                    <p>&copy; 2026 Task Management API. All rights reserved.</p>
-                </div>
-                <div class="footer-right">
-                    <p>
-                        <a href="terms.html">Terms of Service</a> | 
-                        <a href="license.html">License</a> | 
-                        <a href="http://localhost:5120/swagger" target="_blank">API Documentation</a>
-                    </p>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <script src="js/main.js"></script>
-</body>
-</html>
-                            <li><strong>Caching:</strong> Redis-backed caching for optimal performance</li>
-                            <li><strong>Logging:</strong> Comprehensive structured logging with Serilog</li>
-                            <li><strong>Performance Monitoring:</strong> Real-time performance metrics</li>
-                            <li><strong>Error Handling:</strong> Consistent error responses with detailed messages</li>
-                            <li><strong>Pagination:</strong> Efficient data retrieval with pagination support</li>
-                            <li><strong>Docker Support:</strong> Ready for containerized deployment</li>
-                        </ul>
-                    </section>
-
-                    <section id="quick-start">
-                        <h2><i class="fas fa-rocket"></i> Quick Start</h2>
-                        <p>Get up and running with the Bookstore API in minutes.</p>
-
-                        <h3>1. Installation</h3>
-                        <div class="getting-started-grid">
-                            <div class="getting-started-card">
-                                <h3><i class="fas fa-download"></i> Clone Repository</h3>
-                                <code>git clone https://github.com/yourusername/bookstore-api.git</code>
-                                <code>cd bookstore-api</code>
-                            </div>
-                            <div class="getting-started-card">
-                                <h3><i class="fas fa-cube"></i> Docker Setup</h3>
-                                <code>docker-compose up -d</code>
-                                <p>This starts all services: API, SQL Server, Redis, and Seq</p>
-                            </div>
-                            <div class="getting-started-card">
-                                <h3><i class="fas fa-cogs"></i> Manual Setup</h3>
-                                <code>dotnet restore</code>
-                                <code>dotnet build</code>
-                                <code>dotnet run</code>
-                            </div>
-                        </div>
-
-                        <h3>2. First Request</h3>
-                        <div class="docbox docbox-http">
-                            <pre><code><span class="status-code">GET</span> /api/books HTTP/1.1
-Host: online-bookstore-api.runasp.net
-Accept: application/json</code></pre>
-                        </div>
-
-                        <h3>3. Response</h3>
-                        <div class="docbox">
-                            <pre><code>{
-  "items": [
-    {
-      "id": "550e8400-e29b-41d4-a716-446655440000",
-      "title": "The Great Gatsby",
-      "author": "F. Scott Fitzgerald",
-      "isbn": "978-0743273565",
-      "price": 12.99,
-      "stockQuantity": 50
-    }
-  ],
-  "pageNumber": 1,
-  "pageSize": 10,
-  "totalCount": 1
-}</code></pre>
-                        </div>
-                    </section>
-
-                    <section id="authentication">
-                        <h2><i class="fas fa-lock"></i> Authentication</h2>
-                        <p>The API uses JWT (JSON Web Tokens) for authentication. All protected endpoints require a valid token in the Authorization header.</p>
-
-                        <h3>Getting a Token</h3>
-                        <div class="docbox docbox-http">
-                            <pre><code><span class="status-code">POST</span> /api/auth/login HTTP/1.1
-Host: online-bookstore-api.runasp.net
-Content-Type: application/json
-
-{
-  "email": "user@example.com",
-  "password": "SecurePassword123!"
-}</code></pre>
-                        </div>
-
-                        <h3>Using the Token</h3>
-                        <div class="docbox docbox-http">
-                            <pre><code><span class="status-code">GET</span> /api/orders HTTP/1.1
-Host: online-bookstore-api.runasp.net
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-Accept: application/json</code></pre>
-                        </div>
-
-                        <div class="callout">
-                            <div class="callout-title">
-                                <i class="fas fa-lightbulb"></i> Token Expiration
-                            </div>
-                            <p>Tokens expire after 24 hours. Use the refresh endpoint to get a new token without re-authenticating.</p>
-                        </div>
-                    </section>
 
                     <section>
                         <h2><i class="fas fa-link"></i> Quick Links</h2>
                         <div class="doc-links">
-                            <a href="endpoints.html" class="doc-link">
+                            <a href="api-docs.html" class="doc-link">
                                 <h3><i class="fas fa-code"></i> API Endpoints</h3>
                                 <p>Explore all available endpoints with examples</p>
                             </a>
@@ -341,7 +202,7 @@ Accept: application/json</code></pre>
                                 <h3><i class="fas fa-star"></i> Features</h3>
                                 <p>Learn about key features and capabilities</p>
                             </a>
-                            <a href="http://online-bookstore-api.runasp.net/swagger" target="_blank" class="doc-link">
+                            <a href="http://localhost:5120/swagger" target="_blank" class="doc-link">
                                 <h3><i class="fas fa-flask"></i> Swagger UI</h3>
                                 <p>Interactive API documentation and testing</p>
                             </a>
@@ -354,19 +215,20 @@ Accept: application/json</code></pre>
         <footer>
             <div class="footer-content">
                 <div class="footer-left">
-                    <p>&copy; 2024 Online Bookstore API. All rights reserved.</p>
+                    <p>&copy; <span class="current-year"></span> Task Management API. All rights reserved.</p>
                 </div>
                 <div class="footer-right">
-                    <a href="terms.html">Terms of Service</a> | 
-                    <a href="license.html">License</a> | 
-                    <a href="http://online-bookstore-api.runasp.net/swagger" target="_blank">Swagger</a>
+                    <p>
+                        <a href="terms.html">Terms of Service</a> | 
+                        <a href="license.html">License</a> | 
+                        <a href="http://localhost:5120/swagger" target="_blank">Swagger UI</a>
+                    </p>
                 </div>
             </div>
         </footer>
     </div>
 
     <script src="js/main.js"></script>
-    <script src="js/search.js"></script>
 </body>
 </html>
 

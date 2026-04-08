@@ -125,7 +125,7 @@ This implementation plan breaks down the Task Management API modular monolith in
 
 ## Phase 3: Tasks Module
 
-- [ ] 3.1 Create Task entity and enums
+- [x] 3.1 Create Task entity and enums
   - Create Task entity with ProjectId, Title, Description, Status, Priority, AssigneeId, DueDate properties
   - Create TaskStatus enum (New, InProgress, Completed, Blocked, Cancelled)
   - Create TaskPriority enum (Low, Medium, High, Critical)
@@ -133,14 +133,14 @@ This implementation plan breaks down the Task Management API modular monolith in
   - Create TimeTrackingEntry entity with TaskId, UserId, Hours, Date
   - _Requirements: 2.1, 2.2, 2.7, 2.11, 2.12_
 
-- [ ] 3.2 Set up TasksDbContext and entity configurations
+- [x] 3.2 Set up TasksDbContext and entity configurations
   - Create TasksDbContext inheriting from BaseDbContext
   - Create TaskConfiguration with Fluent API (relationships, indexes, constraints)
   - Create TaskDependencyConfiguration and TimeTrackingEntryConfiguration
   - Configure soft delete query filters
   - _Requirements: 8.2, 8.3, 13.1_
 
-- [ ] 3.3 Create task specifications for complex queries
+- [x] 3.3 Create task specifications for complex queries
   - Create TaskSpecifications class with methods: GetByProjectAndStatus, GetByAssignee, GetBlocked, GetOverdue
   - Implement filtering, sorting, and pagination logic
   - _Requirements: 2.6_
@@ -152,7 +152,7 @@ This implementation plan breaks down the Task Management API modular monolith in
   - Implement task dependency validation (blocking tasks must be complete)
   - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 2.7, 2.11, 2.12_
 
-- [ ] 3.5 Implement Tasks API controllers and endpoints
+- [~] 3.5 Implement Tasks API controllers and endpoints
   - Create TasksController with endpoints: POST /api/tasks, GET /api/tasks/{id}, PUT /api/tasks/{id}, DELETE /api/tasks/{id}
   - Create endpoint: GET /api/projects/{projectId}/tasks with filtering by status, priority, assignee
   - Create endpoints: PUT /api/tasks/{id}/status, PUT /api/tasks/{id}/assignee
@@ -161,20 +161,20 @@ This implementation plan breaks down the Task Management API modular monolith in
   - Create request/response DTOs
   - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 2.10_
 
-- [ ] 3.6 Create task seeders
+- [~] 3.6 Create task seeders
   - Create TaskSeeder to seed initial tasks
   - Create TaskDependencySeeder to seed task dependencies
   - Create TimeTrackingSeeder to seed time tracking entries
   - _Requirements: 8.3_
 
-- [ ] 3.7 Integrate Tasks module with DI and routing
+- [~] 3.7 Integrate Tasks module with DI and routing
   - Create TasksModuleExtensions with AddTasksModule method
   - Register TasksDbContext, repositories, and services
   - Create MapTasksEndpoints extension method
   - Register in Program.cs
   - _Requirements: 8.10_
 
-- [ ] 3.8 Write unit tests for Tasks module
+- [~] 3.8 Write unit tests for Tasks module
   - Test TaskService methods (create, update, delete, assign, status change)
   - Test task dependency validation
   - Test due date validation (no past dates)
@@ -182,7 +182,7 @@ This implementation plan breaks down the Task Management API modular monolith in
   - Test soft delete functionality
   - _Requirements: 6.1, 6.7, 6.8_
 
-- [ ] 3.9 Write integration tests for Tasks module
+- [~] 3.9 Write integration tests for Tasks module
   - Test TasksController endpoints with real database
   - Test task creation, retrieval, update, deletion workflows
   - Test task assignment and status updates
@@ -194,34 +194,34 @@ This implementation plan breaks down the Task Management API modular monolith in
 
 ## Phase 4: Users Module & Authentication
 
-- [ ] 4.1 Create ApplicationUser entity and enums
+- [~] 4.1 Create ApplicationUser entity and enums
   - Create ApplicationUser extending IdentityUser with additional properties
   - Create UserRole enum (Admin, Manager, Developer, Viewer)
   - Create Permission enum with all system permissions
   - Create UserRole entity for role-permission mapping
   - _Requirements: 3.1, 3.4, 3.5, 3.10_
 
-- [ ] 4.2 Set up UsersDbContext with ASP.NET Core Identity
+- [~] 4.2 Set up UsersDbContext with ASP.NET Core Identity
   - Create UsersDbContext extending IdentityDbContext<ApplicationUser>
   - Configure ApplicationUser, IdentityRole, and custom role entities
   - Set up Identity options (password complexity, lockout policy)
   - Configure 5 failed attempts lockout for 30 minutes
   - _Requirements: 3.1, 3.4, 3.8, 3.9_
 
-- [ ] 4.3 Implement JWT authentication
+- [~] 4.3 Implement JWT authentication
   - Create JwtTokenGenerator service to generate JWT tokens with 1-hour expiration
   - Implement token validation middleware
   - Add JWT bearer authentication to Program.cs
   - Include UserId, Email, Roles in token claims
   - _Requirements: 3.1, 3.2, 3.3_
 
-- [ ] 4.4 Create user service layer
+- [~] 4.4 Create user service layer
   - Create UserService with CreateUser, UpdateUser, ChangePassword, AssignRole methods
   - Implement password complexity validation (8+ chars, uppercase, lowercase, number, special char)
   - Implement user profile retrieval with roles and assigned projects
   - _Requirements: 3.4, 3.5, 3.6, 3.7_
 
-- [ ] 4.5 Implement Users API controllers and endpoints
+- [~] 4.5 Implement Users API controllers and endpoints
   - Create AuthController with endpoints: POST /api/auth/login, POST /api/auth/register
   - Create UsersController with endpoints: GET /api/users/{id}, PUT /api/users/{id}, PUT /api/users/{id}/password
   - Create admin endpoints: POST /api/users/{id}/roles, GET /api/users
@@ -229,32 +229,32 @@ This implementation plan breaks down the Task Management API modular monolith in
   - Add authorization checks for admin operations
   - _Requirements: 3.1, 3.4, 3.5, 3.6, 3.7, 3.10_
 
-- [ ] 4.6 Create authorization policies
+- [~] 4.6 Create authorization policies
   - Create policy-based authorization for fine-grained access control
   - Implement role-based policies (Admin, Manager, Developer, Viewer)
   - Create custom authorization handlers for resource-level permissions
   - _Requirements: 3.5, 3.10_
 
-- [ ] 4.7 Create user seeders
+- [~] 4.7 Create user seeders
   - Create UserSeeder to seed initial users with different roles
   - Create UserRoleSeeder to seed roles and permissions
   - _Requirements: 8.3_
 
-- [ ] 4.8 Integrate Users module with DI and routing
+- [~] 4.8 Integrate Users module with DI and routing
   - Create UsersModuleExtensions with AddUsersModule method
   - Register UsersDbContext, Identity, JWT, services
   - Create MapUsersEndpoints extension method
   - Register in Program.cs
   - _Requirements: 8.10_
 
-- [ ] 4.9 Write unit tests for Users module
+- [~] 4.9 Write unit tests for Users module
   - Test UserService methods (create, update, change password, assign role)
   - Test password complexity validation
   - Test JWT token generation and validation
   - Test authorization policies
   - _Requirements: 6.1, 6.7, 6.8_
 
-- [ ] 4.10 Write integration tests for Users module
+- [~] 4.10 Write integration tests for Users module
   - Test authentication flow (login, token generation)
   - Test user creation and profile retrieval
   - Test password change workflow
@@ -266,32 +266,32 @@ This implementation plan breaks down the Task Management API modular monolith in
 
 ## Phase 5: Notifications Module
 
-- [ ] 5.1 Create Notification entity and enums
+- [~] 5.1 Create Notification entity and enums
   - Create Notification entity with UserId, Type, Message, IsRead, Status properties
   - Create NotificationType enum (TaskAssigned, TaskCompleted, TaskMentioned, DueDateApproaching, CriticalPriority)
   - Create NotificationStatus enum (Unread, Read, Archived)
   - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5_
 
-- [ ] 5.2 Set up NotificationsDbContext
+- [~] 5.2 Set up NotificationsDbContext
   - Create NotificationsDbContext inheriting from BaseDbContext
   - Create NotificationConfiguration with Fluent API
   - Configure soft delete query filters
   - _Requirements: 8.2, 8.3, 13.1_
 
-- [ ] 5.3 Create notification repository and service layer
+- [~] 5.3 Create notification repository and service layer
   - Create INotificationRepository interface extending IRepository<Notification>
   - Implement NotificationRepository with custom query methods (GetUserNotifications, GetUnread)
   - Create NotificationService with CreateNotification, MarkAsRead, DeleteNotification methods
   - _Requirements: 5.1, 5.2, 5.5, 5.6, 5.7_
 
-- [ ] 5.4 Implement Notifications API controllers and endpoints
+- [~] 5.4 Implement Notifications API controllers and endpoints
   - Create NotificationsController with endpoints: GET /api/notifications, PUT /api/notifications/{id}/read, DELETE /api/notifications/{id}
   - Create endpoints: GET /api/notifications/preferences, PUT /api/notifications/preferences
   - Implement pagination for notifications list
   - Create request/response DTOs
   - _Requirements: 5.1, 5.5, 5.6, 5.7, 5.8_
 
-- [ ] 5.5 Implement SignalR hub for real-time updates
+- [~] 5.5 Implement SignalR hub for real-time updates
   - Create TaskUpdatesHub extending Hub
   - Implement JoinProjectGroup and LeaveProjectGroup methods
   - Implement SendTaskUpdate, SendProjectUpdate, SendNotification methods
@@ -299,11 +299,11 @@ This implementation plan breaks down the Task Management API modular monolith in
   - Implement connection lifecycle management (OnConnectedAsync, OnDisconnectedAsync)
   - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6_
 
-- [ ] 5.6 Create notification seeders
+- [~] 5.6 Create notification seeders
   - Create NotificationSeeder to seed initial notifications
   - _Requirements: 8.3_
 
-- [ ] 5.7 Integrate Notifications module with DI and routing
+- [~] 5.7 Integrate Notifications module with DI and routing
   - Create NotificationsModuleExtensions with AddNotificationsModule method
   - Register NotificationsDbContext, repositories, and services
   - Create MapNotificationsEndpoints extension method
@@ -311,13 +311,13 @@ This implementation plan breaks down the Task Management API modular monolith in
   - Register in Program.cs
   - _Requirements: 8.10_
 
-- [ ] 5.8 Write unit tests for Notifications module
+- [~] 5.8 Write unit tests for Notifications module
   - Test NotificationService methods (create, mark as read, delete)
   - Test notification filtering and pagination
   - Test soft delete functionality
   - _Requirements: 6.1, 6.7, 6.8_
 
-- [ ] 5.9 Write integration tests for Notifications module
+- [~] 5.9 Write integration tests for Notifications module
   - Test NotificationsController endpoints with real database
   - Test notification creation, retrieval, and status updates
   - Test SignalR hub connections and group management
@@ -328,13 +328,13 @@ This implementation plan breaks down the Task Management API modular monolith in
 
 ## Phase 6: Real-time Integration & Broadcasting
 
-- [ ] 6.1 Integrate SignalR broadcasting with Projects module
+- [~] 6.1 Integrate SignalR broadcasting with Projects module
   - Modify ProjectService to broadcast project updates via SignalR
   - Broadcast project creation, update, and deletion to project group
   - Broadcast team member additions and removals
   - _Requirements: 1.3, 1.4, 4.2, 4.3_
 
-- [ ] 6.2 Integrate SignalR broadcasting with Tasks module
+- [~] 6.2 Integrate SignalR broadcasting with Tasks module
   - Modify TaskService to broadcast task updates via SignalR
   - Broadcast task creation, update, and deletion to project group
   - Broadcast task status changes and assignee changes
@@ -342,20 +342,20 @@ This implementation plan breaks down the Task Management API modular monolith in
   - Notify project manager when task priority is Critical
   - _Requirements: 2.3, 2.4, 2.5, 2.10, 4.2, 4.3, 4.4_
 
-- [ ] 6.3 Implement notification creation on task events
+- [~] 6.3 Implement notification creation on task events
   - Create notifications when user is assigned to task
   - Create notifications when task status changes to Completed
   - Create notifications for due date approaching (within 24 hours)
   - Create notifications for critical priority tasks
   - _Requirements: 5.1, 5.2, 5.3, 5.4_
 
-- [ ] 6.4 Implement connection authorization and filtering
+- [~] 6.4 Implement connection authorization and filtering
   - Add authorization checks in SignalR hub to verify user access to project groups
   - Prevent unauthorized users from receiving project updates
   - Implement permission-based message filtering
   - _Requirements: 4.6_
 
-- [ ] 6.5 Write integration tests for real-time broadcasting
+- [~] 6.5 Write integration tests for real-time broadcasting
   - Test task update broadcasting to project group
   - Test project update broadcasting
   - Test notification delivery to assigned user
@@ -367,39 +367,39 @@ This implementation plan breaks down the Task Management API modular monolith in
 
 ## Phase 7: Cross-Cutting Concerns
 
-- [ ] 7.1 Implement audit logging
+- [~] 7.1 Implement audit logging
   - Create AuditLog entity with UserId, EntityType, EntityId, Action, Changes, Timestamp
   - Create AuditDbContext for audit logs
   - Implement AuditService to log create/update/delete operations
   - Integrate audit logging into Project, Task, and User services
   - _Requirements: 14.1, 14.2, 14.3, 14.4, 14.5, 14.6_
 
-- [ ] 7.2 Implement rate limiting
+- [~] 7.2 Implement rate limiting
   - Create RateLimitingMiddleware to enforce per-user and per-IP limits
   - Configure rate limits per endpoint
   - Return 429 Too Many Requests when limits exceeded
   - _Requirements: 10.3, 12.5_
 
-- [ ] 7.3 Configure CORS
+- [~] 7.3 Configure CORS
   - Set up CORS middleware in Program.cs
   - Configure allowed origins, methods, and headers
   - Support credentials for SignalR connections
   - _Requirements: 11.4_
 
-- [ ] 7.4 Implement soft delete query filters
+- [~] 7.4 Implement soft delete query filters
   - Ensure all DbContexts apply soft delete filters by default
   - Create helper method to retrieve soft-deleted entities when needed
   - Implement restore functionality for soft-deleted entities
   - _Requirements: 13.1, 13.2, 13.3, 13.4, 13.5, 13.6_
 
-- [ ] 7.5 Implement performance optimization
+- [~] 7.5 Implement performance optimization
   - Add database indexes for frequently queried columns
   - Implement query optimization in repositories
   - Add caching for frequently accessed data (projects, user roles)
   - Implement cache invalidation on updates
   - _Requirements: 10.1, 10.2, 10.5, 10.6, 10.7, 10.8_
 
-- [ ] 7.6 Write unit tests for cross-cutting concerns
+- [~] 7.6 Write unit tests for cross-cutting concerns
   - Test audit logging functionality
   - Test rate limiting middleware
   - Test CORS configuration
@@ -410,32 +410,32 @@ This implementation plan breaks down the Task Management API modular monolith in
 
 ## Phase 8: Testing & Quality Assurance
 
-- [ ] 8.1 Set up test infrastructure and fixtures
+- [~] 8.1 Set up test infrastructure and fixtures
   - Create DatabaseFixture using Testcontainers for SQL Server
   - Create TestDataBuilder for consistent test data creation
   - Create test extensions and helpers
   - _Requirements: 6.3, 6.4_
 
-- [ ] 8.2 Set up code coverage measurement
+- [~] 8.2 Set up code coverage measurement
   - Configure Coverlet for coverage reporting
   - Set up coverage thresholds (>80% overall, >85% per module)
   - Create coverage report generation in CI/CD
   - _Requirements: 6.1, 6.2_
 
-- [ ] 8.3 Create comprehensive integration test suite
+- [~] 8.3 Create comprehensive integration test suite
   - Write integration tests for all module workflows
   - Test happy path and error scenarios
   - Test authorization and permission checks
   - Test soft delete and restoration
   - _Requirements: 6.3, 6.4, 6.5, 6.6, 6.8_
 
-- [ ] 8.4 Create performance tests
+- [~] 8.4 Create performance tests
   - Test response times for list endpoints with large datasets
   - Test concurrent SignalR connections
   - Test database query performance
   - _Requirements: 10.1, 10.2, 10.3, 10.4_
 
-- [ ] 8.5 Checkpoint - Ensure all tests pass and coverage meets targets
+- [~] 8.5 Checkpoint - Ensure all tests pass and coverage meets targets
   - Run full test suite (unit + integration)
   - Verify code coverage >80%
   - Verify all tests pass
@@ -445,52 +445,52 @@ This implementation plan breaks down the Task Management API modular monolith in
 
 ## Phase 9: Documentation & DevOps
 
-- [ ] 9.1 Create Architecture Decision Records (ADRs)
+- [~] 9.1 Create Architecture Decision Records (ADRs)
   - Create ADR-001: Modular Monolith Architecture
   - Create ADR-002: Separate DbContext Per Module
   - Create ADR-003: Soft Delete Implementation
   - Create ADR-004: SignalR Real-time Updates
   - _Requirements: 7.1_
 
-- [ ] 9.2 Configure OpenAPI/Swagger
+- [~] 9.2 Configure OpenAPI/Swagger
   - Add Swagger/OpenAPI configuration to Program.cs
   - Configure Swagger UI at /swagger/index.html
   - Document all endpoints with request/response schemas
   - Document authentication requirements
   - _Requirements: 7.3_
 
-- [ ] 9.3 Create Postman collection
+- [~] 9.3 Create Postman collection
   - Create Postman collection with all API endpoints
   - Include authentication flow
   - Include example requests and responses
   - _Requirements: 7.3_
 
-- [ ] 9.4 Create comprehensive README
+- [~] 9.4 Create comprehensive README
   - Document project overview and architecture
   - Include architecture diagram
   - Document setup instructions
   - Document running tests and development workflow
   - _Requirements: 7.2_
 
-- [ ] 9.5 Create CONTRIBUTING.md
+- [~] 9.5 Create CONTRIBUTING.md
   - Document code style and conventions
   - Document commit message format
   - Document pull request process
   - Document code review checklist
   - _Requirements: 7.5, 11.1_
 
-- [ ] 9.6 Create CHANGELOG.md
+- [~] 9.6 Create CHANGELOG.md
   - Document releases, features, bug fixes, and breaking changes
   - _Requirements: 7.7_
 
-- [ ] 9.7 Set up GitHub Actions CI/CD pipeline
+- [~] 9.7 Set up GitHub Actions CI/CD pipeline
   - Create workflow to run unit tests on every commit
   - Create workflow to run integration tests with Testcontainers
   - Generate and report coverage metrics
   - Build Docker image
   - _Requirements: 6.2, 6.3, 6.4, 6.5, 6.6_
 
-- [ ] 9.8 Create Docker setup
+- [~] 9.8 Create Docker setup
   - Create Dockerfile with multi-stage build
   - Create docker-compose.yml with API and SQL Server services
   - Configure environment-specific settings
@@ -500,21 +500,21 @@ This implementation plan breaks down the Task Management API modular monolith in
 
 ## Phase 10: Code Review & Mentoring
 
-- [ ] 10.1 Create code review checklist
+- [~] 10.1 Create code review checklist
   - Document SOLID principles checklist
   - Document clean architecture checklist
   - Document testing requirements checklist
   - Document security best practices checklist
   - _Requirements: 11.1, 11.2, 11.3, 11.4, 11.5, 11.6, 11.7_
 
-- [ ] 10.2 Create internal guidelines document
+- [~] 10.2 Create internal guidelines document
   - Document naming conventions
   - Document folder structure conventions
   - Document DI registration patterns
   - Document error handling patterns
   - _Requirements: 11.1_
 
-- [ ] 10.3 Create SOLID principles examples document
+- [~] 10.3 Create SOLID principles examples document
   - Document Single Responsibility Principle with examples
   - Document Open/Closed Principle with examples
   - Document Liskov Substitution Principle with examples
@@ -522,21 +522,21 @@ This implementation plan breaks down the Task Management API modular monolith in
   - Document Dependency Inversion Principle with examples
   - _Requirements: 8.6, 8.7, 8.8, 8.9_
 
-- [ ] 10.4 Create performance optimization guide
+- [~] 10.4 Create performance optimization guide
   - Document query optimization techniques
   - Document caching strategies
   - Document indexing best practices
   - Document pagination implementation
   - _Requirements: 10.1, 10.2, 10.5, 10.6, 10.7, 10.8_
 
-- [ ] 10.5 Create testing best practices guide
+- [~] 10.5 Create testing best practices guide
   - Document unit testing patterns
   - Document integration testing patterns
   - Document test data builders
   - Document mocking strategies
   - _Requirements: 6.7, 6.8, 6.9_
 
-- [ ] 10.6 Final checkpoint - Ensure all documentation is complete
+- [~] 10.6 Final checkpoint - Ensure all documentation is complete
   - Verify all ADRs are documented
   - Verify README is comprehensive
   - Verify CONTRIBUTING.md is clear

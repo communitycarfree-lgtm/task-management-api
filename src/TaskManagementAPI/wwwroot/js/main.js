@@ -1,12 +1,65 @@
-// Main JavaScript for Bookstore API Documentation
+// Main JavaScript for Task Management API Documentation
 
 document.addEventListener('DOMContentLoaded', function() {
+    initTheme();
     initializeNavigation();
     initializeSearch();
     initializeSidebar();
+    initializeCodeCopy();
+    initializeScrollAnimations();
+    initializeMobileMenu();
+    initCopyrightYear();
+    highlightCode();
 });
 
-// Initialize navigation active state
+// ========== THEME TOGGLE LOGIC ==========
+function initTheme() {
+    const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+    createThemeToggle(theme);
+}
+
+function createThemeToggle(currentTheme) {
+    const headerContainer = document.querySelector('.header-container');
+    if (!headerContainer) return;
+
+    // Ensure header-actions wrapper exists
+    let headerActions = document.querySelector('.header-actions');
+    if (!headerActions) {
+        headerActions = document.createElement('div');
+        headerActions.className = 'header-actions';
+        headerContainer.appendChild(headerActions);
+    }
+
+    const toggleContainer = document.createElement('div');
+    toggleContainer.className = 'theme-toggle-container';
+    
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'theme-toggle-btn';
+    toggleBtn.setAttribute('aria-label', 'Toggle theme');
+    toggleBtn.innerHTML = currentTheme === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+    
+    toggleBtn.addEventListener('click', () => {
+        const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        toggleBtn.innerHTML = newTheme === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+    });
+
+    toggleContainer.appendChild(toggleBtn);
+    headerActions.prepend(toggleContainer); // Prepend to keep it before hamburger
+}
+
+// ========== COPYRIGHT YEAR ==========
+function initCopyrightYear() {
+    const yearElements = document.querySelectorAll('.current-year');
+    const currentYear = new Date().getFullYear();
+    yearElements.forEach(el => {
+        el.textContent = currentYear;
+    });
+}
+
+// ========== NAVIGATION & SIDEBAR ==========
 function initializeNavigation() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.navbar a');
@@ -21,7 +74,6 @@ function initializeNavigation() {
     });
 }
 
-// Initialize search functionality
 function initializeSearch() {
     const searchInput = document.getElementById('searchInput');
     if (!searchInput) return;
@@ -41,7 +93,6 @@ function initializeSearch() {
     });
 }
 
-// Initialize sidebar link active state
 function initializeSidebar() {
     const sidebarLinks = document.querySelectorAll('.sidebar-link');
     
@@ -52,13 +103,9 @@ function initializeSidebar() {
         });
     });
 
-    // Set active link based on scroll position
-    window.addEventListener('scroll', function() {
-        updateActiveSidebarLink();
-    });
+    window.addEventListener('scroll', updateActiveSidebarLink);
 }
 
-// Update active sidebar link based on scroll position
 function updateActiveSidebarLink() {
     const sections = document.querySelectorAll('section');
     const sidebarLinks = document.querySelectorAll('.sidebar-link');
@@ -66,7 +113,7 @@ function updateActiveSidebarLink() {
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 200) {
+        if (window.pageYOffset >= sectionTop - 150) {
             current = section.getAttribute('id');
         }
     });
@@ -79,7 +126,119 @@ function updateActiveSidebarLink() {
     });
 }
 
-// Smooth scroll for anchor links
+// ========== CODE COPY FUNCTIONALITY ==========
+function initializeCodeCopy() {
+    const docBoxes = document.querySelectorAll('.docbox');
+    
+    docBoxes.forEach(box => {
+        const codeElement = box.querySelector('code');
+        if (!codeElement) return;
+
+        const copyButton = document.createElement('button');
+        copyButton.className = 'copy-btn';
+        copyButton.innerHTML = '<i class="far fa-copy"></i>';
+        copyButton.setAttribute('aria-label', 'Copy code');
+        
+        box.appendChild(copyButton);
+        
+        copyButton.addEventListener('click', () => {
+            const text = codeElement.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                copyButton.innerHTML = '<i class="fas fa-check"></i>';
+                copyButton.classList.add('copied');
+                
+                setTimeout(() => {
+                    copyButton.innerHTML = '<i class="far fa-copy"></i>';
+                    copyButton.classList.remove('copied');
+                }, 2000);
+            });
+        });
+    });
+}
+
+// ========== UI ENHANCEMENTS ==========
+function initializeScrollAnimations() {
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.feature-card, .getting-started-card, .endpoint-card, section').forEach(el => {
+        el.classList.add('reveal-on-scroll');
+        observer.observe(el);
+    });
+}
+
+function initializeMobileMenu() {
+    const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+
+    // Ensure header-actions wrapper exists
+    let headerActions = document.querySelector('.header-actions');
+    if (!headerActions) {
+        headerActions = document.createElement('div');
+        headerActions.className = 'header-actions';
+        headerContainer.appendChild(headerActions);
+    }
+
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'mobile-menu-toggle';
+    toggleBtn.innerHTML = '<span></span><span></span><span></span>';
+    headerActions.appendChild(toggleBtn);
+
+    const backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
+
+    const toggleMenu = (open) => {
+        navbar.classList.toggle('active', open);
+        toggleBtn.classList.toggle('active', open);
+        backdrop.classList.toggle('active', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+    };
+
+    toggleBtn.addEventListener('click', () => toggleMenu(!navbar.classList.contains('active')));
+    backdrop.addEventListener('click', () => toggleMenu(false));
+    navbar.querySelectorAll('a').forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+}
+
+function highlightCode() {
+    const codeBlocks = document.querySelectorAll('.docbox code');
+    codeBlocks.forEach(block => {
+        // Use textContent to get clean text without existing HTML
+        let text = block.textContent;
+        
+        // Escape special characters to prevent XSS
+        let html = text
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
+        
+        // Highlight JSON Keys ("key":)
+        html = html.replace(/"([^"]+)":/g, '<span class="hl-key">"$1"</span>:');
+        
+        // Highlight JSON Strings after colon (: "value")
+        html = html.replace(/: &quot;(.*?)&quot;/g, ': <span class="hl-string">&quot;$1&quot;</span>');
+        
+        // Highlight HTTP Methods
+        html = html.replace(/\b(GET|POST|PUT|DELETE|PATCH)\b/g, '<span class="hl-method">$1</span>');
+        
+        // Highlight Numbers
+        html = html.replace(/\b(\d+)\b/g, '<span class="hl-number">$1</span>');
+        
+        // Highlight Authorization tokens
+        html = html.replace(/(Authorization: Bearer )([^\s]+)/g, '$1<span class="hl-token">$2</span>');
+
+        block.innerHTML = html;
+    });
+}
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -87,193 +246,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
     });
 });
 
-// Copy code to clipboard functionality
-function initializeCodeCopy() {
-    const codeBlocks = document.querySelectorAll('.docbox code');
-    
-    codeBlocks.forEach(block => {
-        const copyButton = document.createElement('button');
-        copyButton.textContent = 'Copy';
-        copyButton.className = 'copy-btn';
-        copyButton.style.cssText = `
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 5px 10px;
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        `;
-        
-        block.parentElement.style.position = 'relative';
-        block.parentElement.appendChild(copyButton);
-        
-        block.parentElement.addEventListener('mouseenter', () => {
-            copyButton.style.opacity = '1';
-        });
-        
-        block.parentElement.addEventListener('mouseleave', () => {
-            copyButton.style.opacity = '0';
-        });
-        
-        copyButton.addEventListener('click', () => {
-            const text = block.textContent;
-            navigator.clipboard.writeText(text).then(() => {
-                copyButton.textContent = 'Copied!';
-                setTimeout(() => {
-                    copyButton.textContent = 'Copy';
-                }, 2000);
-            });
-        });
-    });
-}
-
-// Initialize code copy on page load
-document.addEventListener('DOMContentLoaded', initializeCodeCopy);
-
-// Add keyboard shortcuts
-document.addEventListener('keydown', function(e) {
-    // Ctrl/Cmd + K for search
-    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-        e.preventDefault();
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput) {
-            searchInput.focus();
-        }
-    }
-    
-    // Escape to clear search
-    if (e.key === 'Escape') {
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput && searchInput === document.activeElement) {
-            searchInput.value = '';
-            searchInput.dispatchEvent(new Event('input'));
-        }
-    }
-});
-
-// Add animation to elements on scroll
-function initializeScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animation = 'fadeIn 0.6s ease-out forwards';
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.feature-card, .getting-started-card, .endpoint-card').forEach(el => {
-        observer.observe(el);
-    });
-}
-
-document.addEventListener('DOMContentLoaded', initializeScrollAnimations);
-
-// Mobile menu toggle
-function initializeMobileMenu() {
-    const navbar = document.querySelector('.navbar');
-    if (!navbar) return;
-
-    const headerContainer = document.querySelector('.header-container');
-    if (!headerContainer) return;
-
-    // Create the hamburger toggle button
-    const toggleBtn = document.createElement('button');
-    toggleBtn.className = 'mobile-menu-toggle';
-    toggleBtn.setAttribute('aria-label', 'Toggle navigation menu');
-    toggleBtn.setAttribute('aria-expanded', 'false');
-    toggleBtn.innerHTML = '<span></span><span></span><span></span>';
-    headerContainer.appendChild(toggleBtn);
-
-    // Create the backdrop overlay
-    const backdrop = document.createElement('div');
-    backdrop.className = 'nav-backdrop';
-    document.body.appendChild(backdrop);
-
-    function openMenu() {
-        navbar.classList.add('active');
-        toggleBtn.classList.add('active');
-        backdrop.classList.add('active');
-        toggleBtn.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeMenu() {
-        navbar.classList.remove('active');
-        toggleBtn.classList.remove('active');
-        backdrop.classList.remove('active');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-    }
-
-    // Toggle on hamburger click
-    toggleBtn.addEventListener('click', function() {
-        if (navbar.classList.contains('active')) {
-            closeMenu();
-        } else {
-            openMenu();
-        }
-    });
-
-    // Close on backdrop click
-    backdrop.addEventListener('click', closeMenu);
-
-    // Close when a nav link is clicked
-    const navLinks = navbar.querySelectorAll('a');
-    navLinks.forEach(function(link) {
-        link.addEventListener('click', closeMenu);
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && navbar.classList.contains('active')) {
-            closeMenu();
-        }
-    });
-
-    // Close menu if window is resized above mobile breakpoint
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768 && navbar.classList.contains('active')) {
-            closeMenu();
-        }
-    });
-}
-
-document.addEventListener('DOMContentLoaded', initializeMobileMenu);
-
-// Utility function to highlight code syntax
-function highlightCode() {
-    const codeBlocks = document.querySelectorAll('.docbox code');
-    codeBlocks.forEach(block => {
-        // Basic syntax highlighting for JSON
-        let html = block.innerHTML;
-        html = html.replace(/(".*?")/g, '<span style="color: #90ee90;">$1</span>');
-        html = html.replace(/(\d+)/g, '<span style="color: #ffa500;">$1</span>');
-        block.innerHTML = html;
-    });
-}
-
-document.addEventListener('DOMContentLoaded', highlightCode);
-
-// Log initialization
-console.log('Bookstore API Documentation loaded successfully');
+console.log('Task Management API Documentation V2 loaded');

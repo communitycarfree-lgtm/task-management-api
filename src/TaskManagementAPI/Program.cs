@@ -26,6 +26,7 @@ builder.Services.AddAuthentication();
 builder.Services.AddSharedServices();
 builder.Services.AddProjectsModule(builder.Configuration);
 builder.Services.AddTasksModule(builder.Configuration);
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -41,6 +42,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+app.MapControllers();
 app.UseSharedMiddleware();
 app.UseHttpsRedirection();
 app.UseAuthentication();
