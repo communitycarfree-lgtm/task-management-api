@@ -5595,11 +5595,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Memo\\Downloads\\New folder (8)\\src\\TaskManagementAPI\\TaskManagementAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Memo\\Downloads\\New folder (8)\\TaskManagementAPI\\TaskManagementAPI.csproj",
       "projectName": "TaskManagementAPI",
-      "projectPath": "C:\\Users\\Memo\\Downloads\\New folder (8)\\src\\TaskManagementAPI\\TaskManagementAPI.csproj",
+      "projectPath": "C:\\Users\\Memo\\Downloads\\New folder (8)\\TaskManagementAPI\\TaskManagementAPI.csproj",
       "packagesPath": "C:\\Users\\Memo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Memo\\Downloads\\New folder (8)\\src\\TaskManagementAPI\\obj\\",
+      "outputPath": "C:\\Users\\Memo\\Downloads\\New folder (8)\\TaskManagementAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

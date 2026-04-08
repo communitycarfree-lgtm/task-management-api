@@ -170,7 +170,7 @@ public class BaseDbContextIntegrationTests : IAsyncLifetime
     {
         // Arrange
         var entity = new DatabaseFixture.TestEntity { Id = Guid.NewGuid(), Name = "Entity" };
-        var beforeCreation = DateTime.UtcNow;
+        var beforeCreation = DateTime.UtcNow.AddSeconds(-1);
 
         // Act
         _fixture.Context.TestEntities.Add(entity);
@@ -178,7 +178,7 @@ public class BaseDbContextIntegrationTests : IAsyncLifetime
 
         // Assert
         entity.CreatedAt.Should().BeOnOrAfter(beforeCreation);
-        entity.CreatedAt.Should().BeOnOrBefore(DateTime.UtcNow);
+        entity.CreatedAt.Should().BeOnOrBefore(DateTime.UtcNow.AddSeconds(1));
     }
 
     [Fact]

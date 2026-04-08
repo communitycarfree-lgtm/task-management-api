@@ -23,9 +23,6 @@ public class TaskDependencyConfiguration : IEntityTypeConfiguration<TaskDependen
         builder.Property(d => d.BlockedByTaskId)
             .IsRequired();
 
-        // Ensure a task cannot depend on itself
-        builder.HasCheckConstraint("CK_TaskDependency_NotSelf", "[TaskId] != [BlockedByTaskId]");
-
         // Indexes for common queries
         builder.HasIndex(d => d.TaskId);
         builder.HasIndex(d => d.BlockedByTaskId);
@@ -39,6 +36,6 @@ public class TaskDependencyConfiguration : IEntityTypeConfiguration<TaskDependen
         builder.HasOne(d => d.BlockedByTask)
             .WithMany(t => t.BlockingDependencies)
             .HasForeignKey(d => d.BlockedByTaskId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

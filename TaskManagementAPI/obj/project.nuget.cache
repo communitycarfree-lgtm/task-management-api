@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oC6En2+LnD0=",
+  "dgSpecHash": "UFcmOjRPnp8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Memo\\Downloads\\New folder (8)\\src\\TaskManagementAPI\\TaskManagementAPI.csproj",
+  "projectFilePath": "C:\\Users\\Memo\\Downloads\\New folder (8)\\TaskManagementAPI\\TaskManagementAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Memo\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Memo\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

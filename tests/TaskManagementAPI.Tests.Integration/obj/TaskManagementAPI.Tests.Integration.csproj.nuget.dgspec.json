@@ -4,14 +4,14 @@
     "C:\\Users\\Memo\\Downloads\\New folder (8)\\tests\\TaskManagementAPI.Tests.Integration\\TaskManagementAPI.Tests.Integration.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Memo\\Downloads\\New folder (8)\\src\\TaskManagementAPI\\TaskManagementAPI.csproj": {
+    "C:\\Users\\Memo\\Downloads\\New folder (8)\\TaskManagementAPI\\TaskManagementAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Memo\\Downloads\\New folder (8)\\src\\TaskManagementAPI\\TaskManagementAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Memo\\Downloads\\New folder (8)\\TaskManagementAPI\\TaskManagementAPI.csproj",
         "projectName": "TaskManagementAPI",
-        "projectPath": "C:\\Users\\Memo\\Downloads\\New folder (8)\\src\\TaskManagementAPI\\TaskManagementAPI.csproj",
+        "projectPath": "C:\\Users\\Memo\\Downloads\\New folder (8)\\TaskManagementAPI\\TaskManagementAPI.csproj",
         "packagesPath": "C:\\Users\\Memo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Memo\\Downloads\\New folder (8)\\src\\TaskManagementAPI\\obj\\",
+        "outputPath": "C:\\Users\\Memo\\Downloads\\New folder (8)\\TaskManagementAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -58,10 +58,6 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
-            "Microsoft.AspNetCore.OpenApi": {
-              "target": "Package",
-              "version": "[9.0.13, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -89,6 +85,10 @@
             "Serilog.Sinks.File": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
             }
           },
           "imports": [
@@ -142,8 +142,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\Memo\\Downloads\\New folder (8)\\src\\TaskManagementAPI\\TaskManagementAPI.csproj": {
-                "projectPath": "C:\\Users\\Memo\\Downloads\\New folder (8)\\src\\TaskManagementAPI\\TaskManagementAPI.csproj"
+              "C:\\Users\\Memo\\Downloads\\New folder (8)\\TaskManagementAPI\\TaskManagementAPI.csproj": {
+                "projectPath": "C:\\Users\\Memo\\Downloads\\New folder (8)\\TaskManagementAPI\\TaskManagementAPI.csproj"
               }
             }
           }
@@ -167,6 +167,10 @@
             "FluentAssertions": {
               "target": "Package",
               "version": "[6.12.1, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

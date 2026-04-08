@@ -24,11 +24,13 @@ The Task Management API is a production-ready system designed for scalability, m
 
 ## 📚 Documentation
 
-Detailed technical documentation is available in the repository:
+Detailed technical documentation is available in the `docs/` folder:
 
-- 🏗️ **[ARCHITECTURE.md](ARCHITECTURE.md)**: System design, diagrams, and data flows.
-- 💻 **[DEVELOPMENT.md](DEVELOPMENT.md)**: Coding standards, AI context, and setup guide.
-- 📊 **[API Specification](http://localhost:5120/swagger/index.html)**: Interactive Swagger UI (Requires app running).
+- 🏗️ **[System Structure](docs/STRUCTURE.md)**: Project organization and duplicate check results.
+- 💻 **[Development Guide](docs/DEVELOPMENT.md)**: Coding standards, setup guide, and workflows.
+- 🏛️ **[Architecture Decisions (ADRs)](docs/ADR/)**: Record of important architectural decisions.
+- 🚀 **[Getting Started](docs/GETTING_STARTED.md)**: Quick setup and first steps.
+- 📊 **[API Specification](http://localhost:5120/swagger/index.html)**: Interactive Swagger UI.
 
 ## 🚦 Getting Started
 

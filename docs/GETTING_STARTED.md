@@ -221,14 +221,13 @@ dotnet test /p:CollectCoverage=true /p:CoverageFormat=opencover
 
 ## Next Steps
 
-- Read [API Documentation](API.md)
 - Check [Development Guide](DEVELOPMENT.md)
 - Review [Contributing Guidelines](CONTRIBUTING.md)
-- Explore [Architecture](../ARCHITECTURE_DIAGRAM.md)
+- Explore [Architecture Decisions](ADR/)
 
 ## Support
 
 - **Issues**: [GitHub Issues](https://github.com/yourusername/task-management-api/issues)
 - **Documentation**: [docs/](.)
-- **Code Review**: [CODE_REVIEW_REPORT.md](../CODE_REVIEW_REPORT.md)
+
 

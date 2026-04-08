@@ -4,6 +4,7 @@ using TaskManagementAPI.Modules.Tasks.Domain.Enums;
 using TaskManagementAPI.Modules.Tasks.Infrastructure.Persistence;
 using TaskManagementAPI.Modules.Tasks.Infrastructure.Services;
 using Xunit;
+using TaskStatus = TaskManagementAPI.Modules.Tasks.Domain.Enums.TaskStatus;
 
 namespace TaskManagementAPI.Tests.Unit.Modules.Tasks;
 
@@ -41,11 +42,11 @@ public class TaskRepositoryTests : IAsyncLifetime
     {
         // Arrange
         var projectId = Guid.NewGuid();
-        var tasks = new List<Task>
+        var tasks = new List<WorkTask>
         {
-            new Task { ProjectId = projectId, Title = "Task 1", Status = TaskStatus.New },
-            new Task { ProjectId = projectId, Title = "Task 2", Status = TaskStatus.InProgress },
-            new Task { ProjectId = projectId, Title = "Task 3", Status = TaskStatus.Completed }
+            new WorkTask { ProjectId = projectId, Title = "Task 1", Status = TaskStatus.New },
+            new WorkTask { ProjectId = projectId, Title = "Task 2", Status = TaskStatus.InProgress },
+            new WorkTask { ProjectId = projectId, Title = "Task 3", Status = TaskStatus.Completed }
         };
         await _context.Tasks.AddRangeAsync(tasks);
         await _context.SaveChangesAsync();
@@ -63,11 +64,11 @@ public class TaskRepositoryTests : IAsyncLifetime
     {
         // Arrange
         var projectId = Guid.NewGuid();
-        var tasks = new List<Task>
+        var tasks = new List<WorkTask>
         {
-            new Task { ProjectId = projectId, Title = "Task 1", Status = TaskStatus.New },
-            new Task { ProjectId = projectId, Title = "Task 2", Status = TaskStatus.InProgress },
-            new Task { ProjectId = projectId, Title = "Task 3", Status = TaskStatus.Completed }
+            new WorkTask { ProjectId = projectId, Title = "Task 1", Status = TaskStatus.New },
+            new WorkTask { ProjectId = projectId, Title = "Task 2", Status = TaskStatus.InProgress },
+            new WorkTask { ProjectId = projectId, Title = "Task 3", Status = TaskStatus.Completed }
         };
         await _context.Tasks.AddRangeAsync(tasks);
         await _context.SaveChangesAsync();
@@ -87,11 +88,11 @@ public class TaskRepositoryTests : IAsyncLifetime
     {
         // Arrange
         var projectId = Guid.NewGuid();
-        var tasks = new List<Task>
+        var tasks = new List<WorkTask>
         {
-            new Task { ProjectId = projectId, Title = "Task 1", Priority = TaskPriority.Low },
-            new Task { ProjectId = projectId, Title = "Task 2", Priority = TaskPriority.High },
-            new Task { ProjectId = projectId, Title = "Task 3", Priority = TaskPriority.Critical }
+            new WorkTask { ProjectId = projectId, Title = "Task 1", Priority = TaskPriority.Low },
+            new WorkTask { ProjectId = projectId, Title = "Task 2", Priority = TaskPriority.High },
+            new WorkTask { ProjectId = projectId, Title = "Task 3", Priority = TaskPriority.Critical }
         };
         await _context.Tasks.AddRangeAsync(tasks);
         await _context.SaveChangesAsync();
@@ -111,11 +112,11 @@ public class TaskRepositoryTests : IAsyncLifetime
     {
         // Arrange
         var assigneeId = "user123";
-        var tasks = new List<Task>
+        var tasks = new List<WorkTask>
         {
-            new Task { ProjectId = Guid.NewGuid(), Title = "Task 1", AssigneeId = assigneeId },
-            new Task { ProjectId = Guid.NewGuid(), Title = "Task 2", AssigneeId = assigneeId },
-            new Task { ProjectId = Guid.NewGuid(), Title = "Task 3", AssigneeId = "other-user" }
+            new WorkTask { ProjectId = Guid.NewGuid(), Title = "Task 1", AssigneeId = assigneeId },
+            new WorkTask { ProjectId = Guid.NewGuid(), Title = "Task 2", AssigneeId = assigneeId },
+            new WorkTask { ProjectId = Guid.NewGuid(), Title = "Task 3", AssigneeId = "other-user" }
         };
         await _context.Tasks.AddRangeAsync(tasks);
         await _context.SaveChangesAsync();
@@ -132,11 +133,11 @@ public class TaskRepositoryTests : IAsyncLifetime
     public async Task GetOverdueTasksAsync_ReturnsOnlyOverdueTasks()
     {
         // Arrange
-        var tasks = new List<Task>
+        var tasks = new List<WorkTask>
         {
-            new Task { ProjectId = Guid.NewGuid(), Title = "Overdue", DueDate = DateTime.UtcNow.AddDays(-1), Status = TaskStatus.New },
-            new Task { ProjectId = Guid.NewGuid(), Title = "Future", DueDate = DateTime.UtcNow.AddDays(1), Status = TaskStatus.New },
-            new Task { ProjectId = Guid.NewGuid(), Title = "Completed", DueDate = DateTime.UtcNow.AddDays(-1), Status = TaskStatus.Completed }
+            new WorkTask { ProjectId = Guid.NewGuid(), Title = "Overdue", DueDate = DateTime.UtcNow.AddDays(-1), Status = TaskStatus.New },
+            new WorkTask { ProjectId = Guid.NewGuid(), Title = "Future", DueDate = DateTime.UtcNow.AddDays(1), Status = TaskStatus.New },
+            new WorkTask { ProjectId = Guid.NewGuid(), Title = "Completed", DueDate = DateTime.UtcNow.AddDays(-1), Status = TaskStatus.Completed }
         };
         await _context.Tasks.AddRangeAsync(tasks);
         await _context.SaveChangesAsync();
@@ -153,11 +154,11 @@ public class TaskRepositoryTests : IAsyncLifetime
     public async Task GetTasksDueSoonAsync_ReturnsTasksDueWithinSpecifiedDays()
     {
         // Arrange
-        var tasks = new List<Task>
+        var tasks = new List<WorkTask>
         {
-            new Task { ProjectId = Guid.NewGuid(), Title = "Due Soon", DueDate = DateTime.UtcNow.AddHours(12), Status = TaskStatus.New },
-            new Task { ProjectId = Guid.NewGuid(), Title = "Due Later", DueDate = DateTime.UtcNow.AddDays(5), Status = TaskStatus.New },
-            new Task { ProjectId = Guid.NewGuid(), Title = "Overdue", DueDate = DateTime.UtcNow.AddDays(-1), Status = TaskStatus.New }
+            new WorkTask { ProjectId = Guid.NewGuid(), Title = "Due Soon", DueDate = DateTime.UtcNow.AddHours(12), Status = TaskStatus.New },
+            new WorkTask { ProjectId = Guid.NewGuid(), Title = "Due Later", DueDate = DateTime.UtcNow.AddDays(5), Status = TaskStatus.New },
+            new WorkTask { ProjectId = Guid.NewGuid(), Title = "Overdue", DueDate = DateTime.UtcNow.AddDays(-1), Status = TaskStatus.New }
         };
         await _context.Tasks.AddRangeAsync(tasks);
         await _context.SaveChangesAsync();
@@ -176,8 +177,8 @@ public class TaskRepositoryTests : IAsyncLifetime
         var taskId = Guid.NewGuid();
         var blockingTaskId = Guid.NewGuid();
 
-        var blockingTask = new Task { Id = blockingTaskId, ProjectId = Guid.NewGuid(), Title = "Blocking", Status = TaskStatus.New };
-        var task = new Task { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Blocked" };
+        var blockingTask = new WorkTask { Id = blockingTaskId, ProjectId = Guid.NewGuid(), Title = "Blocking", Status = TaskStatus.New };
+        var task = new WorkTask { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Blocked" };
         var dependency = new TaskDependency { TaskId = taskId, BlockedByTaskId = blockingTaskId };
 
         await _context.Tasks.AddAsync(blockingTask);
@@ -199,8 +200,8 @@ public class TaskRepositoryTests : IAsyncLifetime
         var taskId = Guid.NewGuid();
         var blockingTaskId = Guid.NewGuid();
 
-        var blockingTask = new Task { Id = blockingTaskId, ProjectId = Guid.NewGuid(), Title = "Blocking", Status = TaskStatus.Completed };
-        var task = new Task { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Blocked" };
+        var blockingTask = new WorkTask { Id = blockingTaskId, ProjectId = Guid.NewGuid(), Title = "Blocking", Status = TaskStatus.Completed };
+        var task = new WorkTask { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Blocked" };
         var dependency = new TaskDependency { TaskId = taskId, BlockedByTaskId = blockingTaskId };
 
         await _context.Tasks.AddAsync(blockingTask);
@@ -223,9 +224,9 @@ public class TaskRepositoryTests : IAsyncLifetime
         var blockingTask1Id = Guid.NewGuid();
         var blockingTask2Id = Guid.NewGuid();
 
-        var blockingTask1 = new Task { Id = blockingTask1Id, ProjectId = Guid.NewGuid(), Title = "Blocking 1" };
-        var blockingTask2 = new Task { Id = blockingTask2Id, ProjectId = Guid.NewGuid(), Title = "Blocking 2" };
-        var task = new Task { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Blocked" };
+        var blockingTask1 = new WorkTask { Id = blockingTask1Id, ProjectId = Guid.NewGuid(), Title = "Blocking 1" };
+        var blockingTask2 = new WorkTask { Id = blockingTask2Id, ProjectId = Guid.NewGuid(), Title = "Blocking 2" };
+        var task = new WorkTask { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Blocked" };
 
         await _context.Tasks.AddRangeAsync(blockingTask1, blockingTask2, task);
         await _context.TaskDependencies.AddRangeAsync(
@@ -241,3 +242,4 @@ public class TaskRepositoryTests : IAsyncLifetime
         Assert.Equal(2, result.Count());
     }
 }
+

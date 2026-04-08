@@ -31,6 +31,7 @@ public class TasksController : ControllerBase
     /// <param name="request">The create task request.</param>
     /// <returns>The created task.</returns>
     [HttpPost]
+    [AllowAnonymous]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<TaskDto>> CreateTask([FromBody] CreateTaskRequest request)
@@ -121,7 +122,8 @@ public class TasksController : ControllerBase
     /// <param name="pageNumber">The page number (default 1).</param>
     /// <param name="pageSize">The page size (default 20).</param>
     /// <returns>A paginated list of tasks.</returns>
-    [HttpGet("projects/{projectId}/tasks")]
+    [HttpGet("project/{projectId}")]
+    [AllowAnonymous]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async System.Threading.Tasks.Task<ActionResult<TaskListResponse>> GetProjectTasks(
         Guid projectId,
@@ -136,7 +138,7 @@ public class TasksController : ControllerBase
 
         var response = new TaskListResponse
         {
-            Data = tasks.Select(MapToDto),
+            Data = tasks.Select(MapToDto).ToList(),
             TotalCount = totalCount,
             PageNumber = pageNumber,
             PageSize = pageSize

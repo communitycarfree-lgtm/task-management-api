@@ -1,10 +1,17 @@
 using Serilog;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
 using TaskManagementAPI.Shared.Infrastructure.Configuration;
 using TaskManagementAPI.Shared.Infrastructure.DependencyInjection;
 using TaskManagementAPI.Modules.Projects.Configuration;
 using TaskManagementAPI.Modules.Tasks.Configuration;
+using TaskManagementAPI.Modules.Users.Configuration;
+using TaskManagementAPI.Modules.Notifications.Configuration;
+using TaskManagementAPI.Modules.Projects.Infrastructure.Persistence;
+using TaskManagementAPI.Modules.Tasks.Infrastructure.Persistence;
+using TaskManagementAPI.Modules.Users.Infrastructure.Persistence;
+using TaskManagementAPI.Modules.Notifications.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,8 +35,63 @@ builder.Services.AddAuthentication();
 builder.Services.AddSharedServices();
 builder.Services.AddProjectsModule(builder.Configuration);
 builder.Services.AddTasksModule(builder.Configuration);
+builder.Services.AddUsersModule(builder.Configuration);
+builder.Services.AddNotificationsModule(builder.Configuration);
 
 var app = builder.Build();
+
+// Initialize databases
+try
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var projectsContext = scope.ServiceProvider.GetRequiredService<ProjectsDbContext>();
+        var tasksContext = scope.ServiceProvider.GetRequiredService<TasksDbContext>();
+        var usersContext = scope.ServiceProvider.GetRequiredService<UsersDbContext>();
+        var notificationsContext = scope.ServiceProvider.GetRequiredService<NotificationsDbContext>();
+
+        // Using EnsureCreatedAsync for idempotent database creation
+        try
+        {
+            await projectsContext.Database.EnsureCreatedAsync();
+        }
+        catch (Exception ex)
+        {
+            Log.Warning(ex, "Error ensuring ProjectsDbContext database created");
+        }
+
+        try
+        {
+            await tasksContext.Database.EnsureCreatedAsync();
+        }
+        catch (Exception ex)
+        {
+            Log.Warning(ex, "Error ensuring TasksDbContext database created");
+        }
+
+        try
+        {
+            await usersContext.Database.EnsureCreatedAsync();
+        }
+        catch (Exception ex)
+        {
+            Log.Warning(ex, "Error ensuring UsersDbContext database created");
+        }
+
+        try
+        {
+            await notificationsContext.Database.EnsureCreatedAsync();
+        }
+        catch (Exception ex)
+        {
+            Log.Warning(ex, "Error ensuring NotificationsDbContext database created");
+        }
+    }
+}
+catch (Exception ex)
+{
+    Log.Error(ex, "An error occurred while initializing the database");
+}
 
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
@@ -69,3 +131,5 @@ app.Use(async (context, next) =>
 });
 
 app.Run();
+
+public partial class Program { }

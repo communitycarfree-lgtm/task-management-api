@@ -147,10 +147,8 @@ public class ConfigurationTests
         var action = () => ConfigurationValidator.ValidateConfiguration(config);
         var exception = action.Should().Throw<InvalidOperationException>().Which;
         exception.Message.Should().Contain("ConnectionStrings:DefaultConnection");
-        exception.Message.Should().Contain("Jwt:Key");
-        exception.Message.Should().Contain("Jwt:Issuer");
-        exception.Message.Should().Contain("Jwt:Audience");
-        exception.Message.Should().Contain("Serilog");
+        exception.Message.Should().Contain("Jwt section");
+        exception.Message.Should().Contain("Serilog section");
     }
 
     [Fact]

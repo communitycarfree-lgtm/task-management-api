@@ -440,6 +440,7 @@ kill -9 <PID>
 6. **Test locally** - Run all tests before pushing
 7. **Update dependencies** - Keep packages current
 
+
 ## Resources
 
 - [.NET Documentation](https://docs.microsoft.com/en-us/dotnet/)

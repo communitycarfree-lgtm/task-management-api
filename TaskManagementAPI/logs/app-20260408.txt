@@ -1550,3 +1550,1759 @@
 2026-04-08 10:24:55.100 +02:00 [DBG] Connection id "0HNKL7NHRNOVP" disconnecting.
 2026-04-08 10:24:55.385 +02:00 [DBG] Connection id "0HNKL7NHRNOVP" sending FIN because: "The Socket transport's send loop completed gracefully."
 2026-04-08 10:24:55.415 +02:00 [DBG] Connection id "0HNKL7NHRNOVP" stopped.
+2026-04-08 12:34:00.131 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-04-08 12:34:00.488 +02:00 [DBG] Hosting starting
+2026-04-08 12:34:00.525 +02:00 [INF] User profile is available. Using 'C:\Users\Memo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-08 12:34:00.568 +02:00 [DBG] Reading data from file 'C:\Users\Memo\AppData\Local\ASP.NET\DataProtection-Keys\key-cd1be0f2-8d94-48ba-9ba3-047a9f12216d.xml'.
+2026-04-08 12:34:00.592 +02:00 [DBG] Found key {cd1be0f2-8d94-48ba-9ba3-047a9f12216d}.
+2026-04-08 12:34:00.623 +02:00 [DBG] Considering key {cd1be0f2-8d94-48ba-9ba3-047a9f12216d} with expiration date 2026-05-18 22:00:18Z as default key.
+2026-04-08 12:34:00.635 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-04-08 12:34:00.646 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-04-08 12:34:00.657 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-04-08 12:34:00.670 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-04-08 12:34:00.683 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-04-08 12:34:00.690 +02:00 [DBG] Using key {cd1be0f2-8d94-48ba-9ba3-047a9f12216d} as the default key.
+2026-04-08 12:34:00.701 +02:00 [DBG] Key ring with default key {cd1be0f2-8d94-48ba-9ba3-047a9f12216d} was loaded during application startup.
+2026-04-08 12:34:00.792 +02:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-04-08 12:34:00.799 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-04-08 12:34:00.840 +02:00 [INF] Now listening on: http://localhost:5120
+2026-04-08 12:34:00.852 +02:00 [DBG] Loaded hosting startup assembly TaskManagementAPI
+2026-04-08 12:34:00.854 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-08 12:34:00.857 +02:00 [INF] Hosting environment: Development
+2026-04-08 12:34:00.859 +02:00 [INF] Content root path: C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI
+2026-04-08 12:34:00.867 +02:00 [DBG] Hosting started
+2026-04-08 12:34:43.291 +02:00 [DBG] Connection id "0HNKLB9P74OFS" accepted.
+2026-04-08 12:34:43.299 +02:00 [DBG] Connection id "0HNKLB9P74OFS" started.
+2026-04-08 12:34:43.301 +02:00 [DBG] Connection id "0HNKLB9P74OFT" accepted.
+2026-04-08 12:34:43.305 +02:00 [DBG] Connection id "0HNKLB9P74OFT" started.
+2026-04-08 12:34:43.402 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5120/ - null null
+2026-04-08 12:34:43.627 +02:00 [DBG] No candidates found for the request path '/'
+2026-04-08 12:34:43.715 +02:00 [DBG] Request did not match any endpoints
+2026-04-08 12:34:43.808 +02:00 [DBG] The request path  does not match the path filter
+2026-04-08 12:34:43.814 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-04-08 12:34:43.834 +02:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-08 12:34:43.880 +02:00 [INF] Sending file. Request path: '/index.html'. Physical path: 'C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI\wwwroot\index.html'
+2026-04-08 12:34:43.882 +02:00 [DBG] Connection id "0HNKLB9P74OFT" completed keep alive response.
+2026-04-08 12:34:43.888 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5120/index.html - 200 11982 text/html 500.8779ms
+2026-04-08 12:34:43.926 +02:00 [DBG] Connection id "0HNKLB9P74OFU" accepted.
+2026-04-08 12:34:43.929 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5120/images/logo.png - null null
+2026-04-08 12:34:43.970 +02:00 [DBG] Connection id "0HNKLB9P74OFU" started.
+2026-04-08 12:34:43.970 +02:00 [DBG] No candidates found for the request path '/images/logo.png'
+2026-04-08 12:34:43.971 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5120/css/styles.css - null null
+2026-04-08 12:34:43.975 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5120/js/main.js - null null
+2026-04-08 12:34:43.977 +02:00 [DBG] Request did not match any endpoints
+2026-04-08 12:34:43.982 +02:00 [DBG] No candidates found for the request path '/css/styles.css'
+2026-04-08 12:34:43.988 +02:00 [DBG] No candidates found for the request path '/js/main.js'
+2026-04-08 12:34:43.994 +02:00 [DBG] The request path  does not match the path filter
+2026-04-08 12:34:43.996 +02:00 [DBG] Request did not match any endpoints
+2026-04-08 12:34:43.999 +02:00 [DBG] Request did not match any endpoints
+2026-04-08 12:34:44.004 +02:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-08 12:34:44.012 +02:00 [DBG] The request path  does not match the path filter
+2026-04-08 12:34:44.020 +02:00 [DBG] The request path  does not match the path filter
+2026-04-08 12:34:44.036 +02:00 [INF] Sending file. Request path: '/images/logo.png'. Physical path: 'C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI\wwwroot\images\logo.png'
+2026-04-08 12:34:44.055 +02:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-08 12:34:44.055 +02:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-08 12:34:44.070 +02:00 [DBG] Connection id "0HNKLB9P74OFS" completed keep alive response.
+2026-04-08 12:34:44.072 +02:00 [INF] Sending file. Request path: '/css/styles.css'. Physical path: 'C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI\wwwroot\css\styles.css'
+2026-04-08 12:34:44.084 +02:00 [INF] Sending file. Request path: '/js/main.js'. Physical path: 'C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI\wwwroot\js\main.js'
+2026-04-08 12:34:44.088 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5120/images/logo.png - 200 96506 image/png 159.6438ms
+2026-04-08 12:34:44.100 +02:00 [DBG] Connection id "0HNKLB9P74OFT" completed keep alive response.
+2026-04-08 12:34:44.104 +02:00 [DBG] Connection id "0HNKLB9P74OFU" completed keep alive response.
+2026-04-08 12:34:44.162 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5120/css/styles.css - 200 39695 text/css 190.2398ms
+2026-04-08 12:34:44.165 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5120/js/main.js - 200 9388 text/javascript 189.2728ms
+2026-04-08 12:36:55.705 +02:00 [DBG] Connection id "0HNKLB9P74OFS" disconnecting.
+2026-04-08 12:36:56.099 +02:00 [DBG] Connection id "0HNKLB9P74OFT" disconnecting.
+2026-04-08 12:36:56.389 +02:00 [DBG] Connection id "0HNKLB9P74OFU" disconnecting.
+2026-04-08 12:36:56.590 +02:00 [DBG] Connection id "0HNKLB9P74OFS" stopped.
+2026-04-08 12:36:56.603 +02:00 [DBG] Connection id "0HNKLB9P74OFT" stopped.
+2026-04-08 12:36:56.608 +02:00 [DBG] Connection id "0HNKLB9P74OFU" stopped.
+2026-04-08 12:36:56.622 +02:00 [DBG] Connection id "0HNKLB9P74OFS" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-08 12:36:56.625 +02:00 [DBG] Connection id "0HNKLB9P74OFT" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-08 12:36:56.627 +02:00 [DBG] Connection id "0HNKLB9P74OFU" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-08 12:37:05.514 +02:00 [DBG] Connection id "0HNKLB9P74OFV" accepted.
+2026-04-08 12:37:05.518 +02:00 [DBG] Connection id "0HNKLB9P74OFV" started.
+2026-04-08 12:37:05.521 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5120/api/auth/register - application/json 107
+2026-04-08 12:37:05.535 +02:00 [DBG] 1 candidate(s) found for the request path '/api/auth/register'
+2026-04-08 12:37:05.543 +02:00 [DBG] Endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)' with route pattern 'api/auth/register' is valid for the request path '/api/auth/register'
+2026-04-08 12:37:05.558 +02:00 [DBG] Request matched endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:37:05.564 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-04-08 12:37:05.570 +02:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-08 12:37:05.573 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-04-08 12:37:05.577 +02:00 [INF] Executing endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:37:05.619 +02:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TaskManagementAPI.Modules.Users.Application.DTOs.UserDto]] Register(TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest) on controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI).
+2026-04-08 12:37:05.624 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-04-08 12:37:05.627 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-04-08 12:37:05.630 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-04-08 12:37:05.637 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-04-08 12:37:05.640 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-04-08 12:37:05.645 +02:00 [DBG] Executing controller factory for controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI)
+2026-04-08 12:37:05.813 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-04-08 12:37:05.854 +02:00 [DBG] Executed controller factory for controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI)
+2026-04-08 12:37:05.862 +02:00 [DBG] Attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' ...
+2026-04-08 12:37:05.869 +02:00 [DBG] Attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' using the name '' in request data ...
+2026-04-08 12:37:05.873 +02:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-04-08 12:37:05.901 +02:00 [DBG] Connection id "0HNKLB9P74OFV", Request id "0HNKLB9P74OFV:00000001": started reading request body.
+2026-04-08 12:37:05.905 +02:00 [DBG] Connection id "0HNKLB9P74OFV", Request id "0HNKLB9P74OFV:00000001": done reading request body.
+2026-04-08 12:37:05.912 +02:00 [DBG] JSON input formatter succeeded, deserializing to type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'
+2026-04-08 12:37:05.917 +02:00 [DBG] Done attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:37:05.920 +02:00 [DBG] Done attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:37:05.923 +02:00 [DBG] Attempting to validate the bound parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' ...
+2026-04-08 12:37:05.935 +02:00 [DBG] Done attempting to validate the bound parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:37:05.942 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-04-08 12:37:05.951 +02:00 [DBG] No information found on request to perform content negotiation.
+2026-04-08 12:37:05.956 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-04-08 12:37:05.958 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-04-08 12:37:05.962 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-04-08 12:37:05.968 +02:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-08 12:37:05.987 +02:00 [INF] Executed action TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI) in 340.2506ms
+2026-04-08 12:37:05.990 +02:00 [INF] Executed endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:37:05.993 +02:00 [DBG] Connection id "0HNKLB9P74OFV" completed keep alive response.
+2026-04-08 12:37:05.997 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5120/api/auth/register - 400 null application/json; charset=utf-8 476.1848ms
+2026-04-08 12:37:12.248 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5120/api/auth/register - application/json 107
+2026-04-08 12:37:12.344 +02:00 [DBG] 1 candidate(s) found for the request path '/api/auth/register'
+2026-04-08 12:37:12.352 +02:00 [DBG] Endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)' with route pattern 'api/auth/register' is valid for the request path '/api/auth/register'
+2026-04-08 12:37:12.359 +02:00 [DBG] Request matched endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:37:12.361 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-04-08 12:37:12.365 +02:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-08 12:37:12.372 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-04-08 12:37:12.374 +02:00 [INF] Executing endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:37:12.377 +02:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TaskManagementAPI.Modules.Users.Application.DTOs.UserDto]] Register(TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest) on controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI).
+2026-04-08 12:37:12.383 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-04-08 12:37:12.397 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-04-08 12:37:12.404 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-04-08 12:37:12.409 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-04-08 12:37:12.413 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-04-08 12:37:12.416 +02:00 [DBG] Executing controller factory for controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI)
+2026-04-08 12:37:12.445 +02:00 [DBG] Executed controller factory for controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI)
+2026-04-08 12:37:12.452 +02:00 [DBG] Attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' ...
+2026-04-08 12:37:12.459 +02:00 [DBG] Attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' using the name '' in request data ...
+2026-04-08 12:37:12.462 +02:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-04-08 12:37:12.468 +02:00 [DBG] Connection id "0HNKLB9P74OFV", Request id "0HNKLB9P74OFV:00000002": started reading request body.
+2026-04-08 12:37:12.475 +02:00 [DBG] Connection id "0HNKLB9P74OFV", Request id "0HNKLB9P74OFV:00000002": done reading request body.
+2026-04-08 12:37:12.499 +02:00 [DBG] JSON input formatter succeeded, deserializing to type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'
+2026-04-08 12:37:12.508 +02:00 [DBG] Done attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:37:12.511 +02:00 [DBG] Done attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:37:12.515 +02:00 [DBG] Attempting to validate the bound parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' ...
+2026-04-08 12:37:12.522 +02:00 [DBG] Done attempting to validate the bound parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:37:12.527 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-04-08 12:37:12.531 +02:00 [DBG] No information found on request to perform content negotiation.
+2026-04-08 12:37:12.533 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-04-08 12:37:12.540 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-04-08 12:37:12.544 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-04-08 12:37:12.548 +02:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-08 12:37:12.574 +02:00 [INF] Executed action TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI) in 158.5744ms
+2026-04-08 12:37:12.578 +02:00 [INF] Executed endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:37:12.580 +02:00 [DBG] Connection id "0HNKLB9P74OFV" completed keep alive response.
+2026-04-08 12:37:12.602 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5120/api/auth/register - 400 null application/json; charset=utf-8 351.3343ms
+2026-04-08 12:37:19.234 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5120/api/auth/register - application/json 107
+2026-04-08 12:37:19.243 +02:00 [DBG] 1 candidate(s) found for the request path '/api/auth/register'
+2026-04-08 12:37:19.245 +02:00 [DBG] Endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)' with route pattern 'api/auth/register' is valid for the request path '/api/auth/register'
+2026-04-08 12:37:19.247 +02:00 [DBG] Request matched endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:37:19.250 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-04-08 12:37:19.251 +02:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-08 12:37:19.258 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-04-08 12:37:19.260 +02:00 [INF] Executing endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:37:19.262 +02:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TaskManagementAPI.Modules.Users.Application.DTOs.UserDto]] Register(TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest) on controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI).
+2026-04-08 12:37:19.265 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-04-08 12:37:19.274 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-04-08 12:37:19.277 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-04-08 12:37:19.281 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-04-08 12:37:19.288 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-04-08 12:37:19.292 +02:00 [DBG] Executing controller factory for controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI)
+2026-04-08 12:37:19.321 +02:00 [DBG] Executed controller factory for controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI)
+2026-04-08 12:37:19.323 +02:00 [DBG] Attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' ...
+2026-04-08 12:37:19.326 +02:00 [DBG] Attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' using the name '' in request data ...
+2026-04-08 12:37:19.329 +02:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-04-08 12:37:19.332 +02:00 [DBG] Connection id "0HNKLB9P74OFV", Request id "0HNKLB9P74OFV:00000003": started reading request body.
+2026-04-08 12:37:19.341 +02:00 [DBG] Connection id "0HNKLB9P74OFV", Request id "0HNKLB9P74OFV:00000003": done reading request body.
+2026-04-08 12:37:19.344 +02:00 [DBG] JSON input formatter succeeded, deserializing to type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'
+2026-04-08 12:37:19.347 +02:00 [DBG] Done attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:37:19.350 +02:00 [DBG] Done attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:37:19.356 +02:00 [DBG] Attempting to validate the bound parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' ...
+2026-04-08 12:37:19.359 +02:00 [DBG] Done attempting to validate the bound parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:37:19.363 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-04-08 12:37:19.368 +02:00 [DBG] No information found on request to perform content negotiation.
+2026-04-08 12:37:19.372 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-04-08 12:37:19.374 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-04-08 12:37:19.376 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-04-08 12:37:19.381 +02:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-08 12:37:19.383 +02:00 [INF] Executed action TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI) in 91.8468ms
+2026-04-08 12:37:19.388 +02:00 [INF] Executed endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:37:19.391 +02:00 [DBG] Connection id "0HNKLB9P74OFV" completed keep alive response.
+2026-04-08 12:37:19.393 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5120/api/auth/register - 400 null application/json; charset=utf-8 159.352ms
+2026-04-08 12:37:26.007 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5120/api/auth/register - application/json 148
+2026-04-08 12:37:26.013 +02:00 [DBG] 1 candidate(s) found for the request path '/api/auth/register'
+2026-04-08 12:37:26.015 +02:00 [DBG] Endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)' with route pattern 'api/auth/register' is valid for the request path '/api/auth/register'
+2026-04-08 12:37:26.019 +02:00 [DBG] Request matched endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:37:26.025 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-04-08 12:37:26.027 +02:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-08 12:37:26.030 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-04-08 12:37:26.032 +02:00 [INF] Executing endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:37:26.034 +02:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TaskManagementAPI.Modules.Users.Application.DTOs.UserDto]] Register(TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest) on controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI).
+2026-04-08 12:37:26.042 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-04-08 12:37:26.045 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-04-08 12:37:26.048 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-04-08 12:37:26.052 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-04-08 12:37:26.056 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-04-08 12:37:26.059 +02:00 [DBG] Executing controller factory for controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI)
+2026-04-08 12:37:26.063 +02:00 [DBG] Executed controller factory for controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI)
+2026-04-08 12:37:26.065 +02:00 [DBG] Attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' ...
+2026-04-08 12:37:26.068 +02:00 [DBG] Attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' using the name '' in request data ...
+2026-04-08 12:37:26.073 +02:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-04-08 12:37:26.075 +02:00 [DBG] Connection id "0HNKLB9P74OFV", Request id "0HNKLB9P74OFV:00000004": started reading request body.
+2026-04-08 12:37:26.079 +02:00 [DBG] Connection id "0HNKLB9P74OFV", Request id "0HNKLB9P74OFV:00000004": done reading request body.
+2026-04-08 12:37:26.082 +02:00 [DBG] JSON input formatter succeeded, deserializing to type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'
+2026-04-08 12:37:26.084 +02:00 [DBG] Done attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:37:26.089 +02:00 [DBG] Done attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:37:26.093 +02:00 [DBG] Attempting to validate the bound parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' ...
+2026-04-08 12:37:26.096 +02:00 [DBG] Done attempting to validate the bound parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:37:26.666 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2026-04-08 12:37:26.670 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2026-04-08 12:37:26.919 +02:00 [DBG] Entity Framework Core 9.0.0 initialized 'UsersDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2026-04-08 12:37:27.059 +02:00 [DBG] Compiling query expression: 
+'DbSet<ApplicationUser>()
+    .FirstOrDefault(u => u.NormalizedUserName == __normalizedUserName_0)'
+2026-04-08 12:37:27.663 +02:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<ApplicationUser>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<ApplicationUser>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: ApplicationUser.Id (string) Required PK AfterSave:Throw, 0], [Property: ApplicationUser.AccessFailedCount (int) Required, 1], [Property: ApplicationUser.ConcurrencyStamp (string) Concurrency, 2], [Property: ApplicationUser.CreatedAt (DateTime) Required Index ValueGenerated.OnAdd, 3], [Property: ApplicationUser.DeletedAt (DateTime?), 4], [Property: ApplicationUser.Email (string) Index MaxLength(256), 5], [Property: ApplicationUser.EmailConfirmed (bool) Required, 6], [Property: ApplicationUser.FullName (string) MaxLength(255), 7], [Property: ApplicationUser.IsDeleted (bool) Required, 8], [Property: ApplicationUser.LockoutEnabled (bool) Required, 9], [Property: ApplicationUser.LockoutEnd (DateTimeOffset?), 10], [Property: ApplicationUser.NormalizedEmail (string) Index MaxLength(256), 11], [Property: ApplicationUser.NormalizedUserName (string) Index MaxLength(256), 12], [Property: ApplicationUser.PasswordHash (string), 13], [Property: ApplicationUser.PhoneNumber (string), 14], [Property: ApplicationUser.PhoneNumberConfirmed (bool) Required, 15], [Property: ApplicationUser.SecurityStamp (string), 16], [Property: ApplicationUser.TwoFactorEnabled (bool) Required, 17], [Property: ApplicationUser.UpdatedAt (DateTime?), 18], [Property: ApplicationUser.UserName (string) MaxLength(256), 19] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.ConcurrencyStamp, a.CreatedAt, a.DeletedAt, a.Email, a.EmailConfirmed, a.FullName, a.IsDeleted, a.LockoutEnabled, a.LockoutEnd, a.NormalizedEmail, a.NormalizedUserName, a.PasswordHash, a.PhoneNumber, a.PhoneNumberConfirmed, a.SecurityStamp, a.TwoFactorEnabled, a.UpdatedAt, a.UserName
+            FROM AspNetUsers AS a
+            WHERE Not(a.IsDeleted) && (a.NormalizedUserName == @__normalizedUserName_0)) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: ApplicationUser.Id (string) Required PK AfterSave:Throw, 0], [Property: ApplicationUser.AccessFailedCount (int) Required, 1], [Property: ApplicationUser.ConcurrencyStamp (string) Concurrency, 2], [Property: ApplicationUser.CreatedAt (DateTime) Required Index ValueGenerated.OnAdd, 3], [Property: ApplicationUser.DeletedAt (DateTime?), 4], [Property: ApplicationUser.Email (string) Index MaxLength(256), 5], [Property: ApplicationUser.EmailConfirmed (bool) Required, 6], [Property: ApplicationUser.FullName (string) MaxLength(255), 7], [Property: ApplicationUser.IsDeleted (bool) Required, 8], [Property: ApplicationUser.LockoutEnabled (bool) Required, 9], [Property: ApplicationUser.LockoutEnd (DateTimeOffset?), 10], [Property: ApplicationUser.NormalizedEmail (string) Index MaxLength(256), 11], [Property: ApplicationUser.NormalizedUserName (string) Index MaxLength(256), 12], [Property: ApplicationUser.PasswordHash (string), 13], [Property: ApplicationUser.PhoneNumber (string), 14], [Property: ApplicationUser.PhoneNumberConfirmed (bool) Required, 15], [Property: ApplicationUser.SecurityStamp (string), 16], [Property: ApplicationUser.TwoFactorEnabled (bool) Required, 17], [Property: ApplicationUser.UpdatedAt (DateTime?), 18], [Property: ApplicationUser.UserName (string) MaxLength(256), 19] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.ConcurrencyStamp, a.CreatedAt, a.DeletedAt, a.Email, a.EmailConfirmed, a.FullName, a.IsDeleted, a.LockoutEnabled, a.LockoutEnd, a.NormalizedEmail, a.NormalizedUserName, a.PasswordHash, a.PhoneNumber, a.PhoneNumberConfirmed, a.SecurityStamp, a.TwoFactorEnabled, a.UpdatedAt, a.UserName
+            FROM AspNetUsers AS a
+            WHERE Not(a.IsDeleted) && (a.NormalizedUserName == @__normalizedUserName_0), 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            ApplicationUser entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                ApplicationUser instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(ApplicationUser);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: ApplicationUser.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("TaskManagementAPI.Modules.Users.Domain.Entities.ApplicationUser").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetString(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (ApplicationUser)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: ApplicationUser | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("TaskManagementAPI.Modules.Users.Domain.Entities.ApplicationUser")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: ApplicationUser | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("TaskManagementAPI.Modules.Users.Domain.Entities.ApplicationUser")]: 
+                            {
+                                return 
+                                {
+                                    ApplicationUser instance;
+                                    instance = new ApplicationUser();
+                                    instance.<Id>k__BackingField = dataReader.GetString(0);
+                                    instance.<AccessFailedCount>k__BackingField = dataReader.GetInt32(1);
+                                    instance.<ConcurrencyStamp>k__BackingField = dataReader.IsDBNull(2) ? default(string) : dataReader.GetString(2);
+                                    instance.<CreatedAt>k__BackingField = dataReader.GetDateTime(3);
+                                    instance.<DeletedAt>k__BackingField = dataReader.IsDBNull(4) ? default(DateTime?) : (DateTime?)dataReader.GetDateTime(4);
+                                    instance.<Email>k__BackingField = dataReader.IsDBNull(5) ? default(string) : dataReader.GetString(5);
+                                    instance.<EmailConfirmed>k__BackingField = dataReader.GetBoolean(6);
+                                    instance.<FullName>k__BackingField = dataReader.IsDBNull(7) ? default(string) : dataReader.GetString(7);
+                                    instance.<IsDeleted>k__BackingField = dataReader.GetBoolean(8);
+                                    instance.<LockoutEnabled>k__BackingField = dataReader.GetBoolean(9);
+                                    instance.<LockoutEnd>k__BackingField = dataReader.IsDBNull(10) ? default(DateTimeOffset?) : (DateTimeOffset?)dataReader.GetFieldValue<DateTimeOffset>(10);
+                                    instance.<NormalizedEmail>k__BackingField = dataReader.IsDBNull(11) ? default(string) : dataReader.GetString(11);
+                                    instance.<NormalizedUserName>k__BackingField = dataReader.IsDBNull(12) ? default(string) : dataReader.GetString(12);
+                                    instance.<PasswordHash>k__BackingField = dataReader.IsDBNull(13) ? default(string) : dataReader.GetString(13);
+                                    instance.<PhoneNumber>k__BackingField = dataReader.IsDBNull(14) ? default(string) : dataReader.GetString(14);
+                                    instance.<PhoneNumberConfirmed>k__BackingField = dataReader.GetBoolean(15);
+                                    instance.<SecurityStamp>k__BackingField = dataReader.IsDBNull(16) ? default(string) : dataReader.GetString(16);
+                                    instance.<TwoFactorEnabled>k__BackingField = dataReader.GetBoolean(17);
+                                    instance.<UpdatedAt>k__BackingField = dataReader.IsDBNull(18) ? default(DateTime?) : (DateTime?)dataReader.GetDateTime(18);
+                                    instance.<UserName>k__BackingField = dataReader.IsDBNull(19) ? default(string) : dataReader.GetString(19);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: ApplicationUser | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("TaskManagementAPI.Modules.Users.Domain.Entities.ApplicationUser")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(ApplicationUser)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: TaskManagementAPI.Modules.Users.Infrastructure.Persistence.UsersDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-04-08 12:37:27.730 +02:00 [DBG] Creating DbConnection.
+2026-04-08 12:37:27.757 +02:00 [DBG] Created DbConnection. (23ms).
+2026-04-08 12:37:27.762 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:37:28.247 +02:00 [ERR] An error occurred using the connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:37:28.280 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'TaskManagementAPI.Modules.Users.Infrastructure.Persistence.UsersDbContext'.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot open database "TaskManagementAPI_Dev" requested by the login. The login failed.
+Login failed for user 'MOSTAFA-SAID\Memo'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+ClientConnectionId:8c9edd13-cfdd-4d84-a86a-72e6526a1ca5
+Error Number:4060,State:1,Class:11
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot open database "TaskManagementAPI_Dev" requested by the login. The login failed.
+Login failed for user 'MOSTAFA-SAID\Memo'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+ClientConnectionId:8c9edd13-cfdd-4d84-a86a-72e6526a1ca5
+Error Number:4060,State:1,Class:11
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-04-08 12:37:28.432 +02:00 [INF] Executed action TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI) in 2372.8175ms
+2026-04-08 12:37:28.436 +02:00 [INF] Executed endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:37:28.445 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot open database "TaskManagementAPI_Dev" requested by the login. The login failed.
+Login failed for user 'MOSTAFA-SAID\Memo'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+ClientConnectionId:8c9edd13-cfdd-4d84-a86a-72e6526a1ca5
+Error Number:4060,State:1,Class:11
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+   at Microsoft.AspNetCore.Identity.UserValidator`1.ValidateUserName(UserManager`1 manager, TUser user)
+   at Microsoft.AspNetCore.Identity.UserValidator`1.ValidateAsync(UserManager`1 manager, TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.ValidateUserAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CreateAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CreateAsync(TUser user, String password)
+   at TaskManagementAPI.Modules.Users.Application.Services.UserService.CreateUserAsync(String email, String fullName, String password) in C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI\Modules\Users\Application\Services\UserService.cs:line 47
+   at TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register(RegisterRequest request) in C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI\Modules\Users\Presentation\Controllers\AuthController.cs:line 93
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Program.<>c.<<<Main>$>b__0_1>d.MoveNext() in C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI\Program.cs:line 65
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-04-08 12:37:28.581 +02:00 [DBG] Connection id "0HNKLB9P74OFV" completed keep alive response.
+2026-04-08 12:37:28.590 +02:00 [DBG] 'UsersDbContext' disposed.
+2026-04-08 12:37:28.647 +02:00 [DBG] Disposing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:37:28.676 +02:00 [DBG] Disposed connection to database '' on server '' (19ms).
+2026-04-08 12:37:28.684 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5120/api/auth/register - 500 null text/plain; charset=utf-8 2677.0922ms
+2026-04-08 12:38:33.566 +02:00 [DBG] Connection id "0HNKLB9P74OG0" accepted.
+2026-04-08 12:38:33.581 +02:00 [DBG] Connection id "0HNKLB9P74OG0" started.
+2026-04-08 12:38:33.584 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5120/api/auth/register - application/json 148
+2026-04-08 12:38:33.589 +02:00 [DBG] 1 candidate(s) found for the request path '/api/auth/register'
+2026-04-08 12:38:33.593 +02:00 [DBG] Endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)' with route pattern 'api/auth/register' is valid for the request path '/api/auth/register'
+2026-04-08 12:38:33.596 +02:00 [DBG] Request matched endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:38:33.598 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-04-08 12:38:33.599 +02:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-08 12:38:33.601 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-04-08 12:38:33.603 +02:00 [INF] Executing endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:38:33.605 +02:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TaskManagementAPI.Modules.Users.Application.DTOs.UserDto]] Register(TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest) on controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI).
+2026-04-08 12:38:33.611 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-04-08 12:38:33.614 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-04-08 12:38:33.617 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-04-08 12:38:33.621 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-04-08 12:38:33.623 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-04-08 12:38:33.629 +02:00 [DBG] Executing controller factory for controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI)
+2026-04-08 12:38:33.632 +02:00 [DBG] Executed controller factory for controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI)
+2026-04-08 12:38:33.634 +02:00 [DBG] Attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' ...
+2026-04-08 12:38:33.637 +02:00 [DBG] Attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' using the name '' in request data ...
+2026-04-08 12:38:33.639 +02:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-04-08 12:38:33.643 +02:00 [DBG] Connection id "0HNKLB9P74OG0", Request id "0HNKLB9P74OG0:00000001": started reading request body.
+2026-04-08 12:38:33.647 +02:00 [DBG] Connection id "0HNKLB9P74OG0", Request id "0HNKLB9P74OG0:00000001": done reading request body.
+2026-04-08 12:38:33.649 +02:00 [DBG] JSON input formatter succeeded, deserializing to type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'
+2026-04-08 12:38:33.652 +02:00 [DBG] Done attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:38:33.654 +02:00 [DBG] Done attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:38:33.656 +02:00 [DBG] Attempting to validate the bound parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' ...
+2026-04-08 12:38:33.660 +02:00 [DBG] Done attempting to validate the bound parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:38:33.849 +02:00 [DBG] Entity Framework Core 9.0.0 initialized 'UsersDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2026-04-08 12:38:33.857 +02:00 [DBG] Creating DbConnection.
+2026-04-08 12:38:33.861 +02:00 [DBG] Created DbConnection. (4ms).
+2026-04-08 12:38:33.863 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:38:33.890 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:38:33.898 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-04-08 12:38:33.906 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (5ms).
+2026-04-08 12:38:33.922 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (24ms).
+2026-04-08 12:38:33.935 +02:00 [DBG] Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DeletedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = CAST(0 AS bit) AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-04-08 12:38:34.015 +02:00 [ERR] Failed executing DbCommand (78ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DeletedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = CAST(0 AS bit) AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-04-08 12:38:34.022 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:38:34.031 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (9ms).
+2026-04-08 12:38:34.036 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'TaskManagementAPI.Modules.Users.Infrastructure.Persistence.UsersDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:141a0a8d-6f8a-4d2b-b121-863e244189fa
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:141a0a8d-6f8a-4d2b-b121-863e244189fa
+Error Number:208,State:1,Class:16
+2026-04-08 12:38:34.050 +02:00 [INF] Executed action TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI) in 421.3481ms
+2026-04-08 12:38:34.082 +02:00 [INF] Executed endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:38:34.084 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+   at Microsoft.AspNetCore.Identity.UserValidator`1.ValidateUserName(UserManager`1 manager, TUser user)
+   at Microsoft.AspNetCore.Identity.UserValidator`1.ValidateAsync(UserManager`1 manager, TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.ValidateUserAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CreateAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CreateAsync(TUser user, String password)
+   at TaskManagementAPI.Modules.Users.Application.Services.UserService.CreateUserAsync(String email, String fullName, String password) in C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI\Modules\Users\Application\Services\UserService.cs:line 47
+   at TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register(RegisterRequest request) in C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI\Modules\Users\Presentation\Controllers\AuthController.cs:line 93
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Program.<>c.<<<Main>$>b__0_1>d.MoveNext() in C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI\Program.cs:line 65
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:141a0a8d-6f8a-4d2b-b121-863e244189fa
+Error Number:208,State:1,Class:16
+2026-04-08 12:38:34.123 +02:00 [DBG] Connection id "0HNKLB9P74OG0" completed keep alive response.
+2026-04-08 12:38:34.127 +02:00 [DBG] 'UsersDbContext' disposed.
+2026-04-08 12:38:34.130 +02:00 [DBG] Disposing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:38:34.134 +02:00 [DBG] Disposed connection to database '' on server '' (4ms).
+2026-04-08 12:38:34.137 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5120/api/auth/register - 500 null text/plain; charset=utf-8 552.3139ms
+2026-04-08 12:39:08.747 +02:00 [DBG] Connection id "0HNKLB9P74OFV" received FIN.
+2026-04-08 12:39:11.630 +02:00 [DBG] Connection id "0HNKLB9P74OFV" disconnecting.
+2026-04-08 12:39:14.447 +02:00 [DBG] Connection id "0HNKLB9P74OFV" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-08 12:39:18.611 +02:00 [DBG] Connection id "0HNKLB9P74OFV" stopped.
+2026-04-08 12:39:18.653 +02:00 [DBG] Connection id "0HNKLB9P74OFV", Request id "0HNKLB9P74OFV:00000005": the connection was closed because the response was not read by the client at the specified minimum data rate.
+2026-04-08 12:39:19.876 +02:00 [WRN] As of ""2026-04-08T10:39:19.8712620+00:00"", the heartbeat has been running for ""00:00:01.2183334"" which is longer than ""00:00:01"". This could be caused by thread pool starvation.
+2026-04-08 12:39:51.549 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-04-08 12:39:53.697 +02:00 [DBG] The index {'ProjectId'} was not created on entity type 'ProjectMember' as the properties are already covered by the index {'ProjectId', 'UserId'}.
+2026-04-08 12:39:54.441 +02:00 [DBG] Entity Framework Core 9.0.0 initialized 'ProjectsDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2026-04-08 12:39:57.116 +02:00 [DBG] 'ProjectsDbContext' disposed.
+2026-04-08 12:40:13.455 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-04-08 12:40:17.565 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2026-04-08 12:40:17.606 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2026-04-08 12:40:20.571 +02:00 [DBG] Entity Framework Core 9.0.0 initialized 'UsersDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2026-04-08 12:40:21.520 +02:00 [DBG] 'UsersDbContext' disposed.
+2026-04-08 12:41:03.970 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-04-08 12:41:04.852 +02:00 [DBG] No relationship from 'TaskDependency' to 'WorkTask' has been configured by convention because there are multiple properties on one entity type - {'BlockedByTask', 'Task'} that could be matched with the properties on the other entity type - {'BlockedByDependencies', 'BlockingDependencies'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-04-08 12:41:04.942 +02:00 [DBG] No relationship from 'WorkTask' to 'TaskDependency' has been configured by convention because there are multiple properties on one entity type - {'BlockedByDependencies', 'BlockingDependencies'} that could be matched with the properties on the other entity type - {'BlockedByTask', 'Task'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-04-08 12:41:05.547 +02:00 [DBG] No relationship from 'WorkTask' to 'TaskDependency' has been configured by convention because there are multiple properties on one entity type - {'BlockedByDependencies', 'BlockingDependencies'} that could be matched with the properties on the other entity type - {'BlockedByTask', 'Task'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-04-08 12:41:05.551 +02:00 [DBG] No relationship from 'TaskDependency' to 'WorkTask' has been configured by convention because there are multiple properties on one entity type - {'BlockedByTask', 'Task'} that could be matched with the properties on the other entity type - {'BlockedByDependencies', 'BlockingDependencies'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-04-08 12:41:06.712 +02:00 [DBG] Entity Framework Core 9.0.0 initialized 'TasksDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: MigrationsHistoryTable=Tasks.__EFMigrationsHistory EngineType=SqlServer 
+2026-04-08 12:41:09.623 +02:00 [DBG] 'TasksDbContext' disposed.
+2026-04-08 12:41:34.757 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-04-08 12:41:37.178 +02:00 [DBG] The index {'ProjectId'} was not created on entity type 'ProjectMember' as the properties are already covered by the index {'ProjectId', 'UserId'}.
+2026-04-08 12:41:39.302 +02:00 [DBG] Entity Framework Core 9.0.0 initialized 'ProjectsDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2026-04-08 12:41:40.096 +02:00 [DBG] Creating DbConnection.
+2026-04-08 12:41:40.305 +02:00 [DBG] Created DbConnection. (205ms).
+2026-04-08 12:41:40.360 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:41.597 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:42.524 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-08 12:41:42.555 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (28ms).
+2026-04-08 12:41:42.562 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (42ms).
+2026-04-08 12:41:42.640 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-08 12:41:42.784 +02:00 [INF] Executed DbCommand (95ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-08 12:41:43.188 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:43.210 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (15ms).
+2026-04-08 12:41:43.232 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-04-08 12:41:43.236 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (3ms).
+2026-04-08 12:41:43.238 +02:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (5ms).
+2026-04-08 12:41:43.241 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:43.251 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:43.281 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-08 12:41:43.579 +02:00 [INF] Executed DbCommand (300ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-08 12:41:43.584 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:43.588 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (4ms).
+2026-04-08 12:41:44.407 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:49.140 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:50.398 +02:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2026-04-08 12:41:51.047 +02:00 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2026-04-08 12:41:51.095 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-08 12:41:51.112 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (17ms).
+2026-04-08 12:41:51.125 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (30ms).
+2026-04-08 12:41:51.130 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Projects] (
+    [Id] uniqueidentifier NOT NULL,
+    [Name] nvarchar(255) NOT NULL,
+    [Description] nvarchar(2000) NULL,
+    [Status] int NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [IsDeleted] bit NOT NULL DEFAULT CAST(0 AS bit),
+    [DeletedAt] datetime2 NULL,
+    CONSTRAINT [PK_Projects] PRIMARY KEY ([Id])
+);
+2026-04-08 12:41:51.172 +02:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Projects] (
+    [Id] uniqueidentifier NOT NULL,
+    [Name] nvarchar(255) NOT NULL,
+    [Description] nvarchar(2000) NULL,
+    [Status] int NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [IsDeleted] bit NOT NULL DEFAULT CAST(0 AS bit),
+    [DeletedAt] datetime2 NULL,
+    CONSTRAINT [PK_Projects] PRIMARY KEY ([Id])
+);
+2026-04-08 12:41:51.189 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-08 12:41:51.191 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (2ms).
+2026-04-08 12:41:51.195 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (6ms).
+2026-04-08 12:41:51.201 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [ProjectMembers] (
+    [Id] uniqueidentifier NOT NULL,
+    [ProjectId] uniqueidentifier NOT NULL,
+    [UserId] nvarchar(255) NOT NULL,
+    [Role] int NOT NULL,
+    [JoinedAt] datetime2 NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [IsDeleted] bit NOT NULL DEFAULT CAST(0 AS bit),
+    [DeletedAt] datetime2 NULL,
+    CONSTRAINT [PK_ProjectMembers] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_ProjectMembers_Projects_ProjectId] FOREIGN KEY ([ProjectId]) REFERENCES [Projects] ([Id]) ON DELETE CASCADE
+);
+2026-04-08 12:41:51.326 +02:00 [INF] Executed DbCommand (125ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [ProjectMembers] (
+    [Id] uniqueidentifier NOT NULL,
+    [ProjectId] uniqueidentifier NOT NULL,
+    [UserId] nvarchar(255) NOT NULL,
+    [Role] int NOT NULL,
+    [JoinedAt] datetime2 NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    [IsDeleted] bit NOT NULL DEFAULT CAST(0 AS bit),
+    [DeletedAt] datetime2 NULL,
+    CONSTRAINT [PK_ProjectMembers] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_ProjectMembers_Projects_ProjectId] FOREIGN KEY ([ProjectId]) REFERENCES [Projects] ([Id]) ON DELETE CASCADE
+);
+2026-04-08 12:41:51.816 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-08 12:41:51.822 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (5ms).
+2026-04-08 12:41:51.825 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (8ms).
+2026-04-08 12:41:51.827 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_ProjectMembers_IsDeleted] ON [ProjectMembers] ([IsDeleted]);
+2026-04-08 12:41:51.846 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_ProjectMembers_IsDeleted] ON [ProjectMembers] ([IsDeleted]);
+2026-04-08 12:41:51.865 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-08 12:41:51.872 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (7ms).
+2026-04-08 12:41:51.874 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (9ms).
+2026-04-08 12:41:51.877 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_ProjectMembers_ProjectId] ON [ProjectMembers] ([ProjectId]);
+2026-04-08 12:41:51.885 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_ProjectMembers_ProjectId] ON [ProjectMembers] ([ProjectId]);
+2026-04-08 12:41:51.893 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-08 12:41:51.896 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (2ms).
+2026-04-08 12:41:51.899 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (5ms).
+2026-04-08 12:41:51.913 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_ProjectMembers_ProjectId_UserId] ON [ProjectMembers] ([ProjectId], [UserId]);
+2026-04-08 12:41:51.925 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_ProjectMembers_ProjectId_UserId] ON [ProjectMembers] ([ProjectId], [UserId]);
+2026-04-08 12:41:51.931 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-08 12:41:51.978 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (47ms).
+2026-04-08 12:41:51.984 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (52ms).
+2026-04-08 12:41:51.991 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_ProjectMembers_UserId] ON [ProjectMembers] ([UserId]);
+2026-04-08 12:41:52.002 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_ProjectMembers_UserId] ON [ProjectMembers] ([UserId]);
+2026-04-08 12:41:52.022 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-08 12:41:52.027 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (5ms).
+2026-04-08 12:41:52.047 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (24ms).
+2026-04-08 12:41:52.056 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_CreatedAt] ON [Projects] ([CreatedAt]);
+2026-04-08 12:41:52.065 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_CreatedAt] ON [Projects] ([CreatedAt]);
+2026-04-08 12:41:52.076 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-08 12:41:52.079 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (3ms).
+2026-04-08 12:41:52.083 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (7ms).
+2026-04-08 12:41:52.092 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_IsDeleted] ON [Projects] ([IsDeleted]);
+2026-04-08 12:41:52.101 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_IsDeleted] ON [Projects] ([IsDeleted]);
+2026-04-08 12:41:52.112 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-08 12:41:52.116 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (3ms).
+2026-04-08 12:41:52.123 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (10ms).
+2026-04-08 12:41:52.127 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_IsDeleted_CreatedAt] ON [Projects] ([IsDeleted], [CreatedAt]);
+2026-04-08 12:41:52.140 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Projects_IsDeleted_CreatedAt] ON [Projects] ([IsDeleted], [CreatedAt]);
+2026-04-08 12:41:52.156 +02:00 [DBG] Committing transaction.
+2026-04-08 12:41:52.175 +02:00 [DBG] Committed transaction.
+2026-04-08 12:41:52.182 +02:00 [DBG] Disposing transaction.
+2026-04-08 12:41:52.206 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:52.245 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (39ms).
+2026-04-08 12:41:52.290 +02:00 [DBG] No relationship from 'TaskDependency' to 'WorkTask' has been configured by convention because there are multiple properties on one entity type - {'BlockedByTask', 'Task'} that could be matched with the properties on the other entity type - {'BlockedByDependencies', 'BlockingDependencies'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-04-08 12:41:52.365 +02:00 [DBG] No relationship from 'WorkTask' to 'TaskDependency' has been configured by convention because there are multiple properties on one entity type - {'BlockedByDependencies', 'BlockingDependencies'} that could be matched with the properties on the other entity type - {'BlockedByTask', 'Task'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-04-08 12:41:52.462 +02:00 [DBG] No relationship from 'WorkTask' to 'TaskDependency' has been configured by convention because there are multiple properties on one entity type - {'BlockedByDependencies', 'BlockingDependencies'} that could be matched with the properties on the other entity type - {'BlockedByTask', 'Task'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-04-08 12:41:52.496 +02:00 [DBG] No relationship from 'TaskDependency' to 'WorkTask' has been configured by convention because there are multiple properties on one entity type - {'BlockedByTask', 'Task'} that could be matched with the properties on the other entity type - {'BlockedByDependencies', 'BlockingDependencies'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-04-08 12:41:52.590 +02:00 [DBG] Entity Framework Core 9.0.0 initialized 'TasksDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: MigrationsHistoryTable=Tasks.__EFMigrationsHistory EngineType=SqlServer 
+2026-04-08 12:41:52.600 +02:00 [DBG] Creating DbConnection.
+2026-04-08 12:41:52.602 +02:00 [DBG] Created DbConnection. (2ms).
+2026-04-08 12:41:52.604 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:52.607 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:52.611 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-08 12:41:52.613 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (2ms).
+2026-04-08 12:41:52.616 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (5ms).
+2026-04-08 12:41:52.620 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-08 12:41:52.626 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-08 12:41:52.630 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:52.634 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (3ms).
+2026-04-08 12:41:52.638 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-04-08 12:41:52.641 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2026-04-08 12:41:52.643 +02:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (5ms).
+2026-04-08 12:41:52.646 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:52.650 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:52.653 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-08 12:41:52.662 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-08 12:41:52.667 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:52.670 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (2ms).
+2026-04-08 12:41:52.829 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2026-04-08 12:41:52.833 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2026-04-08 12:41:52.930 +02:00 [DBG] Entity Framework Core 9.0.0 initialized 'UsersDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2026-04-08 12:41:52.958 +02:00 [DBG] Creating DbConnection.
+2026-04-08 12:41:52.959 +02:00 [DBG] Created DbConnection. (1ms).
+2026-04-08 12:41:52.962 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:52.965 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:52.968 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-08 12:41:52.973 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (4ms).
+2026-04-08 12:41:52.976 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (7ms).
+2026-04-08 12:41:52.979 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-08 12:41:52.985 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-08 12:41:52.992 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:52.996 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (3ms).
+2026-04-08 12:41:53.000 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-04-08 12:41:53.002 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (1ms).
+2026-04-08 12:41:53.007 +02:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (6ms).
+2026-04-08 12:41:53.010 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:53.013 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:53.016 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-08 12:41:53.026 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-08 12:41:53.033 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:53.042 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (8ms).
+2026-04-08 12:41:53.084 +02:00 [DBG] Entity Framework Core 9.0.0 initialized 'NotificationsDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2026-04-08 12:41:53.088 +02:00 [DBG] Creating DbConnection.
+2026-04-08 12:41:53.091 +02:00 [DBG] Created DbConnection. (3ms).
+2026-04-08 12:41:53.094 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:53.097 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:53.100 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-08 12:41:53.102 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (1ms).
+2026-04-08 12:41:53.104 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (3ms).
+2026-04-08 12:41:53.109 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-08 12:41:53.115 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-08 12:41:53.120 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:53.123 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (3ms).
+2026-04-08 12:41:53.128 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-04-08 12:41:53.130 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2026-04-08 12:41:53.140 +02:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (9ms).
+2026-04-08 12:41:53.145 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:53.149 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:53.165 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-08 12:41:53.182 +02:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-08 12:41:53.204 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:53.213 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (8ms).
+2026-04-08 12:41:53.226 +02:00 [DBG] 'NotificationsDbContext' disposed.
+2026-04-08 12:41:53.238 +02:00 [DBG] Disposing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:53.267 +02:00 [DBG] Disposed connection to database '' on server '' (29ms).
+2026-04-08 12:41:53.277 +02:00 [DBG] 'UsersDbContext' disposed.
+2026-04-08 12:41:53.279 +02:00 [DBG] Disposing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:53.282 +02:00 [DBG] Disposed connection to database '' on server '' (3ms).
+2026-04-08 12:41:53.289 +02:00 [DBG] 'TasksDbContext' disposed.
+2026-04-08 12:41:53.291 +02:00 [DBG] Disposing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:53.294 +02:00 [DBG] Disposed connection to database '' on server '' (3ms).
+2026-04-08 12:41:53.328 +02:00 [DBG] 'ProjectsDbContext' disposed.
+2026-04-08 12:41:53.329 +02:00 [DBG] Disposing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:41:53.336 +02:00 [DBG] Disposed connection to database '' on server '' (6ms).
+2026-04-08 12:41:53.400 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-04-08 12:41:53.578 +02:00 [DBG] Hosting starting
+2026-04-08 12:41:53.614 +02:00 [INF] User profile is available. Using 'C:\Users\Memo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-08 12:41:53.635 +02:00 [DBG] Reading data from file 'C:\Users\Memo\AppData\Local\ASP.NET\DataProtection-Keys\key-cd1be0f2-8d94-48ba-9ba3-047a9f12216d.xml'.
+2026-04-08 12:41:53.652 +02:00 [DBG] Found key {cd1be0f2-8d94-48ba-9ba3-047a9f12216d}.
+2026-04-08 12:41:53.735 +02:00 [DBG] Considering key {cd1be0f2-8d94-48ba-9ba3-047a9f12216d} with expiration date 2026-05-18 22:00:18Z as default key.
+2026-04-08 12:41:53.757 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-04-08 12:41:53.765 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-04-08 12:41:53.779 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-04-08 12:41:53.784 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-04-08 12:41:53.793 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-04-08 12:41:53.798 +02:00 [DBG] Using key {cd1be0f2-8d94-48ba-9ba3-047a9f12216d} as the default key.
+2026-04-08 12:41:53.810 +02:00 [DBG] Key ring with default key {cd1be0f2-8d94-48ba-9ba3-047a9f12216d} was loaded during application startup.
+2026-04-08 12:41:53.879 +02:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-04-08 12:41:53.894 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-04-08 12:41:53.948 +02:00 [INF] Now listening on: http://localhost:5120
+2026-04-08 12:41:53.965 +02:00 [DBG] Loaded hosting startup assembly TaskManagementAPI
+2026-04-08 12:41:53.974 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-08 12:41:53.976 +02:00 [INF] Hosting environment: Development
+2026-04-08 12:41:53.977 +02:00 [INF] Content root path: C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI
+2026-04-08 12:41:53.981 +02:00 [DBG] Hosting started
+2026-04-08 12:41:54.066 +02:00 [DBG] Connection id "0HNKLBDPJBH5A" accepted.
+2026-04-08 12:41:54.088 +02:00 [DBG] Connection id "0HNKLBDPJBH5A" started.
+2026-04-08 12:41:54.166 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5120/api/auth/register - application/json 148
+2026-04-08 12:41:54.225 +02:00 [DBG] 1 candidate(s) found for the request path '/api/auth/register'
+2026-04-08 12:41:54.244 +02:00 [DBG] Endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)' with route pattern 'api/auth/register' is valid for the request path '/api/auth/register'
+2026-04-08 12:41:54.250 +02:00 [DBG] Request matched endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:41:54.282 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-04-08 12:41:54.290 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-04-08 12:41:54.330 +02:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-08 12:41:54.343 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-04-08 12:41:54.366 +02:00 [INF] Executing endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:41:54.415 +02:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TaskManagementAPI.Modules.Users.Application.DTOs.UserDto]] Register(TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest) on controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI).
+2026-04-08 12:41:54.432 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-04-08 12:41:54.441 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-04-08 12:41:54.450 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-04-08 12:41:54.460 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-04-08 12:41:54.465 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-04-08 12:41:54.472 +02:00 [DBG] Executing controller factory for controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI)
+2026-04-08 12:41:54.500 +02:00 [DBG] Executed controller factory for controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI)
+2026-04-08 12:41:54.512 +02:00 [DBG] Attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' ...
+2026-04-08 12:41:54.518 +02:00 [DBG] Attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' using the name '' in request data ...
+2026-04-08 12:41:54.526 +02:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-04-08 12:41:54.563 +02:00 [DBG] Connection id "0HNKLBDPJBH5A", Request id "0HNKLBDPJBH5A:00000001": started reading request body.
+2026-04-08 12:41:54.567 +02:00 [DBG] Connection id "0HNKLBDPJBH5A", Request id "0HNKLBDPJBH5A:00000001": done reading request body.
+2026-04-08 12:41:54.580 +02:00 [DBG] JSON input formatter succeeded, deserializing to type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'
+2026-04-08 12:41:54.585 +02:00 [DBG] Done attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:41:54.588 +02:00 [DBG] Done attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:41:54.595 +02:00 [DBG] Attempting to validate the bound parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' ...
+2026-04-08 12:41:54.616 +02:00 [DBG] Done attempting to validate the bound parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:41:55.123 +02:00 [DBG] Entity Framework Core 9.0.0 initialized 'UsersDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2026-04-08 12:41:55.593 +02:00 [DBG] Compiling query expression: 
+'DbSet<ApplicationUser>()
+    .FirstOrDefault(u => u.NormalizedUserName == __normalizedUserName_0)'
+2026-04-08 12:41:56.946 +02:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<ApplicationUser>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<ApplicationUser>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: ApplicationUser.Id (string) Required PK AfterSave:Throw, 0], [Property: ApplicationUser.AccessFailedCount (int) Required, 1], [Property: ApplicationUser.ConcurrencyStamp (string) Concurrency, 2], [Property: ApplicationUser.CreatedAt (DateTime) Required Index ValueGenerated.OnAdd, 3], [Property: ApplicationUser.DeletedAt (DateTime?), 4], [Property: ApplicationUser.Email (string) Index MaxLength(256), 5], [Property: ApplicationUser.EmailConfirmed (bool) Required, 6], [Property: ApplicationUser.FullName (string) MaxLength(255), 7], [Property: ApplicationUser.IsDeleted (bool) Required, 8], [Property: ApplicationUser.LockoutEnabled (bool) Required, 9], [Property: ApplicationUser.LockoutEnd (DateTimeOffset?), 10], [Property: ApplicationUser.NormalizedEmail (string) Index MaxLength(256), 11], [Property: ApplicationUser.NormalizedUserName (string) Index MaxLength(256), 12], [Property: ApplicationUser.PasswordHash (string), 13], [Property: ApplicationUser.PhoneNumber (string), 14], [Property: ApplicationUser.PhoneNumberConfirmed (bool) Required, 15], [Property: ApplicationUser.SecurityStamp (string), 16], [Property: ApplicationUser.TwoFactorEnabled (bool) Required, 17], [Property: ApplicationUser.UpdatedAt (DateTime?), 18], [Property: ApplicationUser.UserName (string) MaxLength(256), 19] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.ConcurrencyStamp, a.CreatedAt, a.DeletedAt, a.Email, a.EmailConfirmed, a.FullName, a.IsDeleted, a.LockoutEnabled, a.LockoutEnd, a.NormalizedEmail, a.NormalizedUserName, a.PasswordHash, a.PhoneNumber, a.PhoneNumberConfirmed, a.SecurityStamp, a.TwoFactorEnabled, a.UpdatedAt, a.UserName
+            FROM AspNetUsers AS a
+            WHERE Not(a.IsDeleted) && (a.NormalizedUserName == @__normalizedUserName_0)) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: ApplicationUser.Id (string) Required PK AfterSave:Throw, 0], [Property: ApplicationUser.AccessFailedCount (int) Required, 1], [Property: ApplicationUser.ConcurrencyStamp (string) Concurrency, 2], [Property: ApplicationUser.CreatedAt (DateTime) Required Index ValueGenerated.OnAdd, 3], [Property: ApplicationUser.DeletedAt (DateTime?), 4], [Property: ApplicationUser.Email (string) Index MaxLength(256), 5], [Property: ApplicationUser.EmailConfirmed (bool) Required, 6], [Property: ApplicationUser.FullName (string) MaxLength(255), 7], [Property: ApplicationUser.IsDeleted (bool) Required, 8], [Property: ApplicationUser.LockoutEnabled (bool) Required, 9], [Property: ApplicationUser.LockoutEnd (DateTimeOffset?), 10], [Property: ApplicationUser.NormalizedEmail (string) Index MaxLength(256), 11], [Property: ApplicationUser.NormalizedUserName (string) Index MaxLength(256), 12], [Property: ApplicationUser.PasswordHash (string), 13], [Property: ApplicationUser.PhoneNumber (string), 14], [Property: ApplicationUser.PhoneNumberConfirmed (bool) Required, 15], [Property: ApplicationUser.SecurityStamp (string), 16], [Property: ApplicationUser.TwoFactorEnabled (bool) Required, 17], [Property: ApplicationUser.UpdatedAt (DateTime?), 18], [Property: ApplicationUser.UserName (string) MaxLength(256), 19] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.ConcurrencyStamp, a.CreatedAt, a.DeletedAt, a.Email, a.EmailConfirmed, a.FullName, a.IsDeleted, a.LockoutEnabled, a.LockoutEnd, a.NormalizedEmail, a.NormalizedUserName, a.PasswordHash, a.PhoneNumber, a.PhoneNumberConfirmed, a.SecurityStamp, a.TwoFactorEnabled, a.UpdatedAt, a.UserName
+            FROM AspNetUsers AS a
+            WHERE Not(a.IsDeleted) && (a.NormalizedUserName == @__normalizedUserName_0), 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            ApplicationUser entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                ApplicationUser instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(ApplicationUser);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: ApplicationUser.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("TaskManagementAPI.Modules.Users.Domain.Entities.ApplicationUser").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetString(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (ApplicationUser)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: ApplicationUser | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("TaskManagementAPI.Modules.Users.Domain.Entities.ApplicationUser")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: ApplicationUser | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("TaskManagementAPI.Modules.Users.Domain.Entities.ApplicationUser")]: 
+                            {
+                                return 
+                                {
+                                    ApplicationUser instance;
+                                    instance = new ApplicationUser();
+                                    instance.<Id>k__BackingField = dataReader.GetString(0);
+                                    instance.<AccessFailedCount>k__BackingField = dataReader.GetInt32(1);
+                                    instance.<ConcurrencyStamp>k__BackingField = dataReader.IsDBNull(2) ? default(string) : dataReader.GetString(2);
+                                    instance.<CreatedAt>k__BackingField = dataReader.GetDateTime(3);
+                                    instance.<DeletedAt>k__BackingField = dataReader.IsDBNull(4) ? default(DateTime?) : (DateTime?)dataReader.GetDateTime(4);
+                                    instance.<Email>k__BackingField = dataReader.IsDBNull(5) ? default(string) : dataReader.GetString(5);
+                                    instance.<EmailConfirmed>k__BackingField = dataReader.GetBoolean(6);
+                                    instance.<FullName>k__BackingField = dataReader.IsDBNull(7) ? default(string) : dataReader.GetString(7);
+                                    instance.<IsDeleted>k__BackingField = dataReader.GetBoolean(8);
+                                    instance.<LockoutEnabled>k__BackingField = dataReader.GetBoolean(9);
+                                    instance.<LockoutEnd>k__BackingField = dataReader.IsDBNull(10) ? default(DateTimeOffset?) : (DateTimeOffset?)dataReader.GetFieldValue<DateTimeOffset>(10);
+                                    instance.<NormalizedEmail>k__BackingField = dataReader.IsDBNull(11) ? default(string) : dataReader.GetString(11);
+                                    instance.<NormalizedUserName>k__BackingField = dataReader.IsDBNull(12) ? default(string) : dataReader.GetString(12);
+                                    instance.<PasswordHash>k__BackingField = dataReader.IsDBNull(13) ? default(string) : dataReader.GetString(13);
+                                    instance.<PhoneNumber>k__BackingField = dataReader.IsDBNull(14) ? default(string) : dataReader.GetString(14);
+                                    instance.<PhoneNumberConfirmed>k__BackingField = dataReader.GetBoolean(15);
+                                    instance.<SecurityStamp>k__BackingField = dataReader.IsDBNull(16) ? default(string) : dataReader.GetString(16);
+                                    instance.<TwoFactorEnabled>k__BackingField = dataReader.GetBoolean(17);
+                                    instance.<UpdatedAt>k__BackingField = dataReader.IsDBNull(18) ? default(DateTime?) : (DateTime?)dataReader.GetDateTime(18);
+                                    instance.<UserName>k__BackingField = dataReader.IsDBNull(19) ? default(string) : dataReader.GetString(19);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: ApplicationUser | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("TaskManagementAPI.Modules.Users.Domain.Entities.ApplicationUser")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(ApplicationUser)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: TaskManagementAPI.Modules.Users.Infrastructure.Persistence.UsersDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-04-08 12:41:57.815 +02:00 [DBG] Connection id "0HNKLBDPJBH5A" received FIN.
+2026-04-08 12:42:00.996 +02:00 [DBG] Connection id "0HNKLBDPJBH5A" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-08 12:42:01.001 +02:00 [DBG] Connection id "0HNKLBDPJBH5A" disconnecting.
+2026-04-08 12:42:01.545 +02:00 [DBG] Creating DbConnection.
+2026-04-08 12:42:02.601 +02:00 [DBG] Created DbConnection. (1055ms).
+2026-04-08 12:42:02.618 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:42:02.630 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:42:02.641 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-04-08 12:42:02.643 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2026-04-08 12:42:02.658 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (16ms).
+2026-04-08 12:42:02.775 +02:00 [DBG] Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DeletedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = CAST(0 AS bit) AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-04-08 12:42:05.345 +02:00 [ERR] Failed executing DbCommand (2,679ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DeletedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = CAST(0 AS bit) AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-04-08 12:42:05.349 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:42:05.352 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (3ms).
+2026-04-08 12:42:06.152 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'TaskManagementAPI.Modules.Users.Infrastructure.Persistence.UsersDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fe57e073-eca1-4a55-9d6b-039619a3d1d7
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fe57e073-eca1-4a55-9d6b-039619a3d1d7
+Error Number:208,State:1,Class:16
+2026-04-08 12:42:07.166 +02:00 [INF] Executed action TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI) in 12677.1006ms
+2026-04-08 12:42:07.232 +02:00 [INF] Executed endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:42:07.251 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetUsers'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+   at Microsoft.AspNetCore.Identity.UserValidator`1.ValidateUserName(UserManager`1 manager, TUser user)
+   at Microsoft.AspNetCore.Identity.UserValidator`1.ValidateAsync(UserManager`1 manager, TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.ValidateUserAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CreateAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CreateAsync(TUser user, String password)
+   at TaskManagementAPI.Modules.Users.Application.Services.UserService.CreateUserAsync(String email, String fullName, String password) in C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI\Modules\Users\Application\Services\UserService.cs:line 47
+   at TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register(RegisterRequest request) in C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI\Modules\Users\Presentation\Controllers\AuthController.cs:line 93
+   at lambda_method19(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Program.<>c.<<<Main>$>b__0_1>d.MoveNext() in C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI\Program.cs:line 91
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:fe57e073-eca1-4a55-9d6b-039619a3d1d7
+Error Number:208,State:1,Class:16
+2026-04-08 12:42:07.422 +02:00 [DBG] 'UsersDbContext' disposed.
+2026-04-08 12:42:07.434 +02:00 [DBG] Disposing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:42:07.448 +02:00 [DBG] Disposed connection to database '' on server '' (14ms).
+2026-04-08 12:42:07.463 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5120/api/auth/register - 500 null text/plain; charset=utf-8 13300.2504ms
+2026-04-08 12:42:07.486 +02:00 [DBG] Connection id "0HNKLBDPJBH5A" stopped.
+2026-04-08 12:42:14.602 +02:00 [DBG] Connection id "0HNKLBDPJBH5B" accepted.
+2026-04-08 12:42:14.652 +02:00 [DBG] Connection id "0HNKLBDPJBH5C" accepted.
+2026-04-08 12:42:14.663 +02:00 [DBG] Connection id "0HNKLBDPJBH5C" started.
+2026-04-08 12:42:14.652 +02:00 [DBG] Connection id "0HNKLBDPJBH5B" started.
+2026-04-08 12:42:14.672 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5120/ - null null
+2026-04-08 12:42:15.138 +02:00 [DBG] No candidates found for the request path '/'
+2026-04-08 12:42:16.279 +02:00 [DBG] Request did not match any endpoints
+2026-04-08 12:42:16.965 +02:00 [DBG] The request path  does not match the path filter
+2026-04-08 12:42:16.988 +02:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-08 12:42:40.144 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-04-08 12:42:42.295 +02:00 [DBG] Entity Framework Core 9.0.0 initialized 'NotificationsDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2026-04-08 12:42:44.119 +02:00 [DBG] 'NotificationsDbContext' disposed.
+2026-04-08 12:43:13.906 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-04-08 12:43:15.822 +02:00 [DBG] The index {'ProjectId'} was not created on entity type 'ProjectMember' as the properties are already covered by the index {'ProjectId', 'UserId'}.
+2026-04-08 12:43:16.304 +02:00 [DBG] Entity Framework Core 9.0.0 initialized 'ProjectsDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2026-04-08 12:43:16.350 +02:00 [DBG] Creating DbConnection.
+2026-04-08 12:43:16.428 +02:00 [DBG] Created DbConnection. (72ms).
+2026-04-08 12:43:16.450 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:16.786 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:16.804 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-08 12:43:16.819 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (11ms).
+2026-04-08 12:43:16.826 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (24ms).
+2026-04-08 12:43:16.843 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-08 12:43:16.946 +02:00 [INF] Executed DbCommand (73ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-08 12:43:16.957 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:16.978 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (15ms).
+2026-04-08 12:43:16.993 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-04-08 12:43:16.996 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2026-04-08 12:43:16.999 +02:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (5ms).
+2026-04-08 12:43:17.002 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.007 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.012 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-08 12:43:17.098 +02:00 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-08 12:43:17.103 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.107 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (3ms).
+2026-04-08 12:43:17.138 +02:00 [DBG] No relationship from 'TaskDependency' to 'WorkTask' has been configured by convention because there are multiple properties on one entity type - {'BlockedByTask', 'Task'} that could be matched with the properties on the other entity type - {'BlockedByDependencies', 'BlockingDependencies'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-04-08 12:43:17.169 +02:00 [DBG] No relationship from 'WorkTask' to 'TaskDependency' has been configured by convention because there are multiple properties on one entity type - {'BlockedByDependencies', 'BlockingDependencies'} that could be matched with the properties on the other entity type - {'BlockedByTask', 'Task'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-04-08 12:43:17.207 +02:00 [DBG] No relationship from 'WorkTask' to 'TaskDependency' has been configured by convention because there are multiple properties on one entity type - {'BlockedByDependencies', 'BlockingDependencies'} that could be matched with the properties on the other entity type - {'BlockedByTask', 'Task'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-04-08 12:43:17.215 +02:00 [DBG] No relationship from 'TaskDependency' to 'WorkTask' has been configured by convention because there are multiple properties on one entity type - {'BlockedByTask', 'Task'} that could be matched with the properties on the other entity type - {'BlockedByDependencies', 'BlockingDependencies'}. This message can be disregarded if explicit configuration has been specified in 'OnModelCreating'.
+2026-04-08 12:43:17.292 +02:00 [DBG] Entity Framework Core 9.0.0 initialized 'TasksDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: MigrationsHistoryTable=Tasks.__EFMigrationsHistory EngineType=SqlServer 
+2026-04-08 12:43:17.301 +02:00 [DBG] Creating DbConnection.
+2026-04-08 12:43:17.305 +02:00 [DBG] Created DbConnection. (3ms).
+2026-04-08 12:43:17.313 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.317 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.320 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-08 12:43:17.323 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (3ms).
+2026-04-08 12:43:17.328 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (8ms).
+2026-04-08 12:43:17.332 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-08 12:43:17.337 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-08 12:43:17.344 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.348 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (4ms).
+2026-04-08 12:43:17.352 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-04-08 12:43:17.354 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2026-04-08 12:43:17.357 +02:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (5ms).
+2026-04-08 12:43:17.362 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.366 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.369 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-08 12:43:17.382 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-08 12:43:17.387 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.392 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (4ms).
+2026-04-08 12:43:17.557 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2026-04-08 12:43:17.561 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2026-04-08 12:43:17.667 +02:00 [DBG] Entity Framework Core 9.0.0 initialized 'UsersDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2026-04-08 12:43:17.693 +02:00 [DBG] Creating DbConnection.
+2026-04-08 12:43:17.696 +02:00 [DBG] Created DbConnection. (2ms).
+2026-04-08 12:43:17.698 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.701 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.704 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-08 12:43:17.706 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (1ms).
+2026-04-08 12:43:17.712 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (8ms).
+2026-04-08 12:43:17.717 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-08 12:43:17.722 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-08 12:43:17.729 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.732 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (3ms).
+2026-04-08 12:43:17.736 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-04-08 12:43:17.739 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2026-04-08 12:43:17.747 +02:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (10ms).
+2026-04-08 12:43:17.772 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.780 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.784 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-08 12:43:17.807 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-08 12:43:17.816 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.820 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (3ms).
+2026-04-08 12:43:17.868 +02:00 [DBG] Entity Framework Core 9.0.0 initialized 'NotificationsDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2026-04-08 12:43:17.873 +02:00 [DBG] Creating DbConnection.
+2026-04-08 12:43:17.877 +02:00 [DBG] Created DbConnection. (4ms).
+2026-04-08 12:43:17.880 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.884 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.887 +02:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-08 12:43:17.898 +02:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (6ms).
+2026-04-08 12:43:17.902 +02:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (14ms).
+2026-04-08 12:43:17.906 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-08 12:43:17.918 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-08 12:43:17.934 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.944 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (10ms).
+2026-04-08 12:43:17.953 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-04-08 12:43:17.956 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2026-04-08 12:43:17.961 +02:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (7ms).
+2026-04-08 12:43:17.964 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:17.967 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:18.001 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-08 12:43:18.021 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2026-04-08 12:43:18.031 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:18.039 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (8ms).
+2026-04-08 12:43:18.048 +02:00 [DBG] 'NotificationsDbContext' disposed.
+2026-04-08 12:43:18.054 +02:00 [DBG] Disposing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:18.060 +02:00 [DBG] Disposed connection to database '' on server '' (5ms).
+2026-04-08 12:43:18.065 +02:00 [DBG] 'UsersDbContext' disposed.
+2026-04-08 12:43:18.068 +02:00 [DBG] Disposing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:18.071 +02:00 [DBG] Disposed connection to database '' on server '' (3ms).
+2026-04-08 12:43:18.079 +02:00 [DBG] 'TasksDbContext' disposed.
+2026-04-08 12:43:18.081 +02:00 [DBG] Disposing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:18.085 +02:00 [DBG] Disposed connection to database '' on server '' (3ms).
+2026-04-08 12:43:18.089 +02:00 [DBG] 'ProjectsDbContext' disposed.
+2026-04-08 12:43:18.096 +02:00 [DBG] Disposing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:18.099 +02:00 [DBG] Disposed connection to database '' on server '' (2ms).
+2026-04-08 12:43:18.160 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-04-08 12:43:18.279 +02:00 [DBG] Hosting starting
+2026-04-08 12:43:18.303 +02:00 [INF] User profile is available. Using 'C:\Users\Memo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-08 12:43:18.320 +02:00 [DBG] Reading data from file 'C:\Users\Memo\AppData\Local\ASP.NET\DataProtection-Keys\key-cd1be0f2-8d94-48ba-9ba3-047a9f12216d.xml'.
+2026-04-08 12:43:18.334 +02:00 [DBG] Found key {cd1be0f2-8d94-48ba-9ba3-047a9f12216d}.
+2026-04-08 12:43:18.432 +02:00 [DBG] Considering key {cd1be0f2-8d94-48ba-9ba3-047a9f12216d} with expiration date 2026-05-18 22:00:18Z as default key.
+2026-04-08 12:43:18.486 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-04-08 12:43:18.517 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-04-08 12:43:18.530 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-04-08 12:43:18.540 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-04-08 12:43:18.547 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-04-08 12:43:18.552 +02:00 [DBG] Using key {cd1be0f2-8d94-48ba-9ba3-047a9f12216d} as the default key.
+2026-04-08 12:43:18.565 +02:00 [DBG] Key ring with default key {cd1be0f2-8d94-48ba-9ba3-047a9f12216d} was loaded during application startup.
+2026-04-08 12:43:18.668 +02:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-04-08 12:43:18.672 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-04-08 12:43:18.709 +02:00 [INF] Now listening on: http://localhost:5120
+2026-04-08 12:43:18.718 +02:00 [DBG] Loaded hosting startup assembly TaskManagementAPI
+2026-04-08 12:43:18.720 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-08 12:43:18.723 +02:00 [INF] Hosting environment: Development
+2026-04-08 12:43:18.726 +02:00 [INF] Content root path: C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI
+2026-04-08 12:43:18.729 +02:00 [DBG] Hosting started
+2026-04-08 12:43:25.861 +02:00 [DBG] Connection id "0HNKLBEKUP33D" accepted.
+2026-04-08 12:43:25.866 +02:00 [DBG] Connection id "0HNKLBEKUP33D" started.
+2026-04-08 12:43:25.907 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5120/api/auth/register - application/json 148
+2026-04-08 12:43:25.951 +02:00 [DBG] 1 candidate(s) found for the request path '/api/auth/register'
+2026-04-08 12:43:25.955 +02:00 [DBG] Endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)' with route pattern 'api/auth/register' is valid for the request path '/api/auth/register'
+2026-04-08 12:43:25.960 +02:00 [DBG] Request matched endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:43:25.979 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-04-08 12:43:25.982 +02:00 [WRN] Failed to determine the https port for redirect.
+2026-04-08 12:43:25.993 +02:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-08 12:43:25.997 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-04-08 12:43:26.002 +02:00 [INF] Executing endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:43:26.028 +02:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TaskManagementAPI.Modules.Users.Application.DTOs.UserDto]] Register(TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest) on controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI).
+2026-04-08 12:43:26.034 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-04-08 12:43:26.037 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2026-04-08 12:43:26.040 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2026-04-08 12:43:26.044 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-04-08 12:43:26.048 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2026-04-08 12:43:26.053 +02:00 [DBG] Executing controller factory for controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI)
+2026-04-08 12:43:26.060 +02:00 [DBG] Executed controller factory for controller TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController (TaskManagementAPI)
+2026-04-08 12:43:26.069 +02:00 [DBG] Attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' ...
+2026-04-08 12:43:26.074 +02:00 [DBG] Attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' using the name '' in request data ...
+2026-04-08 12:43:26.081 +02:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-04-08 12:43:26.103 +02:00 [DBG] Connection id "0HNKLBEKUP33D", Request id "0HNKLBEKUP33D:00000001": started reading request body.
+2026-04-08 12:43:26.109 +02:00 [DBG] Connection id "0HNKLBEKUP33D", Request id "0HNKLBEKUP33D:00000001": done reading request body.
+2026-04-08 12:43:26.122 +02:00 [DBG] JSON input formatter succeeded, deserializing to type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'
+2026-04-08 12:43:26.125 +02:00 [DBG] Done attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:43:26.134 +02:00 [DBG] Done attempting to bind parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:43:26.137 +02:00 [DBG] Attempting to validate the bound parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest' ...
+2026-04-08 12:43:26.148 +02:00 [DBG] Done attempting to validate the bound parameter 'request' of type 'TaskManagementAPI.Modules.Users.Application.DTOs.RegisterRequest'.
+2026-04-08 12:43:26.276 +02:00 [DBG] Entity Framework Core 9.0.0 initialized 'UsersDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2026-04-08 12:43:26.569 +02:00 [DBG] Compiling query expression: 
+'DbSet<ApplicationUser>()
+    .FirstOrDefault(u => u.NormalizedUserName == __normalizedUserName_0)'
+2026-04-08 12:43:26.927 +02:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<ApplicationUser>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<ApplicationUser>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: ApplicationUser.Id (string) Required PK AfterSave:Throw, 0], [Property: ApplicationUser.AccessFailedCount (int) Required, 1], [Property: ApplicationUser.ConcurrencyStamp (string) Concurrency, 2], [Property: ApplicationUser.CreatedAt (DateTime) Required Index ValueGenerated.OnAdd, 3], [Property: ApplicationUser.DeletedAt (DateTime?), 4], [Property: ApplicationUser.Email (string) Index MaxLength(256), 5], [Property: ApplicationUser.EmailConfirmed (bool) Required, 6], [Property: ApplicationUser.FullName (string) MaxLength(255), 7], [Property: ApplicationUser.IsDeleted (bool) Required, 8], [Property: ApplicationUser.LockoutEnabled (bool) Required, 9], [Property: ApplicationUser.LockoutEnd (DateTimeOffset?), 10], [Property: ApplicationUser.NormalizedEmail (string) Index MaxLength(256), 11], [Property: ApplicationUser.NormalizedUserName (string) Index MaxLength(256), 12], [Property: ApplicationUser.PasswordHash (string), 13], [Property: ApplicationUser.PhoneNumber (string), 14], [Property: ApplicationUser.PhoneNumberConfirmed (bool) Required, 15], [Property: ApplicationUser.SecurityStamp (string), 16], [Property: ApplicationUser.TwoFactorEnabled (bool) Required, 17], [Property: ApplicationUser.UpdatedAt (DateTime?), 18], [Property: ApplicationUser.UserName (string) MaxLength(256), 19] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.ConcurrencyStamp, a.CreatedAt, a.DeletedAt, a.Email, a.EmailConfirmed, a.FullName, a.IsDeleted, a.LockoutEnabled, a.LockoutEnd, a.NormalizedEmail, a.NormalizedUserName, a.PasswordHash, a.PhoneNumber, a.PhoneNumberConfirmed, a.SecurityStamp, a.TwoFactorEnabled, a.UpdatedAt, a.UserName
+            FROM AspNetUsers AS a
+            WHERE Not(a.IsDeleted) && (a.NormalizedUserName == @__normalizedUserName_0)) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: ApplicationUser.Id (string) Required PK AfterSave:Throw, 0], [Property: ApplicationUser.AccessFailedCount (int) Required, 1], [Property: ApplicationUser.ConcurrencyStamp (string) Concurrency, 2], [Property: ApplicationUser.CreatedAt (DateTime) Required Index ValueGenerated.OnAdd, 3], [Property: ApplicationUser.DeletedAt (DateTime?), 4], [Property: ApplicationUser.Email (string) Index MaxLength(256), 5], [Property: ApplicationUser.EmailConfirmed (bool) Required, 6], [Property: ApplicationUser.FullName (string) MaxLength(255), 7], [Property: ApplicationUser.IsDeleted (bool) Required, 8], [Property: ApplicationUser.LockoutEnabled (bool) Required, 9], [Property: ApplicationUser.LockoutEnd (DateTimeOffset?), 10], [Property: ApplicationUser.NormalizedEmail (string) Index MaxLength(256), 11], [Property: ApplicationUser.NormalizedUserName (string) Index MaxLength(256), 12], [Property: ApplicationUser.PasswordHash (string), 13], [Property: ApplicationUser.PhoneNumber (string), 14], [Property: ApplicationUser.PhoneNumberConfirmed (bool) Required, 15], [Property: ApplicationUser.SecurityStamp (string), 16], [Property: ApplicationUser.TwoFactorEnabled (bool) Required, 17], [Property: ApplicationUser.UpdatedAt (DateTime?), 18], [Property: ApplicationUser.UserName (string) MaxLength(256), 19] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.ConcurrencyStamp, a.CreatedAt, a.DeletedAt, a.Email, a.EmailConfirmed, a.FullName, a.IsDeleted, a.LockoutEnabled, a.LockoutEnd, a.NormalizedEmail, a.NormalizedUserName, a.PasswordHash, a.PhoneNumber, a.PhoneNumberConfirmed, a.SecurityStamp, a.TwoFactorEnabled, a.UpdatedAt, a.UserName
+            FROM AspNetUsers AS a
+            WHERE Not(a.IsDeleted) && (a.NormalizedUserName == @__normalizedUserName_0), 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            ApplicationUser entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                ApplicationUser instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(ApplicationUser);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: ApplicationUser.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("TaskManagementAPI.Modules.Users.Domain.Entities.ApplicationUser").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetString(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (ApplicationUser)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: ApplicationUser | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("TaskManagementAPI.Modules.Users.Domain.Entities.ApplicationUser")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: ApplicationUser | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("TaskManagementAPI.Modules.Users.Domain.Entities.ApplicationUser")]: 
+                            {
+                                return 
+                                {
+                                    ApplicationUser instance;
+                                    instance = new ApplicationUser();
+                                    instance.<Id>k__BackingField = dataReader.GetString(0);
+                                    instance.<AccessFailedCount>k__BackingField = dataReader.GetInt32(1);
+                                    instance.<ConcurrencyStamp>k__BackingField = dataReader.IsDBNull(2) ? default(string) : dataReader.GetString(2);
+                                    instance.<CreatedAt>k__BackingField = dataReader.GetDateTime(3);
+                                    instance.<DeletedAt>k__BackingField = dataReader.IsDBNull(4) ? default(DateTime?) : (DateTime?)dataReader.GetDateTime(4);
+                                    instance.<Email>k__BackingField = dataReader.IsDBNull(5) ? default(string) : dataReader.GetString(5);
+                                    instance.<EmailConfirmed>k__BackingField = dataReader.GetBoolean(6);
+                                    instance.<FullName>k__BackingField = dataReader.IsDBNull(7) ? default(string) : dataReader.GetString(7);
+                                    instance.<IsDeleted>k__BackingField = dataReader.GetBoolean(8);
+                                    instance.<LockoutEnabled>k__BackingField = dataReader.GetBoolean(9);
+                                    instance.<LockoutEnd>k__BackingField = dataReader.IsDBNull(10) ? default(DateTimeOffset?) : (DateTimeOffset?)dataReader.GetFieldValue<DateTimeOffset>(10);
+                                    instance.<NormalizedEmail>k__BackingField = dataReader.IsDBNull(11) ? default(string) : dataReader.GetString(11);
+                                    instance.<NormalizedUserName>k__BackingField = dataReader.IsDBNull(12) ? default(string) : dataReader.GetString(12);
+                                    instance.<PasswordHash>k__BackingField = dataReader.IsDBNull(13) ? default(string) : dataReader.GetString(13);
+                                    instance.<PhoneNumber>k__BackingField = dataReader.IsDBNull(14) ? default(string) : dataReader.GetString(14);
+                                    instance.<PhoneNumberConfirmed>k__BackingField = dataReader.GetBoolean(15);
+                                    instance.<SecurityStamp>k__BackingField = dataReader.IsDBNull(16) ? default(string) : dataReader.GetString(16);
+                                    instance.<TwoFactorEnabled>k__BackingField = dataReader.GetBoolean(17);
+                                    instance.<UpdatedAt>k__BackingField = dataReader.IsDBNull(18) ? default(DateTime?) : (DateTime?)dataReader.GetDateTime(18);
+                                    instance.<UserName>k__BackingField = dataReader.IsDBNull(19) ? default(string) : dataReader.GetString(19);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: ApplicationUser | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("TaskManagementAPI.Modules.Users.Domain.Entities.ApplicationUser")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(ApplicationUser)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: TaskManagementAPI.Modules.Users.Infrastructure.Persistence.UsersDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-04-08 12:43:26.998 +02:00 [DBG] Creating DbConnection.
+2026-04-08 12:43:27.000 +02:00 [DBG] Created DbConnection. (2ms).
+2026-04-08 12:43:27.002 +02:00 [DBG] Opening connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:27.004 +02:00 [DBG] Opened connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:27.007 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-04-08 12:43:27.008 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2026-04-08 12:43:27.017 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (10ms).
+2026-04-08 12:43:27.022 +02:00 [DBG] Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DeletedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = CAST(0 AS bit) AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-04-08 12:43:27.053 +02:00 [ERR] Failed executing DbCommand (32ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[DeletedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedAt], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = CAST(0 AS bit) AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-04-08 12:43:27.058 +02:00 [DBG] Closing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:27.061 +02:00 [DBG] Closed connection to database 'TaskManagementAPI_Dev' on server 'localhost' (2ms).
+2026-04-08 12:43:27.079 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'TaskManagementAPI.Modules.Users.Infrastructure.Persistence.UsersDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'IsDeleted'.
+Invalid column name 'CreatedAt'.
+Invalid column name 'DeletedAt'.
+Invalid column name 'FullName'.
+Invalid column name 'IsDeleted'.
+Invalid column name 'UpdatedAt'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:dacbdeac-c0c8-4d4a-89b4-7baa7b26edcf
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'IsDeleted'.
+Invalid column name 'CreatedAt'.
+Invalid column name 'DeletedAt'.
+Invalid column name 'FullName'.
+Invalid column name 'IsDeleted'.
+Invalid column name 'UpdatedAt'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:dacbdeac-c0c8-4d4a-89b4-7baa7b26edcf
+Error Number:207,State:1,Class:16
+2026-04-08 12:43:27.107 +02:00 [INF] Executed action TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI) in 1051.6265ms
+2026-04-08 12:43:27.117 +02:00 [INF] Executed endpoint 'TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register (TaskManagementAPI)'
+2026-04-08 12:43:27.121 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'IsDeleted'.
+Invalid column name 'CreatedAt'.
+Invalid column name 'DeletedAt'.
+Invalid column name 'FullName'.
+Invalid column name 'IsDeleted'.
+Invalid column name 'UpdatedAt'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+   at Microsoft.AspNetCore.Identity.UserValidator`1.ValidateUserName(UserManager`1 manager, TUser user)
+   at Microsoft.AspNetCore.Identity.UserValidator`1.ValidateAsync(UserManager`1 manager, TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.ValidateUserAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CreateAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CreateAsync(TUser user, String password)
+   at TaskManagementAPI.Modules.Users.Application.Services.UserService.CreateUserAsync(String email, String fullName, String password) in C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI\Modules\Users\Application\Services\UserService.cs:line 47
+   at TaskManagementAPI.Modules.Users.Presentation.Controllers.AuthController.Register(RegisterRequest request) in C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI\Modules\Users\Presentation\Controllers\AuthController.cs:line 93
+   at lambda_method19(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Program.<>c.<<<Main>$>b__0_1>d.MoveNext() in C:\Users\Memo\Downloads\New folder (8)\TaskManagementAPI\Program.cs:line 91
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:dacbdeac-c0c8-4d4a-89b4-7baa7b26edcf
+Error Number:207,State:1,Class:16
+2026-04-08 12:43:27.184 +02:00 [DBG] Connection id "0HNKLBEKUP33D" completed keep alive response.
+2026-04-08 12:43:27.189 +02:00 [DBG] 'UsersDbContext' disposed.
+2026-04-08 12:43:27.197 +02:00 [DBG] Disposing connection to database 'TaskManagementAPI_Dev' on server 'localhost'.
+2026-04-08 12:43:27.202 +02:00 [DBG] Disposed connection to database '' on server '' (5ms).
+2026-04-08 12:43:27.207 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5120/api/auth/register - 500 null text/plain; charset=utf-8 1302.2597ms
+2026-04-08 12:44:04.720 +02:00 [DBG] Connection id "0HNKLBEKUP33E" accepted.
+2026-04-08 12:44:05.162 +02:00 [DBG] Connection id "0HNKLBEKUP33F" accepted.
+2026-04-08 12:44:05.181 +02:00 [DBG] Connection id "0HNKLBEKUP33E" started.
+2026-04-08 12:44:05.198 +02:00 [DBG] Connection id "0HNKLBEKUP33F" started.
+2026-04-08 12:44:05.217 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5120/ - null null
+2026-04-08 12:44:05.279 +02:00 [DBG] No candidates found for the request path '/'
+2026-04-08 12:44:05.286 +02:00 [DBG] Request did not match any endpoints
+2026-04-08 12:44:05.334 +02:00 [DBG] The request path  does not match the path filter
+2026-04-08 12:44:05.450 +02:00 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-08 12:44:05.544 +02:00 [INF] The file /index.html was not modified
+2026-04-08 12:44:05.580 +02:00 [DBG] Handled. Status code: 304 File: /index.html
+2026-04-08 12:44:05.703 +02:00 [DBG] Connection id "0HNKLBEKUP33F" completed keep alive response.
+2026-04-08 12:44:06.633 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5120/index.html - 304 null text/html 1415.6529ms
+2026-04-08 12:45:07.202 +02:00 [DBG] Connection id "0HNKLBEKUP33D" received FIN.
+2026-04-08 12:45:07.205 +02:00 [DBG] Connection id "0HNKLBEKUP33D" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-08 12:45:07.208 +02:00 [DBG] Connection id "0HNKLBEKUP33D" disconnecting.
+2026-04-08 12:45:07.211 +02:00 [DBG] Connection id "0HNKLBEKUP33D" stopped.
+2026-04-08 12:46:16.429 +02:00 [DBG] Connection id "0HNKLBEKUP33E" disconnecting.
+2026-04-08 12:46:16.434 +02:00 [DBG] Connection id "0HNKLBEKUP33E" stopped.
+2026-04-08 12:46:16.438 +02:00 [DBG] Connection id "0HNKLBEKUP33E" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-08 12:46:18.445 +02:00 [DBG] Connection id "0HNKLBEKUP33F" disconnecting.
+2026-04-08 12:46:18.448 +02:00 [DBG] Connection id "0HNKLBEKUP33F" stopped.
+2026-04-08 12:46:18.450 +02:00 [DBG] Connection id "0HNKLBEKUP33F" sending FIN because: "The Socket transport's send loop completed gracefully."

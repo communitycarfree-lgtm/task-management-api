@@ -94,7 +94,7 @@ public static class TaskSpecifications
     }
 
     /// <summary>
-    /// Filters tasks due within the specified number of days.
+    /// Filters tasks due within the specified number of days (includes overdue tasks).
     /// </summary>
     /// <param name="query">The base query.</param>
     /// <param name="days">The number of days to look ahead.</param>
@@ -105,7 +105,7 @@ public static class TaskSpecifications
         var futureDate = now.AddDays(days);
 
         return query
-            .Where(t => t.DueDate >= now && t.DueDate <= futureDate && 
+            .Where(t => t.DueDate <= futureDate && 
                         t.Status != Enums.TaskStatus.Completed && t.Status != Enums.TaskStatus.Cancelled)
             .OrderBy(t => t.DueDate);
     }

@@ -5,6 +5,7 @@ using TaskManagementAPI.Modules.Tasks.Domain.Enums;
 using TaskManagementAPI.Modules.Tasks.Infrastructure.Services;
 using TaskManagementAPI.Shared.Domain.Interfaces;
 using Xunit;
+using TaskStatus = TaskManagementAPI.Modules.Tasks.Domain.Enums.TaskStatus;
 
 namespace TaskManagementAPI.Tests.Unit.Modules.Tasks;
 
@@ -34,8 +35,8 @@ public class TaskServiceTests
         var priority = TaskPriority.High;
         var dueDate = DateTime.UtcNow.AddDays(5);
 
-        _mockTaskRepository.Setup(r => r.AddAsync(It.IsAny<Task>()))
-            .ReturnsAsync((Task t) => t);
+        _mockTaskRepository.Setup(r => r.AddAsync(It.IsAny<WorkTask>()))
+            .ReturnsAsync((WorkTask t) => t);
 
         // Act
         var result = await _taskService.CreateTaskAsync(projectId, title, description, priority, dueDate);
@@ -47,7 +48,7 @@ public class TaskServiceTests
         Assert.Equal(priority, result.Priority);
         Assert.Equal(projectId, result.ProjectId);
         Assert.Equal(TaskStatus.New, result.Status);
-        _mockTaskRepository.Verify(r => r.AddAsync(It.IsAny<Task>()), Times.Once);
+        _mockTaskRepository.Verify(r => r.AddAsync(It.IsAny<WorkTask>()), Times.Once);
         _mockNotificationService.Verify(n => n.BroadcastAsync(It.IsAny<string>(), It.IsAny<string>()), Times.Once);
     }
 
@@ -68,7 +69,7 @@ public class TaskServiceTests
     {
         // Arrange
         var taskId = Guid.NewGuid();
-        var existingTask = new Task
+        var existingTask = new WorkTask
         {
             Id = taskId,
             ProjectId = Guid.NewGuid(),
@@ -84,8 +85,8 @@ public class TaskServiceTests
 
         _mockTaskRepository.Setup(r => r.GetByIdAsync(taskId))
             .ReturnsAsync(existingTask);
-        _mockTaskRepository.Setup(r => r.UpdateAsync(It.IsAny<Task>()))
-            .Returns(Task.CompletedTask);
+        _mockTaskRepository.Setup(r => r.UpdateAsync(It.IsAny<WorkTask>()))
+            .Returns(System.Threading.Tasks.Task.CompletedTask);
 
         // Act
         var result = await _taskService.UpdateTaskAsync(taskId, newTitle, newDescription, newPriority);
@@ -95,7 +96,7 @@ public class TaskServiceTests
         Assert.Equal(newTitle, result.Title);
         Assert.Equal(newDescription, result.Description);
         Assert.Equal(newPriority, result.Priority);
-        _mockTaskRepository.Verify(r => r.UpdateAsync(It.IsAny<Task>()), Times.Once);
+        _mockTaskRepository.Verify(r => r.UpdateAsync(It.IsAny<WorkTask>()), Times.Once);
     }
 
     [Fact]
@@ -104,14 +105,14 @@ public class TaskServiceTests
         // Arrange
         var taskId = Guid.NewGuid();
         _mockTaskRepository.Setup(r => r.GetByIdAsync(taskId))
-            .ReturnsAsync((Task?)null);
+            .ReturnsAsync((WorkTask?)null);
 
         // Act
         var result = await _taskService.UpdateTaskAsync(taskId, "Title");
 
         // Assert
         Assert.Null(result);
-        _mockTaskRepository.Verify(r => r.UpdateAsync(It.IsAny<Task>()), Times.Never);
+        _mockTaskRepository.Verify(r => r.UpdateAsync(It.IsAny<WorkTask>()), Times.Never);
     }
 
     [Fact]
@@ -119,12 +120,12 @@ public class TaskServiceTests
     {
         // Arrange
         var taskId = Guid.NewGuid();
-        var task = new Task { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Test" };
+        var task = new WorkTask { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Test" };
 
         _mockTaskRepository.Setup(r => r.GetByIdAsync(taskId))
             .ReturnsAsync(task);
         _mockTaskRepository.Setup(r => r.DeleteAsync(taskId))
-            .Returns(Task.CompletedTask);
+            .Returns(System.Threading.Tasks.Task.CompletedTask);
 
         // Act
         var result = await _taskService.DeleteTaskAsync(taskId);
@@ -139,14 +140,14 @@ public class TaskServiceTests
     {
         // Arrange
         var taskId = Guid.NewGuid();
-        var task = new Task { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Test", Status = TaskStatus.InProgress };
+        var task = new WorkTask { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Test", Status = TaskStatus.InProgress };
 
         _mockTaskRepository.Setup(r => r.GetByIdAsync(taskId))
             .ReturnsAsync(task);
         _mockTaskRepository.Setup(r => r.HasIncompleteBlockingTasksAsync(taskId))
             .ReturnsAsync(false);
-        _mockTaskRepository.Setup(r => r.UpdateAsync(It.IsAny<Task>()))
-            .Returns(Task.CompletedTask);
+        _mockTaskRepository.Setup(r => r.UpdateAsync(It.IsAny<WorkTask>()))
+            .Returns(System.Threading.Tasks.Task.CompletedTask);
 
         // Act
         var result = await _taskService.UpdateTaskStatusAsync(taskId, TaskStatus.Completed);
@@ -154,7 +155,7 @@ public class TaskServiceTests
         // Assert
         Assert.NotNull(result);
         Assert.Equal(TaskStatus.Completed, result.Status);
-        _mockTaskRepository.Verify(r => r.UpdateAsync(It.IsAny<Task>()), Times.Once);
+        _mockTaskRepository.Verify(r => r.UpdateAsync(It.IsAny<WorkTask>()), Times.Once);
     }
 
     [Fact]
@@ -162,7 +163,7 @@ public class TaskServiceTests
     {
         // Arrange
         var taskId = Guid.NewGuid();
-        var task = new Task { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Test", Status = TaskStatus.InProgress };
+        var task = new WorkTask { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Test", Status = TaskStatus.InProgress };
 
         _mockTaskRepository.Setup(r => r.GetByIdAsync(taskId))
             .ReturnsAsync(task);
@@ -180,12 +181,12 @@ public class TaskServiceTests
         // Arrange
         var taskId = Guid.NewGuid();
         var assigneeId = "user123";
-        var task = new Task { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Test", Priority = TaskPriority.Medium };
+        var task = new WorkTask { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Test", Priority = TaskPriority.Medium };
 
         _mockTaskRepository.Setup(r => r.GetByIdAsync(taskId))
             .ReturnsAsync(task);
-        _mockTaskRepository.Setup(r => r.UpdateAsync(It.IsAny<Task>()))
-            .Returns(Task.CompletedTask);
+        _mockTaskRepository.Setup(r => r.UpdateAsync(It.IsAny<WorkTask>()))
+            .Returns(System.Threading.Tasks.Task.CompletedTask);
 
         // Act
         var result = await _taskService.AssignTaskAsync(taskId, assigneeId);
@@ -193,7 +194,7 @@ public class TaskServiceTests
         // Assert
         Assert.NotNull(result);
         Assert.Equal(assigneeId, result.AssigneeId);
-        _mockTaskRepository.Verify(r => r.UpdateAsync(It.IsAny<Task>()), Times.Once);
+        _mockTaskRepository.Verify(r => r.UpdateAsync(It.IsAny<WorkTask>()), Times.Once);
         _mockNotificationService.Verify(n => n.BroadcastAsync(It.IsAny<string>(), It.IsAny<string>()), Times.AtLeastOnce);
     }
 
@@ -204,12 +205,12 @@ public class TaskServiceTests
         var taskId = Guid.NewGuid();
         var projectId = Guid.NewGuid();
         var assigneeId = "user123";
-        var task = new Task { Id = taskId, ProjectId = projectId, Title = "Test", Priority = TaskPriority.Critical };
+        var task = new WorkTask { Id = taskId, ProjectId = projectId, Title = "Test", Priority = TaskPriority.Critical };
 
         _mockTaskRepository.Setup(r => r.GetByIdAsync(taskId))
             .ReturnsAsync(task);
-        _mockTaskRepository.Setup(r => r.UpdateAsync(It.IsAny<Task>()))
-            .Returns(Task.CompletedTask);
+        _mockTaskRepository.Setup(r => r.UpdateAsync(It.IsAny<WorkTask>()))
+            .Returns(System.Threading.Tasks.Task.CompletedTask);
 
         // Act
         var result = await _taskService.AssignTaskAsync(taskId, assigneeId);
@@ -229,12 +230,12 @@ public class TaskServiceTests
         var userId = "user123";
         var hours = 8m;
         var date = DateTime.UtcNow;
-        var task = new Task { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Test", Status = TaskStatus.InProgress };
+        var task = new WorkTask { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Test", Status = TaskStatus.InProgress };
 
         _mockTaskRepository.Setup(r => r.GetByIdAsync(taskId))
             .ReturnsAsync(task);
-        _mockTaskRepository.Setup(r => r.UpdateAsync(It.IsAny<Task>()))
-            .Returns(Task.CompletedTask);
+        _mockTaskRepository.Setup(r => r.UpdateAsync(It.IsAny<WorkTask>()))
+            .Returns(System.Threading.Tasks.Task.CompletedTask);
 
         // Act
         var result = await _taskService.AddTimeTrackingEntryAsync(taskId, userId, hours, date);
@@ -252,7 +253,7 @@ public class TaskServiceTests
     {
         // Arrange
         var taskId = Guid.NewGuid();
-        var task = new Task { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Test", Status = TaskStatus.New };
+        var task = new WorkTask { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Test", Status = TaskStatus.New };
 
         _mockTaskRepository.Setup(r => r.GetByIdAsync(taskId))
             .ReturnsAsync(task);
@@ -268,15 +269,15 @@ public class TaskServiceTests
         // Arrange
         var taskId = Guid.NewGuid();
         var blockedByTaskId = Guid.NewGuid();
-        var task = new Task { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Test" };
-        var blockingTask = new Task { Id = blockedByTaskId, ProjectId = Guid.NewGuid(), Title = "Blocking" };
+        var task = new WorkTask { Id = taskId, ProjectId = Guid.NewGuid(), Title = "Test" };
+        var blockingTask = new WorkTask { Id = blockedByTaskId, ProjectId = Guid.NewGuid(), Title = "Blocking" };
 
         _mockTaskRepository.Setup(r => r.GetByIdAsync(taskId))
             .ReturnsAsync(task);
         _mockTaskRepository.Setup(r => r.GetByIdAsync(blockedByTaskId))
             .ReturnsAsync(blockingTask);
-        _mockTaskRepository.Setup(r => r.UpdateAsync(It.IsAny<Task>()))
-            .Returns(Task.CompletedTask);
+        _mockTaskRepository.Setup(r => r.UpdateAsync(It.IsAny<WorkTask>()))
+            .Returns(System.Threading.Tasks.Task.CompletedTask);
 
         // Act
         var result = await _taskService.AddTaskDependencyAsync(taskId, blockedByTaskId);
@@ -298,3 +299,4 @@ public class TaskServiceTests
             _taskService.AddTaskDependencyAsync(taskId, taskId));
     }
 }
+

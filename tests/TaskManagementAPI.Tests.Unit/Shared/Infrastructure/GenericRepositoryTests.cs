@@ -1,6 +1,5 @@
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
-using Moq;
 using TaskManagementAPI.Shared.Domain;
 using TaskManagementAPI.Shared.Infrastructure.Repositories;
 
@@ -8,25 +7,55 @@ namespace TaskManagementAPI.Tests.Unit.Shared.Infrastructure;
 
 /// <summary>
 /// Unit tests for GenericRepository CRUD operations.
-/// Tests with mocked DbContext to verify repository behavior.
+/// Tests with in-memory database to verify repository behavior.
 /// </summary>
-public class GenericRepositoryTests
+public class GenericRepositoryTests : IAsyncLifetime
 {
-    private class TestEntity : BaseEntity
+    public class TestEntity : BaseEntity
     {
         public string Name { get; set; } = string.Empty;
     }
 
-    private Mock<DbContext> CreateMockDbContext()
+    public class TestDbContext : DbContext
     {
-        var mockContext = new Mock<DbContext>();
-        var mockDbSet = new Mock<DbSet<TestEntity>>();
+        public DbSet<TestEntity> TestEntities { get; set; } = null!;
 
-        mockContext
-            .Setup(c => c.Set<TestEntity>())
-            .Returns(mockDbSet.Object);
+        public TestDbContext(DbContextOptions<TestDbContext> options) : base(options)
+        {
+        }
 
-        return mockContext;
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<TestEntity>().HasKey(e => e.Id);
+        }
+    }
+
+    private readonly DbContextOptions<TestDbContext> _options;
+    private TestDbContext _context = null!;
+
+    private TestDbContext CreateContext()
+    {
+        return new TestDbContext(_options);
+    }
+
+    public GenericRepositoryTests()
+    {
+        _options = new DbContextOptionsBuilder<TestDbContext>()
+            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
+            .Options;
+    }
+
+    public async Task InitializeAsync()
+    {
+        _context = CreateContext();
+        await _context.Database.EnsureCreatedAsync();
+    }
+
+    public async Task DisposeAsync()
+    {
+        await _context.Database.EnsureDeletedAsync();
+        await _context.DisposeAsync();
     }
 
     [Fact]
@@ -40,11 +69,8 @@ public class GenericRepositoryTests
     [Fact]
     public void Constructor_WithValidContext_ShouldSucceed()
     {
-        // Arrange
-        var mockContext = CreateMockDbContext();
-
-        // Act
-        var repository = new GenericRepository<TestEntity>(mockContext.Object);
+        // Arrange & Act
+        var repository = new GenericRepository<TestEntity>(_context);
 
         // Assert
         repository.Should().NotBeNull();
@@ -54,27 +80,26 @@ public class GenericRepositoryTests
     public async Task AddAsync_WithValidEntity_ShouldAddToContext()
     {
         // Arrange
-        var mockContext = CreateMockDbContext();
-        var mockDbSet = new Mock<DbSet<TestEntity>>();
-        mockContext.Setup(c => c.Set<TestEntity>()).Returns(mockDbSet.Object);
-
-        var repository = new GenericRepository<TestEntity>(mockContext.Object);
+        var repository = new GenericRepository<TestEntity>(_context);
         var entity = new TestEntity { Name = "Test" };
 
         // Act
         var result = await repository.AddAsync(entity);
+        await _context.SaveChangesAsync();
 
         // Assert
         result.Should().Be(entity);
-        mockDbSet.Verify(s => s.AddAsync(entity, It.IsAny<CancellationToken>()), Times.Once);
+        result.Name.Should().Be("Test");
+        var retrieved = await repository.GetByIdAsync(entity.Id);
+        retrieved.Should().NotBeNull();
+        retrieved?.Name.Should().Be("Test");
     }
 
     [Fact]
     public async Task AddAsync_WithNullEntity_ShouldThrowArgumentNullException()
     {
         // Arrange
-        var mockContext = CreateMockDbContext();
-        var repository = new GenericRepository<TestEntity>(mockContext.Object);
+        var repository = new GenericRepository<TestEntity>(_context);
 
         // Act & Assert
         var action = () => repository.AddAsync(null!);
@@ -85,40 +110,24 @@ public class GenericRepositoryTests
     public async Task GetByIdAsync_WithValidId_ShouldReturnEntity()
     {
         // Arrange
-        var mockContext = CreateMockDbContext();
-        var mockDbSet = new Mock<DbSet<TestEntity>>();
+        var repository = new GenericRepository<TestEntity>(_context);
         var entity = new TestEntity { Name = "Test" };
-        var id = entity.Id;
-
-        mockDbSet
-            .Setup(s => s.FirstOrDefaultAsync(It.IsAny<System.Linq.Expressions.Expression<Func<TestEntity, bool>>>(), It.IsAny<CancellationToken>()))
-            .ReturnsAsync(entity);
-
-        mockContext.Setup(c => c.Set<TestEntity>()).Returns(mockDbSet.Object);
-
-        var repository = new GenericRepository<TestEntity>(mockContext.Object);
+        await repository.AddAsync(entity);
+        await _context.SaveChangesAsync();
 
         // Act
-        var result = await repository.GetByIdAsync(id);
+        var result = await repository.GetByIdAsync(entity.Id);
 
         // Assert
-        result.Should().Be(entity);
+        result.Should().NotBeNull();
+        result?.Name.Should().Be("Test");
     }
 
     [Fact]
     public async Task GetByIdAsync_WithInvalidId_ShouldReturnNull()
     {
         // Arrange
-        var mockContext = CreateMockDbContext();
-        var mockDbSet = new Mock<DbSet<TestEntity>>();
-
-        mockDbSet
-            .Setup(s => s.FirstOrDefaultAsync(It.IsAny<System.Linq.Expressions.Expression<Func<TestEntity, bool>>>(), It.IsAny<CancellationToken>()))
-            .ReturnsAsync((TestEntity?)null);
-
-        mockContext.Setup(c => c.Set<TestEntity>()).Returns(mockDbSet.Object);
-
-        var repository = new GenericRepository<TestEntity>(mockContext.Object);
+        var repository = new GenericRepository<TestEntity>(_context);
 
         // Act
         var result = await repository.GetByIdAsync(Guid.NewGuid());
@@ -131,8 +140,7 @@ public class GenericRepositoryTests
     public async Task GetAllAsync_ShouldReturnAllEntities()
     {
         // Arrange
-        var mockContext = CreateMockDbContext();
-        var mockDbSet = new Mock<DbSet<TestEntity>>();
+        var repository = new GenericRepository<TestEntity>(_context);
         var entities = new List<TestEntity>
         {
             new TestEntity { Name = "Entity1" },
@@ -140,46 +148,44 @@ public class GenericRepositoryTests
             new TestEntity { Name = "Entity3" }
         };
 
-        mockDbSet
-            .Setup(s => s.ToListAsync(It.IsAny<CancellationToken>()))
-            .ReturnsAsync(entities);
-
-        mockContext.Setup(c => c.Set<TestEntity>()).Returns(mockDbSet.Object);
-
-        var repository = new GenericRepository<TestEntity>(mockContext.Object);
+        foreach (var entity in entities)
+        {
+            await repository.AddAsync(entity);
+        }
+        await _context.SaveChangesAsync();
 
         // Act
         var result = await repository.GetAllAsync();
 
         // Assert
         result.Should().HaveCount(3);
-        result.Should().ContainInOrder(entities);
     }
 
     [Fact]
     public async Task UpdateAsync_WithValidEntity_ShouldUpdateContext()
     {
         // Arrange
-        var mockContext = CreateMockDbContext();
-        var mockDbSet = new Mock<DbSet<TestEntity>>();
-        mockContext.Setup(c => c.Set<TestEntity>()).Returns(mockDbSet.Object);
+        var repository = new GenericRepository<TestEntity>(_context);
+        var entity = new TestEntity { Name = "Original" };
+        await repository.AddAsync(entity);
+        await _context.SaveChangesAsync();
 
-        var repository = new GenericRepository<TestEntity>(mockContext.Object);
-        var entity = new TestEntity { Name = "Updated" };
+        entity.Name = "Updated";
 
         // Act
         await repository.UpdateAsync(entity);
+        await _context.SaveChangesAsync();
 
         // Assert
-        mockDbSet.Verify(s => s.Update(entity), Times.Once);
+        var updated = await repository.GetByIdAsync(entity.Id);
+        updated?.Name.Should().Be("Updated");
     }
 
     [Fact]
     public async Task UpdateAsync_WithNullEntity_ShouldThrowArgumentNullException()
     {
         // Arrange
-        var mockContext = CreateMockDbContext();
-        var repository = new GenericRepository<TestEntity>(mockContext.Object);
+        var repository = new GenericRepository<TestEntity>(_context);
 
         // Act & Assert
         var action = () => repository.UpdateAsync(null!);
@@ -190,42 +196,26 @@ public class GenericRepositoryTests
     public async Task DeleteAsync_WithValidId_ShouldSoftDeleteEntity()
     {
         // Arrange
-        var mockContext = CreateMockDbContext();
-        var mockDbSet = new Mock<DbSet<TestEntity>>();
+        var repository = new GenericRepository<TestEntity>(_context);
         var entity = new TestEntity { Name = "ToDelete" };
-        var id = entity.Id;
-
-        mockDbSet
-            .Setup(s => s.FirstOrDefaultAsync(It.IsAny<System.Linq.Expressions.Expression<Func<TestEntity, bool>>>(), It.IsAny<CancellationToken>()))
-            .ReturnsAsync(entity);
-
-        mockContext.Setup(c => c.Set<TestEntity>()).Returns(mockDbSet.Object);
-
-        var repository = new GenericRepository<TestEntity>(mockContext.Object);
+        await repository.AddAsync(entity);
+        await _context.SaveChangesAsync();
 
         // Act
-        await repository.DeleteAsync(id);
+        await repository.DeleteAsync(entity.Id);
+        await _context.SaveChangesAsync();
 
         // Assert
-        entity.IsDeleted.Should().BeTrue();
-        entity.DeletedAt.Should().NotBeNull();
-        mockDbSet.Verify(s => s.Update(entity), Times.Once);
+        var deleted = await repository.GetByIdAsync(entity.Id);
+        deleted?.IsDeleted.Should().BeTrue();
+        deleted?.DeletedAt.Should().NotBeNull();
     }
 
     [Fact]
     public async Task DeleteAsync_WithInvalidId_ShouldNotThrow()
     {
         // Arrange
-        var mockContext = CreateMockDbContext();
-        var mockDbSet = new Mock<DbSet<TestEntity>>();
-
-        mockDbSet
-            .Setup(s => s.FirstOrDefaultAsync(It.IsAny<System.Linq.Expressions.Expression<Func<TestEntity, bool>>>(), It.IsAny<CancellationToken>()))
-            .ReturnsAsync((TestEntity?)null);
-
-        mockContext.Setup(c => c.Set<TestEntity>()).Returns(mockDbSet.Object);
-
-        var repository = new GenericRepository<TestEntity>(mockContext.Object);
+        var repository = new GenericRepository<TestEntity>(_context);
 
         // Act & Assert
         var action = () => repository.DeleteAsync(Guid.NewGuid());

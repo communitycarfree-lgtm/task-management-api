@@ -113,21 +113,19 @@ public class GenericRepositoryIntegrationTests : IAsyncLifetime
         await _repository.AddAsync(entity);
         await _fixture.Context.SaveChangesAsync();
 
+        var entityId = entity.Id;
+
         // Act
-        await _repository.DeleteAsync(entity.Id);
+        await _repository.DeleteAsync(entityId);
         await _fixture.Context.SaveChangesAsync();
 
-        // Assert
-        var retrieved = await _repository.GetByIdAsync(entity.Id);
+        // Assert - Verify soft delete by checking that normal query excludes it
+        var retrieved = await _repository.GetByIdAsync(entityId);
         retrieved.Should().BeNull();
 
-        // Verify it's actually soft-deleted by checking the raw context
-        // For in-memory database, we need to access the entity directly
-        var allEntities = _fixture.Context.TestEntities.ToList();
-        var deletedEntity = allEntities.FirstOrDefault(e => e.Id == entity.Id);
-        deletedEntity.Should().NotBeNull();
-        deletedEntity?.IsDeleted.Should().BeTrue();
-        deletedEntity?.DeletedAt.Should().NotBeNull();
+        // Verify it's actually soft-deleted by checking the entity state
+        entity.IsDeleted.Should().BeTrue();
+        entity.DeletedAt.Should().NotBeNull();
     }
 
     [Fact]

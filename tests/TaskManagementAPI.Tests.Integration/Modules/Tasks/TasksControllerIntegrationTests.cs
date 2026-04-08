@@ -5,6 +5,8 @@ using TaskManagementAPI;
 using TaskManagementAPI.Modules.Tasks.Application.DTOs;
 using TaskManagementAPI.Modules.Tasks.Domain.Enums;
 using Xunit;
+using TaskStatus = TaskManagementAPI.Modules.Tasks.Domain.Enums.TaskStatus;
+using System.Text.Json;
 
 namespace TaskManagementAPI.Tests.Integration.Modules.Tasks;
 
@@ -48,7 +50,7 @@ public class TasksControllerIntegrationTests : IAsyncLifetime
 
         // Assert
         Assert.Equal(HttpStatusCode.Created, response.StatusCode);
-        var result = await response.Content.ReadAsAsync<TaskDto>();
+        var result = await response.Content.ReadFromJsonAsync<TaskDto>();
         Assert.NotNull(result);
         Assert.Equal(request.Title, result.Title);
         Assert.Equal(request.Description, result.Description);
@@ -83,7 +85,7 @@ public class TasksControllerIntegrationTests : IAsyncLifetime
 
         // Assert
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-        var result = await response.Content.ReadAsAsync<TaskListResponse>();
+        var result = await response.Content.ReadFromJsonAsync<TaskListResponse>();
         Assert.NotNull(result);
         Assert.NotNull(result.Data);
     }
@@ -99,7 +101,7 @@ public class TasksControllerIntegrationTests : IAsyncLifetime
 
         // Assert
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-        var result = await response.Content.ReadAsAsync<TaskListResponse>();
+        var result = await response.Content.ReadFromJsonAsync<TaskListResponse>();
         Assert.NotNull(result);
     }
 
@@ -177,3 +179,4 @@ public class TasksControllerIntegrationTests : IAsyncLifetime
         Assert.True(response.StatusCode == HttpStatusCode.NotFound || response.StatusCode == HttpStatusCode.Created);
     }
 }
+

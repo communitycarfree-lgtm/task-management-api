@@ -290,7 +290,6 @@ Presentation → Application → Domain → Infrastructure
 
 - Check [GETTING_STARTED.md](GETTING_STARTED.md)
 - Review [DEVELOPMENT.md](DEVELOPMENT.md)
-- Read [CODE_REVIEW_REPORT.md](../CODE_REVIEW_REPORT.md)
 - Open an issue for discussion
 
 Thank you for contributing!
