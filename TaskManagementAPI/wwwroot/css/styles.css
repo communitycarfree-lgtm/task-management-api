@@ -74,6 +74,14 @@
   --color-btn-secondary-bg: rgba(255, 255, 255, 0.03);
   --color-btn-secondary-text: var(--color-text-primary);
   --color-btn-secondary-border: rgba(255, 255, 255, 0.1);
+
+  /* ========== ANIMATIONS ========== */
+  --transition-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  --duration-slow: 700ms;
+  --duration-slower: 1200ms;
 }
 
 
@@ -244,6 +252,61 @@ body::-webkit-scrollbar-thumb:hover {
   50% { transform: translate(-10%, 10%) scale(1.1); opacity: 0.8; }
   100% { transform: translate(5%, -5%) scale(0.9); opacity: 0.5; }
 }
+
+/* ============================================CENTRALIZED ANIMATION REPOSITORY============================================ */
+
+/* --- Keyframes --- */
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes revealDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* --- Animation Utilities --- */
+.reveal-up {
+  opacity: 0;
+  animation: revealUp var(--duration-slow) var(--transition-premium) forwards;
+}
+
+.reveal-down {
+  opacity: 0;
+  animation: revealDown var(--duration-slow) var(--transition-premium) forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn var(--duration-normal) var(--transition-soft) forwards;
+}
+
+.scale-in {
+  opacity: 0;
+  animation: scaleIn var(--duration-normal) var(--transition-premium) forwards;
+}
+
+/* --- Delays --- */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-500 { animation-delay: 500ms; }
 
 
 .container {

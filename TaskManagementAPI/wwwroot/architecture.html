@@ -62,10 +62,10 @@
                     </div>
                 </aside>
 
-                <div class="doc-content">
+                <div class="doc-content reveal-up">
                     <section id="overview">
-                        <h2><i class="fas fa-sitemap"></i> Architecture Overview</h2>
-                        <p class="subtitle">Understanding the design and inner workings of the Task Management API</p>
+                        <h2 class="fade-in"><i class="fas fa-sitemap"></i> Architecture Overview</h2>
+                        <p class="subtitle fade-in delay-100">Understanding the design and inner workings of the Task Management API</p>
                         <p>The Task Management API is built using <strong>Modular Monolith</strong> and <strong>Clean Architecture</strong> principles. This ensures that features are logically separated into independent modules while sharing a common infrastructure, making the system highly testable, maintainable, and ready for future scaling.</p>
 
                         <div class="callout">
@@ -79,20 +79,20 @@
                     <section id="modular">
                         <h2><i class="fas fa-cubes"></i> Modular Structure</h2>
                         <p>The system is divided into four primary modules, each responsible for a specific business domain:</p>
-                        <div class="features-grid">
-                            <div class="feature-card project-card">
+                        <div class="features-grid reveal-up delay-200">
+                            <div class="feature-card project-card scale-in delay-100">
                                 <h4>Users & Auth</h4>
                                 <p>Identity management, JWT issuance, and RBAC security.</p>
                             </div>
-                            <div class="feature-card project-card">
+                            <div class="feature-card project-card scale-in delay-200">
                                 <h4>Projects</h4>
                                 <p>Workspace organization, naming, and team membership.</p>
                             </div>
-                            <div class="feature-card project-card">
+                            <div class="feature-card project-card scale-in delay-300">
                                 <h4>Tasks</h4>
                                 <p>Task lifecycle, dependencies, and time tracking entries.</p>
                             </div>
-                            <div class="feature-card project-card">
+                            <div class="feature-card project-card scale-in delay-500">
                                 <h4>Notifications</h4>
                                 <p>Real-time updates and historical alert management.</p>
                             </div>

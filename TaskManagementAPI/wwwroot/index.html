@@ -30,15 +30,19 @@
         </header>
 
             <section class="hero-section">
-                <h1 class="hero-title">The Engine of Productivity</h1>
-                <p class="hero-subtitle">A high-performance, modular API for enterprise-grade task and project management, built on .NET 9 and SQL Server.</p>
-                <div class="home-buttons">
-                    <a href="api-docs.html" class="home-btn primary-btn">
-                        <i class="fas fa-book"></i> Browse API
-                    </a>
-                    <a href="/swagger" target="_blank" class="home-btn secondary-btn">
-                        <i class="fas fa-flask"></i> Try Swagger
-                    </a>
+                <div class="hero-content reveal-down">
+                    <div class="hero-badge fade-in delay-500">v1.2.0 • Stable Release</div>
+                    <h1 class="hero-title reveal-up delay-100">Task Management <span class="text-highlight">API Documentation</span></h1>
+                    <p class="hero-subtitle reveal-up delay-200">The high-performance, modular monolith engine for building scalable project management solutions. Integrate tasks, projects, and notifications with a single, unified API.</p>
+                    
+                    <div class="hero-buttons reveal-up delay-300">
+                        <a href="api-docs.html" class="home-btn primary-btn">
+                            <i class="fas fa-book"></i> Browse API
+                        </a>
+                        <a href="/swagger" target="_blank" class="home-btn secondary-btn">
+                            <i class="fas fa-flask"></i> Try Swagger
+                        </a>
+                    </div>
                 </div>
             </section>
 
@@ -80,6 +84,36 @@
                 </aside>
 
                 <div class="doc-content">
+                    <section id="getting-started" class="reveal-up delay-100">
+                        <h2>Getting Started</h2>
+                        <p class="subtitle">Equip your development environment in less than two minutes.</p>
+                        
+                        <div class="getting-started-grid">
+                            <div class="getting-started-card scale-in delay-200">
+                                <div class="card-icon"><i class="fas fa-download"></i></div>
+                                <h3>1. Install</h3>
+                                <p>Clone the repository and install the required .NET 9 SDK dependencies.</p>
+                                <code>git clone ...</code>
+                            </div>
+                            <div class="getting-started-card scale-in delay-300">
+                                <div class="card-icon"><i class="fas fa-rocket"></i></div>
+                                <h3>2. Launch</h3>
+                                <p>Initialize the application and auto-generate the database schema.</p>
+                                <code>dotnet run</code>
+                                <ul>
+                                    <li>Automated migrations</li>
+                                    <li>Seed data initialization</li>
+                                </ul>
+                            </div>
+                            <div class="getting-started-card scale-in delay-500">
+                                <div class="card-icon"><i class="fas fa-check-circle"></i></div>
+                                <h3>3. Verify</h3>
+                                <p>Access the Swagger UI to test your first endpoint.</p>
+                                <code>/swagger</code>
+                            </div>
+                        </div>
+                    </section>
+
                     <section id="overview">
                         <h2><i class="fas fa-home"></i> Overview</h2>
                         <p class="subtitle">Welcome to the Task Management API documentation. This comprehensive guide will help you integrate with our powerful REST API for project and task management.</p>
