@@ -1,227 +1,315 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Architecture - Task Management API</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture — Task Management API</title>
+  <meta name="description" content="Understand the Modular Monolith and Clean Architecture design of the Task Management API.">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="bg-atmosphere"></div>
-    <div class="container">
-        <header>
-            <div class="header-container">
-                <a href="index.html" class="logo-section">
-                    <img src="images/logo.png" alt="Task Management API Logo" class="logo-image">
-                    <span class="brand-name">Task Management API</span>
-                </a>
-                <nav class="navbar">
-                    <ul>
-                        <li><a href="index.html">Overview</a></li>
-                        <li><a href="api-docs.html">API Docs</a></li>
-                        <li><a href="architecture.html" class="active">Architecture</a></li>
-                        <li><a href="features.html">Features</a></li>
-                        <li><a href="/swagger" target="_blank">Swagger UI</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
 
-        <main>
-            <div class="doc-layout">
-                <aside class="doc-sidebar">
-                    <div class="search-box">
-                        <input type="text" placeholder="Search architecture..." id="searchInput">
-                    </div>
-                    <div class="sidebar-nav">
-                        <div class="sidebar-title">Core Architecture</div>
-                        <a href="#overview" class="sidebar-link active">
-                            <i class="fas fa-sitemap"></i> Overview
-                        </a>
-                        <a href="#modular" class="sidebar-link">
-                            <i class="fas fa-cubes"></i> Modular Monolith
-                        </a>
-                        <a href="#layers" class="sidebar-link">
-                            <i class="fas fa-layer-group"></i> Clean Architecture
-                        </a>
-                        <a href="#patterns" class="sidebar-link">
-                            <i class="fas fa-puzzle-piece"></i> Design Patterns
-                        </a>
-                        <a href="#technologies" class="sidebar-link">
-                            <i class="fas fa-cogs"></i> Technology Stack
-                        </a>
-                        <div class="sidebar-title" style="margin-top: 30px;">Resources</div>
-                        <a href="index.html" class="sidebar-link">
-                            <i class="fas fa-home"></i> Documentation Home
-                        </a>
-                        <a href="features.html" class="sidebar-link">
-                            <i class="fas fa-star"></i> Key Features
-                        </a>
-                    </div>
-                </aside>
-
-                <div class="doc-content reveal-up">
-                    <section id="overview">
-                        <h2 class="fade-in"><i class="fas fa-sitemap"></i> Architecture Overview</h2>
-                        <p class="subtitle fade-in delay-100">Understanding the design and inner workings of the Task Management API</p>
-                        <p>The Task Management API is built using <strong>Modular Monolith</strong> and <strong>Clean Architecture</strong> principles. This ensures that features are logically separated into independent modules while sharing a common infrastructure, making the system highly testable, maintainable, and ready for future scaling.</p>
-
-                        <div class="callout">
-                            <div class="callout-title">
-                                <i class="fas fa-lightbulb"></i> Architectural Goal
-                            </div>
-                            <p>Our primary goal is to provide a scalable foundation where each domain (Users, Projects, Tasks) is encapsulated, reducing complexity and allowing teams to work independently on different modules.</p>
-                        </div>
-                    </section>
-
-                    <section id="modular">
-                        <h2><i class="fas fa-cubes"></i> Modular Structure</h2>
-                        <p>The system is divided into four primary modules, each responsible for a specific business domain:</p>
-                        <div class="features-grid reveal-up delay-200">
-                            <div class="feature-card project-card scale-in delay-100">
-                                <h4>Users & Auth</h4>
-                                <p>Identity management, JWT issuance, and RBAC security.</p>
-                            </div>
-                            <div class="feature-card project-card scale-in delay-200">
-                                <h4>Projects</h4>
-                                <p>Workspace organization, naming, and team membership.</p>
-                            </div>
-                            <div class="feature-card project-card scale-in delay-300">
-                                <h4>Tasks</h4>
-                                <p>Task lifecycle, dependencies, and time tracking entries.</p>
-                            </div>
-                            <div class="feature-card project-card scale-in delay-500">
-                                <h4>Notifications</h4>
-                                <p>Real-time updates and historical alert management.</p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="layers">
-                        <h2><i class="fas fa-layer-group"></i> Layered Design (Clean Architecture)</h2>
-                        <p>Each module follows a structured layering strategy to separate concerns:</p>
-
-                        <div class="features-grid">
-                            <div class="feature-card project-card">
-                                <span class="feature-icon"><i class="fas fa-desktop"></i></span>
-                                <h4>Presentation Layer</h4>
-                                <p>Handles API entry points and response formatting.</p>
-                                <ul class="feature-list">
-                                    <li>Controllers (REST Endpoints)</li>
-                                    <li>Middleware & Auth filters</li>
-                                    <li>Swagger Spec documentation</li>
-                                </ul>
-                            </div>
-
-                            <div class="feature-card project-card">
-                                <span class="feature-icon"><i class="fas fa-project-diagram"></i></span>
-                                <h4>Application Layer</h4>
-                                <p>Contains service logic and domain orchestration.</p>
-                                <ul class="feature-list">
-                                    <li>Services & Operations</li>
-                                    <li>Request Models & DTOs</li>
-                                    <li>Fluent Validation logic</li>
-                                </ul>
-                            </div>
-
-                            <div class="feature-card project-card">
-                                <span class="feature-icon"><i class="fas fa-database"></i></span>
-                                <h4>Infrastructure Layer</h4>
-                                <p>Persistence implementations and external services.</p>
-                                <ul class="feature-list">
-                                    <li>Module-specific DbContexts</li>
-                                    <li>Entity configurations</li>
-                                    <li>Redis caching providers</li>
-                                </ul>
-                            </div>
-
-                            <div class="feature-card project-card">
-                                <span class="feature-icon"><i class="fas fa-cube"></i></span>
-                                <h4>Domain Layer</h4>
-                                <p>The pure heart of the module's business logic.</p>
-                                <ul class="feature-list">
-                                    <li>Core Entities</li>
-                                    <li>Domain Events & Exceptions</li>
-                                    <li>Value Objects</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="patterns">
-                        <h2><i class="fas fa-puzzle-piece"></i> Design Patterns</h2>
-
-                        <h3>Service Layer Pattern</h3>
-                        <p>We use dedicated services to encapsulate business logic, ensuring that controllers remain thin and only handle request routing.</p>
-
-                        <h3>Modular Database Contexts</h3>
-                        <p>Each module has its own <code>DbContext</code> and migrations, allowing for clear data boundaries and database-level separation if needed.</p>
-
-                        <h3>Repository Pattern</h3>
-                        <p>Abstracts complex data access logic, providing a clean interface for the application layer to interact with data entities.</p>
-                    </section>
-
-
-                    <section id="technologies">
-                        <h2><i class="fas fa-cogs"></i> Technology Stack</h2>
-                        <div class="getting-started-grid">
-                            <div class="getting-started-card">
-                                <h3><i class="fas fa-code"></i> .NET 8/9</h3>
-                                <p>Core framework for high-performance API development.</p>
-                            </div>
-                            <div class="getting-started-card">
-                                <h3><i class="fas fa-database"></i> EF Core</h3>
-                                <p>Modern ORM for database operations with SQL Server.</p>
-                            </div>
-                            <div class="getting-started-card">
-                                <h3><i class="fas fa-bolt"></i> Redis</h3>
-                                <p>Distributed caching for high-speed data retrieval.</p>
-                            </div>
-                            <div class="getting-started-card">
-                                <h3><i class="fas fa-broadcast-tower"></i> SignalR</h3>
-                                <p>Real-time bidirectional communication for notifications.</p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section style="margin-top: 60px;">
-                        <h2><i class="fas fa-link"></i> Continue Reading</h2>
-                        <div class="doc-links">
-                            <a href="features.html" class="doc-link">
-                                <h3><i class="fas fa-star"></i> Features</h3>
-                                <p>Explore deeper into what the system can do</p>
-                            </a>
-                            <a href="api-docs.html" class="doc-link">
-                                <h3><i class="fas fa-code"></i> Endpoints</h3>
-                                <p>Technical specification for every endpoint</p>
-                            </a>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </main>
-
-        <footer>
-            <div class="footer-content">
-                <div class="footer-left">
-                    <p>&copy; <span class="current-year"></span> Task Management API. All rights reserved.</p>
-                </div>
-                <div class="footer-right">
-                    <p>
-                        <a href="terms.html">Terms of Service</a> | 
-                        <a href="license.html">License</a> | 
-                        <a href="/swagger" target="_blank">Swagger UI</a>
-                    </p>
-                </div>
-            </div>
-        </footer>
+  <!-- PAGE LOADER -->
+  <div id="page-loader" role="status" aria-label="Loading">
+    <div class="loader-logo-wrap">
+      <img src="images/logo.png" alt="" class="loader-logo">
+      <div class="loader-logo-shimmer"></div>
     </div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    <span class="loader-text">Loading</span>
+  </div>
 
-    <script src="js/main.js"></script>
+  <div class="bg-atmosphere" aria-hidden="true"></div>
+  <div class="nav-backdrop" aria-hidden="true"></div>
+
+  <div class="site-wrap">
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="logo-link">
+          <img src="images/logo.png" alt="Task Management API" class="logo-img">
+          <span class="logo-name">Task Management API</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="api-docs.html">API Docs</a></li>
+            <li><a href="architecture.html" class="active">Architecture</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="/swagger" target="_blank" rel="noopener">Swagger UI <i class="fas fa-external-link-alt" style="font-size:0.7em;opacity:.6;"></i></a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-toggle" data-theme-toggle aria-label="Switch theme">
+            <i class="fas fa-sun" aria-hidden="true"></i>
+          </button>
+          <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <div class="doc-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="doc-sidebar">
+          <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search architecture…" autocomplete="off" aria-label="Search architecture">
+          </div>
+          <nav aria-label="Architecture sections">
+            <div class="sidebar-section-title">Core Architecture</div>
+            <a href="#overview" class="sidebar-link active">
+              <i class="fas fa-sitemap" aria-hidden="true"></i> Overview
+            </a>
+            <a href="#modular" class="sidebar-link">
+              <i class="fas fa-cubes" aria-hidden="true"></i> Modular Monolith
+            </a>
+            <a href="#layers" class="sidebar-link">
+              <i class="fas fa-layer-group" aria-hidden="true"></i> Clean Architecture
+            </a>
+            <a href="#patterns" class="sidebar-link">
+              <i class="fas fa-puzzle-piece" aria-hidden="true"></i> Design Patterns
+            </a>
+            <a href="#technologies" class="sidebar-link">
+              <i class="fas fa-cogs" aria-hidden="true"></i> Technology Stack
+            </a>
+
+            <div class="sidebar-section-title">Resources</div>
+            <a href="index.html" class="sidebar-link">
+              <i class="fas fa-home" aria-hidden="true"></i> Documentation Home
+            </a>
+            <a href="features.html" class="sidebar-link">
+              <i class="fas fa-star" aria-hidden="true"></i> Key Features
+            </a>
+          </nav>
+        </aside>
+
+        <!-- CONTENT -->
+        <div class="doc-content">
+
+          <!-- Overview -->
+          <section id="overview">
+            <h2><i class="fas fa-sitemap" aria-hidden="true"></i> Architecture Overview</h2>
+            <p class="section-lead">Understanding the design philosophy and inner workings of the Task Management API.</p>
+            <p>The Task Management API is built using <strong>Modular Monolith</strong> and <strong>Clean Architecture</strong> principles. Features are logically separated into independent modules while sharing a common infrastructure, making the system highly testable, maintainable, and ready for future decomposition into microservices if needed.</p>
+
+            <div class="callout callout-tip reveal">
+              <div class="callout-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></div>
+              <div>
+                <div class="callout-title">Architectural Goal</div>
+                <div class="callout-body">Each domain (Users, Projects, Tasks, Notifications) is fully encapsulated — teams can work independently on different modules without risk of cross-module breakage.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Modular Monolith -->
+          <section id="modular">
+            <h2><i class="fas fa-cubes" aria-hidden="true"></i> Modular Structure</h2>
+            <p class="section-lead">Four primary modules, each owning its own domain, database context, and migration history.</p>
+
+            <div class="grid-auto-2 reveal">
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-user-lock" aria-hidden="true"></i></div>
+                <h4>Users &amp; Auth</h4>
+                <p>Identity management, JWT issuance, token refresh, and RBAC security enforcement.</p>
+                <ul class="feature-list">
+                  <li>Registration &amp; login flows</li>
+                  <li>Role assignment &amp; validation</li>
+                  <li>Password hashing (BCrypt)</li>
+                </ul>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-folder-open" aria-hidden="true"></i></div>
+                <h4>Projects</h4>
+                <p>Workspace organization, team membership, project-level permissions, and lifecycle management.</p>
+                <ul class="feature-list">
+                  <li>Create / archive projects</li>
+                  <li>Member invitation &amp; removal</li>
+                  <li>Soft-delete with restore</li>
+                </ul>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-tasks" aria-hidden="true"></i></div>
+                <h4>Tasks</h4>
+                <p>Task lifecycle, priorities, assignee tracking, dependencies, and time logging.</p>
+                <ul class="feature-list">
+                  <li>Status state machine</li>
+                  <li>Priority tiers</li>
+                  <li>Dependency graph</li>
+                </ul>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-bell" aria-hidden="true"></i></div>
+                <h4>Notifications</h4>
+                <p>Real-time event delivery via SignalR and historical alert inbox management per user.</p>
+                <ul class="feature-list">
+                  <li>SignalR push delivery</li>
+                  <li>Paginated inbox API</li>
+                  <li>Read / delete controls</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Clean Architecture Layers -->
+          <section id="layers">
+            <h2><i class="fas fa-layer-group" aria-hidden="true"></i> Clean Architecture Layers</h2>
+            <p class="section-lead">Each module follows a four-layer structure to keep concerns fully separated.</p>
+
+            <div class="grid-auto-2 reveal">
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-desktop" aria-hidden="true"></i></div>
+                <h4>Presentation Layer</h4>
+                <p>Handles API entry points, request routing, and response formatting. Controllers stay intentionally thin.</p>
+                <ul class="feature-list">
+                  <li>REST Controllers</li>
+                  <li>Middleware &amp; auth filters</li>
+                  <li>Swagger/OpenAPI spec</li>
+                </ul>
+              </div>
+
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-project-diagram" aria-hidden="true"></i></div>
+                <h4>Application Layer</h4>
+                <p>Business orchestration — services, use-case handlers, validation, and cross-module event dispatch.</p>
+                <ul class="feature-list">
+                  <li>Service &amp; use-case classes</li>
+                  <li>DTOs &amp; request models</li>
+                  <li>FluentValidation rules</li>
+                </ul>
+              </div>
+
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-database" aria-hidden="true"></i></div>
+                <h4>Infrastructure Layer</h4>
+                <p>All I/O concerns: database persistence, caching, email, file storage, and third-party integrations.</p>
+                <ul class="feature-list">
+                  <li>Module-scoped DbContexts</li>
+                  <li>EF Core entity configs</li>
+                  <li>Redis cache providers</li>
+                </ul>
+              </div>
+
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-cube" aria-hidden="true"></i></div>
+                <h4>Domain Layer</h4>
+                <p>The pure, framework-free heart of each module. Contains entities, value objects, and domain events.</p>
+                <ul class="feature-list">
+                  <li>Aggregate roots &amp; entities</li>
+                  <li>Domain events</li>
+                  <li>Value objects &amp; exceptions</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="callout callout-info reveal">
+              <div class="callout-icon"><i class="fas fa-info-circle" aria-hidden="true"></i></div>
+              <div>
+                <div class="callout-title">Dependency Direction</div>
+                <div class="callout-body">Dependencies only flow <strong>inward</strong>: Presentation → Application → Domain. Infrastructure implements interfaces defined in Application, so Domain has zero framework dependencies.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Design Patterns -->
+          <section id="patterns">
+            <h2><i class="fas fa-puzzle-piece" aria-hidden="true"></i> Design Patterns</h2>
+            <p class="section-lead">Proven patterns applied consistently across every module.</p>
+
+            <h3>Service Layer Pattern</h3>
+            <p>Controllers delegate all logic to dedicated service classes. Controllers remain thin — they handle HTTP routing, model binding, and response shaping only. Services handle validation, authorization checks, and domain orchestration.</p>
+
+            <h3>Repository Pattern</h3>
+            <p>All data access goes through repository interfaces defined in the Application layer and implemented in Infrastructure. The Application layer never touches <code>DbContext</code> directly — this makes unit testing trivial with in-memory or mock repositories.</p>
+
+            <h3>Modular DbContexts</h3>
+            <p>Each module has its own <code>DbContext</code> and its own EF Core migration history. This enforces hard data boundaries between modules. If a module needs data from another, it goes through that module's service — never by joining across contexts directly.</p>
+
+            <div class="callout callout-warn reveal">
+              <div class="callout-icon"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i></div>
+              <div>
+                <div class="callout-title">No Cross-context Queries</div>
+                <div class="callout-body">Cross-module data fetching is always mediated through the owning module's service interface, never via raw SQL or shared DbContext. This is intentional — it preserves module independence.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Technology Stack -->
+          <section id="technologies">
+            <h2><i class="fas fa-cogs" aria-hidden="true"></i> Technology Stack</h2>
+            <p class="section-lead">Carefully chosen, battle-tested technologies forming a coherent platform.</p>
+
+            <div class="grid-auto-2 reveal">
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+                <h3>.NET 9 / ASP.NET Core</h3>
+                <p>Core framework for high-performance API development with minimal overhead and first-class async support.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-database" aria-hidden="true"></i></div>
+                <h3>PostgreSQL + EF Core</h3>
+                <p>Robust relational database via Npgsql driver. EF Core 9 handles migrations, compiled queries, and owned entities.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+                <h3>Redis</h3>
+                <p>In-memory distributed cache for sub-millisecond reads on hot data. Supports cache-aside and write-through patterns.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-broadcast-tower" aria-hidden="true"></i></div>
+                <h3>SignalR</h3>
+                <p>Real-time bidirectional communication hub for instant event delivery to all connected clients.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+                <h3>FluentValidation</h3>
+                <p>Rich, expressive validation rules decoupled from request models — easily unit-tested in isolation.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-file-alt" aria-hidden="true"></i></div>
+                <h3>Serilog</h3>
+                <p>Structured, sink-agnostic logging. Production logs can be routed to file, Seq, Elastic, or any structured sink.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Continue reading -->
+          <section>
+            <h2><i class="fas fa-arrow-right" aria-hidden="true"></i> Continue Reading</h2>
+            <div class="grid-auto-2 reveal">
+              <a href="features.html" class="card quick-link">
+                <h3><i class="fas fa-star" aria-hidden="true"></i> Features</h3>
+                <p>Explore security, real-time sync, and performance characteristics in depth.</p>
+              </a>
+              <a href="api-docs.html" class="card quick-link">
+                <h3><i class="fas fa-code" aria-hidden="true"></i> API Reference</h3>
+                <p>Technical specification for every endpoint, method, and request body.</p>
+              </a>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; <span class="current-year"></span> Task Management API. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="terms.html">Terms</a>
+          <a href="license.html">License</a>
+          <a href="/swagger" target="_blank" rel="noopener">Swagger UI</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
-
-
-

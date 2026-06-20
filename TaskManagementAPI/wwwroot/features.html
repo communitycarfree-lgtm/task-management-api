@@ -1,195 +1,318 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Features - Task Management API</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features — Task Management API</title>
+  <meta name="description" content="Explore security, real-time sync, performance, and collaboration features of the Task Management API.">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="bg-atmosphere"></div>
-    <div class="container">
-        <header>
-            <div class="header-container">
-                <a href="index.html" class="logo-section">
-                    <img src="images/logo.png" alt="Task Management API Logo" class="logo-image">
-                    <span class="brand-name">Task Management API</span>
-                </a>
-                <nav class="navbar">
-                    <ul>
-                        <li><a href="index.html">Overview</a></li>
-                        <li><a href="api-docs.html">API Docs</a></li>
-                        <li><a href="architecture.html">Architecture</a></li>
-                        <li><a href="features.html" class="active">Features</a></li>
-                        <li><a href="/swagger" target="_blank">Swagger UI</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
 
-
-        <main>
-            <div class="doc-layout">
-                <aside class="doc-sidebar">
-                    <div class="search-box">
-                        <input type="text" placeholder="Search features..." id="searchInput">
-                    </div>
-                    <div class="sidebar-nav">
-                        <div class="sidebar-title">Feature Guide</div>
-                        <a href="#core" class="sidebar-link active">
-                            <i class="fas fa-rocket"></i> Core Capabilities
-                        </a>
-                        <a href="#security" class="sidebar-link">
-                            <i class="fas fa-shield-alt"></i> Security & Auth
-                        </a>
-                        <a href="#collaboration" class="sidebar-link">
-                            <i class="fas fa-users"></i> Collaboration
-                        </a>
-                        <a href="#realtime" class="sidebar-link">
-                            <i class="fas fa-bolt"></i> Real-time Sync
-                        </a>
-                        <a href="#performance" class="sidebar-link">
-                            <i class="fas fa-tachometer-alt"></i> Performance
-                        </a>
-                        <div class="sidebar-title" style="margin-top: 30px;">Resources</div>
-                        <a href="index.html" class="sidebar-link">
-                            <i class="fas fa-home"></i> Documentation Home
-                        </a>
-                        <a href="api-docs.html" class="sidebar-link">
-                            <i class="fas fa-code"></i> API Endpoints
-                        </a>
-                    </div>
-                </aside>
-
-                <div class="doc-content reveal-up">
-                    <section id="core">
-                        <h2 class="fade-in">🚀 Core Capabilities</h2>
-                        <p class="subtitle fade-in delay-100">A full-featured engine for professional task and project management.</p>
-                        
-                        <div class="features-grid reveal-up delay-200">
-                            <div class="feature-card scale-in delay-100">
-                                <span class="feature-icon"><i class="fas fa-project-diagram"></i></span>
-                                <h4>Project Organization</h4>
-                                <p>Manage multiple projects with hierarchical structures and custom categorization.</p>
-                                <ul class="feature-list">
-                                    <li>Multi-project support</li>
-                                    <li>Custom project statuses</li>
-                                    <li>Project-level permissions</li>
-                                </ul>
-                            </div>
-
-                            <div class="feature-card scale-in delay-200">
-                                <span class="feature-icon"><i class="fas fa-tasks"></i></span>
-                                <h4>Task Tracking</h4>
-                                <p>Organize work with priorities, deadlines, and advanced dependency management.</p>
-                                <ul class="feature-list">
-                                    <li>Infinite sub-tasks</li>
-                                    <li>Task dependencies</li>
-                                    <li>Recurring tasks</li>
-                                </ul>
-                            </div>
-
-                            <div class="feature-card scale-in delay-300">
-                                <span class="feature-icon"><i class="fas fa-clock"></i></span>
-                                <h4>Time Management</h4>
-                                <p>Built-in time tracking and scheduling for precise project monitoring.</p>
-                                <ul class="feature-list">
-                                    <li>Automatic time logs</li>
-                                    <li>Estimation vs Actual</li>
-                                    <li>Timeline visualization</li>
-                                </ul>
-                            </div>
-
-                            <div class="feature-card">
-                                <span class="feature-icon"><i class="fas fa-file-invoice"></i></span>
-                                <h4>Reporting</h4>
-                                <p>Generate detailed reports on productivity, progress, and team performance.</p>
-                                <ul class="feature-list">
-                                    <li>Project health checks</li>
-                                    <li>Team workload reports</li>
-                                    <li>Export to PDF/JSON</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="security">
-                        <h2>🛡️ Enterprise Security</h2>
-                        <p class="subtitle">Protecting your data with industry-standard protocols.</p>
-                        
-                        <div class="getting-started-grid">
-                            <div class="getting-started-card">
-                                <h3><i class="fas fa-key"></i> JWT Auth</h3>
-                                <p>State-of-the-art token authentication with HMAC-SHA256 signature verification.</p>
-                                <code>Auth Scheme: Bearer JWT</code>
-                            </div>
-                            <div class="getting-started-card">
-                                <h3><i class="fas fa-user-shield"></i> RBAC</h3>
-                                <p>Role-Based Access Control to manage permissions at the granular level.</p>
-                                <code>Admin | Manager | Member</code>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="realtime">
-                        <h2>⚡ Real-time Connectivity</h2>
-                        <p class="subtitle">Stay in sync with your team effortlessly.</p>
-                        
-                        <div class="callout">
-                            <div class="callout-title">
-                                <i class="fas fa-bolt"></i> SignalR Powered
-                            </div>
-                            <p>Real-time notifications and live task updates are delivered instantly without page refreshes, ensuring everyone is always on the same page.</p>
-                        </div>
-
-                        <h3>Sync Capabilities</h3>
-                        <ul>
-                            <li><strong>Live Collaboration:</strong> See who's working on what in real-time.</li>
-                            <li><strong>Instant Notifications:</strong> Get alerted the second a task is assigned or commented on.</li>
-                            <li><strong>Global State Sync:</strong> Across web, mobile, and desktop clients simultaneously.</li>
-                        </ul>
-                    </section>
-
-                    <section id="performance">
-                        <h2>🏎️ High Performance</h2>
-                        <p class="subtitle">Built to scale for global organizations.</p>
-                        
-                        <div class="getting-started-grid">
-                            <div class="getting-started-card">
-                                <h3><i class="fas fa-memory"></i> Redis Caching</h3>
-                                <p>Sub-millisecond data retrieval for frequently accessed project lists.</p>
-                            </div>
-                            <div class="getting-started-card">
-                                <h3><i class="fas fa-compress-arrows-alt"></i> Compression</h3>
-                                <p>Advanced response compression (Gzip/Brotli) for minimal data transfer.</p>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </main>
-
-        <footer>
-            <div class="footer-content">
-                <div class="footer-left">
-                    <p>&copy; <span class="current-year"></span> Task Management API. All rights reserved.</p>
-                </div>
-                <div class="footer-right">
-                    <p>
-                        <a href="terms.html">Terms of Service</a> | 
-                        <a href="license.html">License</a> | 
-                        <a href="/swagger" target="_blank">Swagger UI</a>
-                    </p>
-                </div>
-            </div>
-        </footer>
+  <!-- PAGE LOADER -->
+  <div id="page-loader" role="status" aria-label="Loading">
+    <div class="loader-logo-wrap">
+      <img src="images/logo.png" alt="" class="loader-logo">
+      <div class="loader-logo-shimmer"></div>
     </div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    <span class="loader-text">Loading</span>
+  </div>
 
-    <script src="js/main.js"></script>
+  <div class="bg-atmosphere" aria-hidden="true"></div>
+  <div class="nav-backdrop" aria-hidden="true"></div>
+
+  <div class="site-wrap">
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="logo-link">
+          <img src="images/logo.png" alt="Task Management API" class="logo-img">
+          <span class="logo-name">Task Management API</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="api-docs.html">API Docs</a></li>
+            <li><a href="architecture.html">Architecture</a></li>
+            <li><a href="features.html" class="active">Features</a></li>
+            <li><a href="/swagger" target="_blank" rel="noopener">Swagger UI <i class="fas fa-external-link-alt" style="font-size:0.7em;opacity:.6;"></i></a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-toggle" data-theme-toggle aria-label="Switch theme">
+            <i class="fas fa-sun" aria-hidden="true"></i>
+          </button>
+          <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <div class="doc-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="doc-sidebar">
+          <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Filter features…" autocomplete="off" aria-label="Search features">
+          </div>
+          <nav aria-label="Feature sections">
+            <div class="sidebar-section-title">Feature Guide</div>
+            <a href="#core" class="sidebar-link active">
+              <i class="fas fa-rocket" aria-hidden="true"></i> Core Capabilities
+            </a>
+            <a href="#security" class="sidebar-link">
+              <i class="fas fa-shield-alt" aria-hidden="true"></i> Security & Auth
+            </a>
+            <a href="#collaboration" class="sidebar-link">
+              <i class="fas fa-users" aria-hidden="true"></i> Collaboration
+            </a>
+            <a href="#realtime" class="sidebar-link">
+              <i class="fas fa-bolt" aria-hidden="true"></i> Real-time Sync
+            </a>
+            <a href="#performance" class="sidebar-link">
+              <i class="fas fa-tachometer-alt" aria-hidden="true"></i> Performance
+            </a>
+
+            <div class="sidebar-section-title">Resources</div>
+            <a href="index.html" class="sidebar-link">
+              <i class="fas fa-home" aria-hidden="true"></i> Documentation Home
+            </a>
+            <a href="api-docs.html" class="sidebar-link">
+              <i class="fas fa-code" aria-hidden="true"></i> API Endpoints
+            </a>
+          </nav>
+        </aside>
+
+        <!-- CONTENT -->
+        <div class="doc-content">
+
+          <!-- Core -->
+          <section id="core">
+            <h2>🚀 Core Capabilities</h2>
+            <p class="section-lead">A full-featured engine for professional task and project management at any scale.</p>
+
+            <div class="grid-auto-2 reveal">
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-project-diagram" aria-hidden="true"></i></div>
+                <h4>Project Organization</h4>
+                <p>Manage multiple projects with hierarchical structures, custom statuses, and project-scoped permissions.</p>
+                <ul class="feature-list">
+                  <li>Multi-project workspaces</li>
+                  <li>Custom project statuses</li>
+                  <li>Project-level RBAC</li>
+                </ul>
+              </div>
+
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-tasks" aria-hidden="true"></i></div>
+                <h4>Task Tracking</h4>
+                <p>Organize work with priorities, deadlines, and advanced dependency management built in.</p>
+                <ul class="feature-list">
+                  <li>Nested sub-tasks</li>
+                  <li>Task dependencies</li>
+                  <li>Recurring task schedules</li>
+                </ul>
+              </div>
+
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+                <h4>Time Management</h4>
+                <p>Built-in time tracking and scheduling for precise project monitoring and capacity planning.</p>
+                <ul class="feature-list">
+                  <li>Automatic time logs</li>
+                  <li>Estimated vs. actual hours</li>
+                  <li>Timeline visualization data</li>
+                </ul>
+              </div>
+
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-chart-bar" aria-hidden="true"></i></div>
+                <h4>Reporting</h4>
+                <p>Generate detailed analytics on productivity, progress, and team performance over any period.</p>
+                <ul class="feature-list">
+                  <li>Project health metrics</li>
+                  <li>Team workload reports</li>
+                  <li>JSON / CSV export</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Security -->
+          <section id="security">
+            <h2>🛡️ Enterprise Security</h2>
+            <p class="section-lead">Industry-standard protocols protecting every layer of your data.</p>
+
+            <div class="grid-auto-2 reveal">
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-key" aria-hidden="true"></i></div>
+                <h3>JWT Authentication</h3>
+                <p>State-of-the-art token authentication with HMAC-SHA256 signature verification and configurable expiry.</p>
+                <code>Scheme: Bearer JWT</code>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-user-shield" aria-hidden="true"></i></div>
+                <h3>Role-Based Access</h3>
+                <p>Granular RBAC controls ensure users can only access resources appropriate for their permission level.</p>
+                <code>Admin | Manager | Member</code>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-history" aria-hidden="true"></i></div>
+                <h3>Audit Logging</h3>
+                <p>Every state-changing operation is recorded with actor identity, timestamp, and delta for compliance.</p>
+                <code>Immutable audit trail</code>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-trash-restore" aria-hidden="true"></i></div>
+                <h3>Soft Delete</h3>
+                <p>Resources are never immediately purged — they are archived with restoration capability built in.</p>
+                <code>DeletedAt timestamp pattern</code>
+              </div>
+            </div>
+
+            <div class="callout callout-tip reveal">
+              <div class="callout-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></div>
+              <div>
+                <div class="callout-title">Password Security</div>
+                <div class="callout-body">All passwords are hashed with <code>BCrypt</code> (cost factor 12). Plain-text credentials are never stored or logged at any layer.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Collaboration -->
+          <section id="collaboration">
+            <h2>🤝 Team Collaboration</h2>
+            <p class="section-lead">Built for teams — from a two-person startup to an enterprise engineering org.</p>
+
+            <div class="grid-auto-2 reveal">
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-user-plus" aria-hidden="true"></i></div>
+                <h4>Membership Management</h4>
+                <p>Invite, remove, and manage project members with distinct role assignments per project.</p>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-user-tag" aria-hidden="true"></i></div>
+                <h4>Task Assignment</h4>
+                <p>Assign and reassign tasks to any project member with full audit trail of ownership changes.</p>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-bell" aria-hidden="true"></i></div>
+                <h4>Notification Inbox</h4>
+                <p>Every team event — assignment, status change, comment — triggers targeted notifications.</p>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-eye" aria-hidden="true"></i></div>
+                <h4>Activity Visibility</h4>
+                <p>See exactly who did what and when, across every project and task in the system.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Real-time -->
+          <section id="realtime">
+            <h2>⚡ Real-time Connectivity</h2>
+            <p class="section-lead">Stay in sync with your team without polling or page refreshes.</p>
+
+            <div class="callout callout-success reveal">
+              <div class="callout-icon"><i class="fas fa-broadcast-tower" aria-hidden="true"></i></div>
+              <div>
+                <div class="callout-title">SignalR WebSocket Hub</div>
+                <div class="callout-body">All task and project events are broadcast to connected clients in real time via <code>ASP.NET Core SignalR</code>. Supports WebSockets with Server-Sent Events as fallback.</div>
+              </div>
+            </div>
+
+            <h3>What gets pushed live</h3>
+            <div class="grid-auto-2 reveal">
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-sync" aria-hidden="true"></i></div>
+                <h4>Live Collaboration</h4>
+                <p>See in real time who is working on what — task status changes appear instantly across all connected clients.</p>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-bell" aria-hidden="true"></i></div>
+                <h4>Instant Notifications</h4>
+                <p>Alert delivery when a task is assigned, a deadline approaches, or a teammate comments on your work.</p>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
+                <h4>Multi-client State Sync</h4>
+                <p>Web, mobile, and desktop clients all receive the same events simultaneously from the hub.</p>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-plug" aria-hidden="true"></i></div>
+                <h4>Automatic Reconnection</h4>
+                <p>SignalR automatically re-establishes dropped connections and replays missed events on reconnect.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Performance -->
+          <section id="performance">
+            <h2>🏎️ High Performance</h2>
+            <p class="section-lead">Engineered for speed — built to scale for global organizations under peak load.</p>
+
+            <div class="grid-auto-2 reveal">
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-memory" aria-hidden="true"></i></div>
+                <h3>Redis Caching</h3>
+                <p>Distributed cache layer provides sub-millisecond retrieval for high-frequency reads like project lists and user lookups.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-compress-arrows-alt" aria-hidden="true"></i></div>
+                <h3>Response Compression</h3>
+                <p>Gzip and Brotli compression for all API responses, reducing payload sizes by up to 75% on JSON-heavy endpoints.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-database" aria-hidden="true"></i></div>
+                <h3>Optimized EF Core</h3>
+                <p>Compiled queries, AsNoTracking reads, and split queries prevent N+1 problems and minimize round-trips.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-list-ol" aria-hidden="true"></i></div>
+                <h3>Cursor Pagination</h3>
+                <p>All list endpoints use cursor-based pagination — constant-time retrieval regardless of dataset size.</p>
+              </div>
+            </div>
+
+            <div class="stat-grid reveal" style="margin-top:2rem;">
+              <div class="stat-card">
+                <div class="stat-value">&lt;5ms</div>
+                <div class="stat-label">Cached response</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">75%</div>
+                <div class="stat-label">Compression gain</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">∞</div>
+                <div class="stat-label">Horizontal scale</div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; <span class="current-year"></span> Task Management API. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="terms.html">Terms</a>
+          <a href="license.html">License</a>
+          <a href="/swagger" target="_blank" rel="noopener">Swagger UI</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
-
-
-
