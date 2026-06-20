@@ -70,6 +70,9 @@
             <a href="#tasks" class="sidebar-link">
               <i class="fas fa-tasks" aria-hidden="true"></i> Tasks
             </a>
+            <a href="#time-tracking" class="sidebar-link">
+              <i class="fas fa-clock" aria-hidden="true"></i> Time Tracking
+            </a>
             <a href="#users" class="sidebar-link">
               <i class="fas fa-users" aria-hidden="true"></i> Users
             </a>
@@ -78,6 +81,9 @@
             </a>
             <a href="#auth" class="sidebar-link">
               <i class="fas fa-lock" aria-hidden="true"></i> Authentication
+            </a>
+            <a href="#response-codes" class="sidebar-link">
+              <i class="fas fa-code" aria-hidden="true"></i> Response Codes
             </a>
 
             <div class="sidebar-section-title">External</div>
@@ -145,10 +151,24 @@
               <div class="grid-auto-2">
                 <div class="endpoint-card">
                   <div class="endpoint-header">
+                    <span class="method-badge method-get">GET</span>
+                    <span class="endpoint-path">/api/projects/{id}/members</span>
+                  </div>
+                  <div class="endpoint-desc">List all members of a project with their assigned roles.</div>
+                </div>
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
                     <span class="method-badge method-post">POST</span>
                     <span class="endpoint-path">/api/projects/{id}/members</span>
                   </div>
                   <div class="endpoint-desc">Invite a user to the project with an assigned role.</div>
+                </div>
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge method-put">PUT</span>
+                    <span class="endpoint-path">/api/projects/{id}/members/{userId}</span>
+                  </div>
+                  <div class="endpoint-desc">Change a member's role within the project.</div>
                 </div>
                 <div class="endpoint-card">
                   <div class="endpoint-header">
@@ -237,6 +257,35 @@
               </div>
             </div>
 
+            <div class="endpoint-group reveal">
+              <div class="endpoint-group-title">
+                <i class="fas fa-sitemap" aria-hidden="true"></i> Dependencies
+              </div>
+              <div class="grid-auto-2">
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge method-get">GET</span>
+                    <span class="endpoint-path">/api/tasks/{id}/dependencies</span>
+                  </div>
+                  <div class="endpoint-desc">List all blocking and blocked-by dependencies for a task.</div>
+                </div>
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge method-post">POST</span>
+                    <span class="endpoint-path">/api/tasks/{id}/dependencies</span>
+                  </div>
+                  <div class="endpoint-desc">Add a dependency link. Circular dependency detection runs automatically.</div>
+                </div>
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge method-delete">DELETE</span>
+                    <span class="endpoint-path">/api/tasks/{id}/dependencies/{depId}</span>
+                  </div>
+                  <div class="endpoint-desc">Remove a specific dependency link between two tasks.</div>
+                </div>
+              </div>
+            </div>
+
             <h3>Create Task — Request Body</h3>
             <div class="code-block reveal">
               <div class="code-block-header">
@@ -250,6 +299,69 @@
   "priority": "High",
   "dueDate": "2026-08-15"
 }</code></pre>
+            </div>
+          </section>
+
+          <!-- Time Tracking -->
+          <section id="time-tracking">
+            <h2><i class="fas fa-clock" aria-hidden="true"></i> Time Tracking</h2>
+            <p class="section-lead">Log, review, and manage time entries against individual tasks for accurate capacity planning.</p>
+
+            <div class="endpoint-group reveal">
+              <div class="endpoint-group-title">
+                <i class="fas fa-stopwatch" aria-hidden="true"></i> Time Entries
+              </div>
+              <div class="grid-auto-2">
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge method-get">GET</span>
+                    <span class="endpoint-path">/api/tasks/{id}/time-entries</span>
+                  </div>
+                  <div class="endpoint-desc">Retrieve all time entries for a task, including estimated vs. actual breakdown.</div>
+                </div>
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge method-post">POST</span>
+                    <span class="endpoint-path">/api/tasks/{id}/time-entries</span>
+                  </div>
+                  <div class="endpoint-desc">Log time worked against a task with an optional note and duration.</div>
+                </div>
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge method-put">PUT</span>
+                    <span class="endpoint-path">/api/time-entries/{id}</span>
+                  </div>
+                  <div class="endpoint-desc">Correct a time entry's duration, date, or description.</div>
+                </div>
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge method-delete">DELETE</span>
+                    <span class="endpoint-path">/api/time-entries/{id}</span>
+                  </div>
+                  <div class="endpoint-desc">Permanently remove a time entry from the task log.</div>
+                </div>
+              </div>
+            </div>
+
+            <h3>Log Time — Request Body</h3>
+            <div class="code-block reveal">
+              <div class="code-block-header">
+                <span class="code-lang-badge">JSON</span>
+                <button class="copy-btn"><i class="far fa-copy"></i> Copy</button>
+              </div>
+              <pre><code>{
+  "durationMinutes": 90,
+  "loggedAt": "2026-06-20T14:00:00Z",
+  "note": "Completed OAuth token validation logic"
+}</code></pre>
+            </div>
+
+            <div class="callout callout-tip reveal">
+              <div class="callout-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></div>
+              <div>
+                <div class="callout-title">Estimated vs. Actual</div>
+                <div class="callout-body">Set <code>estimatedMinutes</code> on a task at creation. The API automatically computes variance between estimate and logged actuals on each <code>GET /api/tasks/{id}/time-entries</code> response.</div>
+              </div>
             </div>
           </section>
 
@@ -390,6 +502,137 @@
   "refreshToken": "dGhpcyBpcyBhIHJlZnJlc2ggdG9rZW4...",
   "expiresIn": 3600,
   "tokenType": "Bearer"
+}</code></pre>
+            </div>
+          </section>
+
+          <!-- Response Codes -->
+          <section id="response-codes">
+            <h2><i class="fas fa-code" aria-hidden="true"></i> Response Codes</h2>
+            <p class="section-lead">Every response follows standard HTTP semantics. Handle these codes in your integration for a robust client.</p>
+
+            <div class="endpoint-group reveal">
+              <div class="endpoint-group-title">
+                <i class="fas fa-check-circle" aria-hidden="true"></i> Success Codes
+              </div>
+              <div class="grid-auto-2">
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge" style="background:rgba(16,185,129,.15);color:#10b981;border:1px solid rgba(16,185,129,.3);">200</span>
+                    <span class="endpoint-path">OK</span>
+                  </div>
+                  <div class="endpoint-desc">Request succeeded. Response body contains the requested resource or operation result.</div>
+                </div>
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge" style="background:rgba(16,185,129,.15);color:#10b981;border:1px solid rgba(16,185,129,.3);">201</span>
+                    <span class="endpoint-path">Created</span>
+                  </div>
+                  <div class="endpoint-desc">Resource was created. <code>Location</code> header contains the URL of the new resource.</div>
+                </div>
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge" style="background:rgba(16,185,129,.15);color:#10b981;border:1px solid rgba(16,185,129,.3);">204</span>
+                    <span class="endpoint-path">No Content</span>
+                  </div>
+                  <div class="endpoint-desc">Operation succeeded with no response body. Typical for DELETE and some PUT endpoints.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="endpoint-group reveal">
+              <div class="endpoint-group-title">
+                <i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Client Error Codes
+              </div>
+              <div class="grid-auto-2">
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge method-put" style="background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3);">400</span>
+                    <span class="endpoint-path">Bad Request</span>
+                  </div>
+                  <div class="endpoint-desc">Request body failed validation. Response includes a <code>errors</code> array detailing each field violation.</div>
+                </div>
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge method-put" style="background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3);">401</span>
+                    <span class="endpoint-path">Unauthorized</span>
+                  </div>
+                  <div class="endpoint-desc">Missing or expired JWT token. Re-authenticate via <code>POST /api/auth/refresh</code>.</div>
+                </div>
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge method-put" style="background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3);">403</span>
+                    <span class="endpoint-path">Forbidden</span>
+                  </div>
+                  <div class="endpoint-desc">Token is valid but your role does not permit this action. Check the endpoint's required role.</div>
+                </div>
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge method-put" style="background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3);">404</span>
+                    <span class="endpoint-path">Not Found</span>
+                  </div>
+                  <div class="endpoint-desc">Resource does not exist or has been soft-deleted. Soft-deleted resources are not returned in GET responses.</div>
+                </div>
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge method-put" style="background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3);">409</span>
+                    <span class="endpoint-path">Conflict</span>
+                  </div>
+                  <div class="endpoint-desc">State conflict — e.g. a circular task dependency was detected, or a duplicate resource key exists.</div>
+                </div>
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge method-put" style="background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3);">422</span>
+                    <span class="endpoint-path">Unprocessable Entity</span>
+                  </div>
+                  <div class="endpoint-desc">Request was well-formed but violates business rules — e.g. an invalid task status transition.</div>
+                </div>
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge method-put" style="background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3);">429</span>
+                    <span class="endpoint-path">Too Many Requests</span>
+                  </div>
+                  <div class="endpoint-desc">Rate limit exceeded (100 req/min per account). Check the <code>Retry-After</code> response header for the reset window.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="endpoint-group reveal">
+              <div class="endpoint-group-title">
+                <i class="fas fa-server" aria-hidden="true"></i> Server Error Codes
+              </div>
+              <div class="grid-auto-2">
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge method-delete">500</span>
+                    <span class="endpoint-path">Internal Server Error</span>
+                  </div>
+                  <div class="endpoint-desc">Unexpected server fault. A structured error ID is returned — include it when filing a support request.</div>
+                </div>
+                <div class="endpoint-card">
+                  <div class="endpoint-header">
+                    <span class="method-badge method-delete">503</span>
+                    <span class="endpoint-path">Service Unavailable</span>
+                  </div>
+                  <div class="endpoint-desc">Server is temporarily down for maintenance or overloaded. Retry with exponential back-off.</div>
+                </div>
+              </div>
+            </div>
+
+            <h3>Error Response Envelope</h3>
+            <div class="code-block reveal">
+              <div class="code-block-header">
+                <span class="code-lang-badge">JSON</span>
+                <button class="copy-btn"><i class="far fa-copy"></i> Copy</button>
+              </div>
+              <pre><code>{
+  "status": 422,
+  "title": "Unprocessable Entity",
+  "detail": "Task status transition from 'Done' to 'InProgress' is not permitted.",
+  "traceId": "0HNMET31IBVA8:00000001",
+  "errors": {
+    "status": ["Invalid transition. Only re-opening to 'Todo' is allowed from 'Done'."]
+  }
 }</code></pre>
             </div>
           </section>

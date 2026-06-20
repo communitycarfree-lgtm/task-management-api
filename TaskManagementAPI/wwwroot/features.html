@@ -70,6 +70,9 @@
             <a href="#security" class="sidebar-link">
               <i class="fas fa-shield-alt" aria-hidden="true"></i> Security & Auth
             </a>
+            <a href="#data-integrity" class="sidebar-link">
+              <i class="fas fa-history" aria-hidden="true"></i> Data Integrity
+            </a>
             <a href="#collaboration" class="sidebar-link">
               <i class="fas fa-users" aria-hidden="true"></i> Collaboration
             </a>
@@ -78,6 +81,9 @@
             </a>
             <a href="#performance" class="sidebar-link">
               <i class="fas fa-tachometer-alt" aria-hidden="true"></i> Performance
+            </a>
+            <a href="#error-handling" class="sidebar-link">
+              <i class="fas fa-exclamation-circle" aria-hidden="true"></i> Error Handling
             </a>
 
             <div class="sidebar-section-title">Resources</div>
@@ -182,6 +188,63 @@
               <div>
                 <div class="callout-title">Password Security</div>
                 <div class="callout-body">All passwords are hashed with <code>BCrypt</code> (cost factor 12). Plain-text credentials are never stored or logged at any layer.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Data Integrity -->
+          <section id="data-integrity">
+            <h2>🗂️ Data Integrity &amp; Audit Trail</h2>
+            <p class="section-lead">Every write leaves a complete, tamper-evident record. Nothing is ever silently lost.</p>
+
+            <div class="grid-auto-2 reveal">
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-history" aria-hidden="true"></i></div>
+                <h4>Full Audit Trail</h4>
+                <p>Every entity in the system carries three actor fields stamped automatically on each write — no controller code required.</p>
+                <ul class="feature-list">
+                  <li><code>CreatedBy</code> — JWT subject on first insert</li>
+                  <li><code>UpdatedBy</code> — JWT subject on every update</li>
+                  <li><code>DeletedBy</code> — JWT subject on soft-delete</li>
+                </ul>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-trash-restore" aria-hidden="true"></i></div>
+                <h4>Soft Delete &amp; Recovery</h4>
+                <p>No data is immediately destroyed on DELETE. Records are archived with a timestamp and actor, then filtered from all GET responses automatically.</p>
+                <ul class="feature-list">
+                  <li><code>IsDeleted</code> boolean flag</li>
+                  <li><code>DeletedAt</code> UTC timestamp</li>
+                  <li>EF Core global query filter applied</li>
+                </ul>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-file-alt" aria-hidden="true"></i></div>
+                <h4>Structured Audit Logging</h4>
+                <p>Every state-changing database operation emits a dedicated Serilog <code>AUDIT</code> event with entity type, action, actor, and timestamp — routable to any sink (file, Seq, Elastic).</p>
+                <ul class="feature-list">
+                  <li>Entity name &amp; primary key logged</li>
+                  <li>Action: Insert / Update / SoftDelete</li>
+                  <li>Correlated with HTTP <code>RequestId</code></li>
+                </ul>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+                <h4>Rate Limiting</h4>
+                <p>A sliding-window rate limiter enforces fair usage across all clients. Violations return a clear <code>429</code> response with a <code>Retry-After</code> header.</p>
+                <ul class="feature-list">
+                  <li>100 requests / minute per account</li>
+                  <li><code>X-RateLimit-Remaining</code> header</li>
+                  <li>Configurable per environment</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="callout callout-info reveal">
+              <div class="callout-icon"><i class="fas fa-info-circle" aria-hidden="true"></i></div>
+              <div>
+                <div class="callout-title">How actor stamping works</div>
+                <div class="callout-body"><code>ICurrentUserService</code> resolves the actor ID from the JWT <code>sub</code> claim and passes it into <code>BaseDbContext.SaveChangesAsync()</code>. If no authenticated user is present (anonymous request), the actor is recorded as <code>system</code>. This happens automatically for every module — Projects, Tasks, and Notifications — with zero per-controller code.</div>
               </div>
             </div>
           </section>
@@ -293,6 +356,35 @@
               <div class="stat-card">
                 <div class="stat-value">∞</div>
                 <div class="stat-label">Horizontal scale</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Error Handling -->
+          <section id="error-handling">
+            <h2>⚠️ Error Handling</h2>
+            <p class="section-lead">Consistent, structured error responses across every endpoint make integration straightforward.</p>
+
+            <div class="grid-auto-2 reveal">
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-check-double" aria-hidden="true"></i></div>
+                <h3>FluentValidation</h3>
+                <p>All incoming requests are validated before reaching the service layer. Validation errors are aggregated into a single <code>400</code> response with per-field detail.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-route" aria-hidden="true"></i></div>
+                <h3>Business Rule Enforcement</h3>
+                <p>Domain violations (circular dependencies, invalid status transitions) return <code>409 Conflict</code> or <code>422 Unprocessable Entity</code> with a human-readable <code>detail</code> field.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-fingerprint" aria-hidden="true"></i></div>
+                <h3>Trace IDs on Every Error</h3>
+                <p>Every error response includes the ASP.NET Core <code>traceId</code> (tied to the Serilog <code>RequestId</code>). Support teams can find the full request log in seconds.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
+                <h3>Consistent Error Envelope</h3>
+                <p>All errors use the RFC 7807 Problem Details format — <code>status</code>, <code>title</code>, <code>detail</code>, <code>traceId</code>, and an optional <code>errors</code> map — no surprises for clients.</p>
               </div>
             </div>
           </section>

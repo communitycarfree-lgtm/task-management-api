@@ -127,6 +127,9 @@
             <a href="#authentication" class="sidebar-link">
               <i class="fas fa-lock" aria-hidden="true"></i> Authentication
             </a>
+            <a href="#changelog" class="sidebar-link">
+              <i class="fas fa-tag" aria-hidden="true"></i> What's New
+            </a>
 
             <div class="sidebar-section-title">Documentation</div>
             <a href="api-docs.html" class="sidebar-link">
@@ -299,6 +302,45 @@ Content-Type: application/json
               <div>
                 <div class="callout-title">Full Auth Reference</div>
                 <div class="callout-body">Token issuance, refresh flow, RBAC roles, and example JSON responses are fully documented in the <a href="api-docs.html#auth" style="color:var(--c-primary);text-decoration:none;font-weight:var(--fw-semibold);">API Docs → Authentication</a> section.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Changelog -->
+          <section id="changelog">
+            <h2><i class="fas fa-tag" aria-hidden="true"></i> What's New in v1.2.0</h2>
+            <p class="section-lead">The latest release brings hardened data integrity, structured observability, and a polished documentation site.</p>
+
+            <div class="grid-auto-2 reveal">
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-history" aria-hidden="true"></i></div>
+                <h3>Actor-Stamped Audit Trail</h3>
+                <p>All 14 database entities now carry <code>CreatedBy</code>, <code>UpdatedBy</code>, and <code>DeletedBy</code> fields populated automatically from the JWT subject on every write — zero controller changes required.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-pen-alt" aria-hidden="true"></i></div>
+                <h3>Structured Serilog Logging</h3>
+                <p>Request logging now emits machine-readable JSON events with <code>RequestId</code>, <code>ElapsedMs</code>, status code, and user identity — routable to any sink (file, Seq, Elastic, etc.).</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-database" aria-hidden="true"></i></div>
+                <h3>GenericRepository Improvements</h3>
+                <p>The shared generic repository now uses <code>AsNoTracking()</code> on read paths, compiled LINQ expressions for hot queries, and proper cancellation token propagation throughout all async methods.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-book-open" aria-hidden="true"></i></div>
+                <h3>Documentation Site</h3>
+                <p>A fully-featured documentation site now lives at the root of the API — covering Quick Start, endpoint reference, architecture, and features — all styled with the dark-glass design system.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-compress-arrows-alt" aria-hidden="true"></i></div>
+                <h3>Response Compression</h3>
+                <p>Gzip and Brotli compression added to all JSON responses. List endpoints over 1 KB are automatically compressed — typically reducing wire size by 60–80%.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+                <h3>Rate Limiting Middleware</h3>
+                <p>Sliding-window rate limiter enforces 100 requests/minute per account. Violations return a structured <code>429</code> with <code>Retry-After</code> and <code>X-RateLimit-Remaining</code> headers.</p>
               </div>
             </div>
           </section>

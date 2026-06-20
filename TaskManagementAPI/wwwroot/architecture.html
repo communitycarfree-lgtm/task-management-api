@@ -73,6 +73,9 @@
             <a href="#layers" class="sidebar-link">
               <i class="fas fa-layer-group" aria-hidden="true"></i> Clean Architecture
             </a>
+            <a href="#pipeline" class="sidebar-link">
+              <i class="fas fa-filter" aria-hidden="true"></i> Request Pipeline
+            </a>
             <a href="#patterns" class="sidebar-link">
               <i class="fas fa-puzzle-piece" aria-hidden="true"></i> Design Patterns
             </a>
@@ -208,6 +211,63 @@
               <div>
                 <div class="callout-title">Dependency Direction</div>
                 <div class="callout-body">Dependencies only flow <strong>inward</strong>: Presentation → Application → Domain. Infrastructure implements interfaces defined in Application, so Domain has zero framework dependencies.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Request Pipeline -->
+          <section id="pipeline">
+            <h2><i class="fas fa-filter" aria-hidden="true"></i> Request Pipeline</h2>
+            <p class="section-lead">Every HTTP request passes through an ordered middleware stack before reaching a controller. Understanding this order is critical for debugging and extending the API.</p>
+
+            <div class="grid-auto-2 reveal">
+              <div class="card feature-card">
+                <div class="feature-icon" style="background:rgba(99,102,241,.12);color:#6366f1;"><i class="fas fa-globe" aria-hidden="true"></i></div>
+                <h4>① HTTPS Redirection</h4>
+                <p>All plain HTTP connections are redirected to HTTPS immediately. In the Replit development environment this is suppressed so the proxied preview iframe works without cert issues.</p>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon" style="background:rgba(99,102,241,.12);color:#6366f1;"><i class="fas fa-file-code" aria-hidden="true"></i></div>
+                <h4>② Static Files</h4>
+                <p>The <code>wwwroot/</code> directory is served before any routing logic. Documentation pages, stylesheets, and scripts are delivered without touching the ASP.NET Core controller pipeline.</p>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon" style="background:rgba(99,102,241,.12);color:#6366f1;"><i class="fas fa-pen" aria-hidden="true"></i></div>
+                <h4>③ Structured Request Logging</h4>
+                <p>Serilog's request-logging middleware captures method, path, status code, and elapsed time. Every log line carries a <code>RequestId</code> that threads through the entire downstream pipeline.</p>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon" style="background:rgba(99,102,241,.12);color:#6366f1;"><i class="fas fa-tachometer-alt" aria-hidden="true"></i></div>
+                <h4>④ Rate Limiting</h4>
+                <p>A sliding-window limiter checks request budget before any authentication occurs. Clients that exceed 100 req/min receive an immediate <code>429</code> — the identity layer is never reached.</p>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon" style="background:rgba(99,102,241,.12);color:#6366f1;"><i class="fas fa-lock" aria-hidden="true"></i></div>
+                <h4>⑤ Authentication &amp; Authorization</h4>
+                <p>JWT bearer token is validated. The <code>[Authorize]</code> attribute enforces role requirements. Unauthenticated requests stop here with a <code>401</code>; forbidden roles stop with <code>403</code>.</p>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon" style="background:rgba(99,102,241,.12);color:#6366f1;"><i class="fas fa-hdd" aria-hidden="true"></i></div>
+                <h4>⑥ Response Compression</h4>
+                <p>Gzip and Brotli compression is applied on the way out for all JSON responses larger than 1 KB. Typically reduces API payload sizes by 60–80% on list endpoints.</p>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon" style="background:rgba(99,102,241,.12);color:#6366f1;"><i class="fas fa-check-double" aria-hidden="true"></i></div>
+                <h4>⑦ FluentValidation</h4>
+                <p>Request DTOs are validated before the controller action body executes. Invalid requests return a <code>400</code> with a structured error map — the service layer never sees bad input.</p>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon" style="background:rgba(99,102,241,.12);color:#6366f1;"><i class="fas fa-broadcast-tower" aria-hidden="true"></i></div>
+                <h4>⑧ SignalR &amp; Controller Routing</h4>
+                <p>Requests are dispatched either to the <code>/hubs/notifications</code> SignalR hub or to the appropriate module controller. Controllers delegate to service classes and return structured responses.</p>
+              </div>
+            </div>
+
+            <div class="callout callout-tip reveal">
+              <div class="callout-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></div>
+              <div>
+                <div class="callout-title">Adding custom middleware</div>
+                <div class="callout-body">Register middleware in <code>Program.cs</code> between the appropriate steps above. If your middleware needs access to the authenticated user, place it <em>after</em> <code>UseAuthentication()</code>. If it should run regardless of auth (e.g. request telemetry), place it before.</div>
               </div>
             </div>
           </section>
