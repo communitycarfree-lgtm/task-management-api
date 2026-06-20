@@ -1,270 +1,391 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Management API - Documentation</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Management API — Documentation</title>
+  <meta name="description" content="High-performance modular monolith API for project & task management. Built with .NET 9, PostgreSQL, and SignalR.">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="bg-atmosphere"></div>
-    <div class="container">
-        <header>
-            <div class="header-container">
-                <a href="index.html" class="logo-section">
-                    <img src="images/logo.png" alt="Task Management API Logo" class="logo-image">
-                    <span class="brand-name">Task Management API</span>
-                </a>
-                <nav class="navbar">
-                    <ul>
-                        <li><a href="index.html" class="active">Overview</a></li>
-                        <li><a href="api-docs.html">API Docs</a></li>
-                        <li><a href="architecture.html">Architecture</a></li>
-                        <li><a href="features.html">Features</a></li>
-                        <li><a href="/swagger" target="_blank">Swagger UI</a></li>
-                    </ul>
-                </nav>
+
+  <!-- PAGE LOADER -->
+  <div id="page-loader" role="status" aria-label="Loading">
+    <div class="loader-logo-wrap">
+      <img src="images/logo.png" alt="" class="loader-logo">
+      <div class="loader-logo-shimmer"></div>
+    </div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    <span class="loader-text">Loading</span>
+  </div>
+
+  <!-- AMBIENT BACKGROUND -->
+  <div class="bg-atmosphere" aria-hidden="true"></div>
+
+  <!-- MOBILE NAV BACKDROP -->
+  <div class="nav-backdrop" aria-hidden="true"></div>
+
+  <div class="site-wrap">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="logo-link">
+          <img src="images/logo.png" alt="Task Management API" class="logo-img">
+          <span class="logo-name">Task Management API</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="index.html" class="active">Overview</a></li>
+            <li><a href="api-docs.html">API Docs</a></li>
+            <li><a href="architecture.html">Architecture</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="/swagger" target="_blank" rel="noopener">Swagger UI <i class="fas fa-external-link-alt" style="font-size:0.7em;opacity:.6;"></i></a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" data-theme-toggle aria-label="Switch theme">
+            <i class="fas fa-sun" aria-hidden="true"></i>
+          </button>
+          <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-badge anim-fade-up">
+        v1.2.0 &nbsp;·&nbsp; Stable Release
+      </div>
+      <h1 class="hero-title anim-fade-up delay-100">
+        The API for Modern<br><span class="hero-highlight">Task Management</span>
+      </h1>
+      <p class="hero-sub anim-fade-up delay-200">
+        High-performance, modular monolith engine for scalable project management.
+        Integrate tasks, projects, and real-time notifications with a single unified API.
+      </p>
+      <div class="hero-actions anim-fade-up delay-300">
+        <a href="api-docs.html" class="btn btn-primary">
+          <i class="fas fa-book" aria-hidden="true"></i> Browse API Docs
+        </a>
+        <a href="/swagger" target="_blank" rel="noopener" class="btn btn-ghost">
+          <i class="fas fa-flask" aria-hidden="true"></i> Try in Swagger
+        </a>
+      </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <div style="max-width:1400px;margin:0 auto;padding:0 2rem 3rem;">
+      <div class="stat-grid reveal">
+        <div class="stat-card">
+          <div class="stat-value">4</div>
+          <div class="stat-label">API Modules</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">25+</div>
+          <div class="stat-label">Endpoints</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">.NET 9</div>
+          <div class="stat-label">Framework</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">JWT</div>
+          <div class="stat-label">Auth Scheme</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN DOC CONTENT -->
+    <main class="page-main">
+      <div class="doc-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="doc-sidebar">
+          <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+          </div>
+          <nav aria-label="Documentation sections">
+            <div class="sidebar-section-title">Getting Started</div>
+            <a href="#getting-started" class="sidebar-link active">
+              <i class="fas fa-rocket" aria-hidden="true"></i> Quick Start
+            </a>
+            <a href="#overview" class="sidebar-link">
+              <i class="fas fa-home" aria-hidden="true"></i> Overview
+            </a>
+            <a href="#quick-start" class="sidebar-link">
+              <i class="fas fa-code" aria-hidden="true"></i> First Request
+            </a>
+            <a href="#authentication" class="sidebar-link">
+              <i class="fas fa-lock" aria-hidden="true"></i> Authentication
+            </a>
+            <a href="#changelog" class="sidebar-link">
+              <i class="fas fa-tag" aria-hidden="true"></i> What's New
+            </a>
+
+            <div class="sidebar-section-title">Documentation</div>
+            <a href="api-docs.html" class="sidebar-link">
+              <i class="fas fa-book" aria-hidden="true"></i> API Endpoints
+            </a>
+            <a href="architecture.html" class="sidebar-link">
+              <i class="fas fa-sitemap" aria-hidden="true"></i> Architecture
+            </a>
+            <a href="features.html" class="sidebar-link">
+              <i class="fas fa-star" aria-hidden="true"></i> Features
+            </a>
+
+            <div class="sidebar-section-title">Legal</div>
+            <a href="terms.html" class="sidebar-link">
+              <i class="fas fa-file-contract" aria-hidden="true"></i> Terms of Service
+            </a>
+            <a href="license.html" class="sidebar-link">
+              <i class="fas fa-certificate" aria-hidden="true"></i> License
+            </a>
+          </nav>
+        </aside>
+
+        <!-- CONTENT -->
+        <div class="doc-content">
+
+          <!-- Quick Start -->
+          <section id="getting-started">
+            <h2>🚀 Quick Start</h2>
+            <p class="section-lead">Get your environment running in under two minutes.</p>
+
+            <div class="grid-auto-3" style="margin-bottom:2rem;">
+              <div class="card step-card reveal">
+                <div class="step-icon"><i class="fas fa-download" aria-hidden="true"></i></div>
+                <h3>1. Clone</h3>
+                <p>Clone the repository and ensure you have the .NET 9 SDK installed.</p>
+                <code>git clone &lt;repo-url&gt;</code>
+              </div>
+              <div class="card step-card reveal" style="transition-delay:100ms;">
+                <div class="step-icon"><i class="fas fa-play" aria-hidden="true"></i></div>
+                <h3>2. Run</h3>
+                <p>Start the app — EF Core will auto-apply migrations on first launch.</p>
+                <code>dotnet run</code>
+              </div>
+              <div class="card step-card reveal" style="transition-delay:200ms;">
+                <div class="step-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+                <h3>3. Explore</h3>
+                <p>Open the interactive Swagger UI to call your first endpoint.</p>
+                <code>/swagger</code>
+              </div>
             </div>
-        </header>
+          </section>
 
-            <section class="hero-section">
-                <div class="hero-content reveal-down">
-                    <div class="hero-badge fade-in delay-500">v1.2.0 • Stable Release</div>
-                    <h1 class="hero-title reveal-up delay-100">Task Management <span class="text-highlight">API Documentation</span></h1>
-                    <p class="hero-subtitle reveal-up delay-200">The high-performance, modular monolith engine for building scalable project management solutions. Integrate tasks, projects, and notifications with a single, unified API.</p>
-                    
-                    <div class="hero-buttons reveal-up delay-300">
-                        <a href="api-docs.html" class="home-btn primary-btn">
-                            <i class="fas fa-book"></i> Browse API
-                        </a>
-                        <a href="/swagger" target="_blank" class="home-btn secondary-btn">
-                            <i class="fas fa-flask"></i> Try Swagger
-                        </a>
-                    </div>
-                </div>
-            </section>
+          <!-- Overview -->
+          <section id="overview">
+            <h2><i class="fas fa-home" aria-hidden="true"></i> Overview</h2>
+            <p class="section-lead">A production-ready REST API built on .NET 9, ASP.NET Core, and PostgreSQL following Clean Architecture principles.</p>
 
+            <div class="callout callout-tip reveal">
+              <div class="callout-icon"><i class="fas fa-link" aria-hidden="true"></i></div>
+              <div>
+                <div class="callout-title">Base URL</div>
+                <div class="callout-body"><code>/api</code> &nbsp;—&nbsp; All endpoints are prefixed with this path.</div>
+              </div>
+            </div>
 
-            <section class="doc-layout">
-                <aside class="doc-sidebar">
-                    <div class="search-box">
-                        <input type="text" placeholder="Search documentation...">
-                    </div>
-                    <div class="sidebar-nav">
-                        <div class="sidebar-title">Getting Started</div>
-                        <a href="#overview" class="sidebar-link active">
-                            <i class="fas fa-home"></i> Overview
-                        </a>
-                        <a href="#quick-start" class="sidebar-link">
-                            <i class="fas fa-rocket"></i> Quick Start
-                        </a>
-                        <a href="#authentication" class="sidebar-link">
-                            <i class="fas fa-lock"></i> Authentication
-                        </a>
-                        <div class="sidebar-title" style="margin-top: 30px;">Documentation</div>
-                        <a href="api-docs.html" class="sidebar-link">
-                            <i class="fas fa-code"></i> API Endpoints
-                        </a>
-                        <a href="architecture.html" class="sidebar-link">
-                            <i class="fas fa-sitemap"></i> Architecture
-                        </a>
-                        <a href="features.html" class="sidebar-link">
-                            <i class="fas fa-star"></i> Features
-                        </a>
-                        <div class="sidebar-title" style="margin-top: 30px;">Legal</div>
-                        <a href="terms.html" class="sidebar-link">
-                            <i class="fas fa-file-contract"></i> Terms of Service
-                        </a>
-                        <a href="license.html" class="sidebar-link">
-                            <i class="fas fa-certificate"></i> License
-                        </a>
-                    </div>
-                </aside>
+            <h3>Project Structure at a Glance</h3>
+            <p>Four self-contained modules share a common infrastructure layer. Each module owns its domain, its database context, and its own migration history — nothing bleeds across boundaries.</p>
+            <div class="code-block reveal" style="margin:1.25rem 0 2rem;">
+              <div class="code-block-header">
+                <span class="code-lang-badge">Shell</span>
+              </div>
+              <pre><code>TaskManagementAPI/
+├── Modules/
+│   ├── Users/           # Identity, JWT issuance, RBAC enforcement
+│   ├── Projects/        # Workspaces, membership, soft-delete
+│   ├── Tasks/           # Lifecycle, priorities, time logs
+│   └── Notifications/   # SignalR delivery, paginated inbox
+├── Shared/
+│   ├── Domain/          # BaseEntity · audit fields · value objects
+│   └── Infrastructure/  # GenericRepository · logging middleware
+└── Program.cs           # Composition root · DI wiring</code></pre>
+            </div>
 
-                <div class="doc-content">
-                    <section id="getting-started" class="reveal-up delay-100">
-                        <h2>Getting Started</h2>
-                        <p class="subtitle">Equip your development environment in less than two minutes.</p>
-                        
-                        <div class="getting-started-grid">
-                            <div class="getting-started-card scale-in delay-200">
-                                <div class="card-icon"><i class="fas fa-download"></i></div>
-                                <h3>1. Install</h3>
-                                <p>Clone the repository and install the required .NET 9 SDK dependencies.</p>
-                                <code>git clone ...</code>
-                            </div>
-                            <div class="getting-started-card scale-in delay-300">
-                                <div class="card-icon"><i class="fas fa-rocket"></i></div>
-                                <h3>2. Launch</h3>
-                                <p>Initialize the application and auto-generate the database schema.</p>
-                                <code>dotnet run</code>
-                                <ul>
-                                    <li>Automated migrations</li>
-                                    <li>Seed data initialization</li>
-                                </ul>
-                            </div>
-                            <div class="getting-started-card scale-in delay-500">
-                                <div class="card-icon"><i class="fas fa-check-circle"></i></div>
-                                <h3>3. Verify</h3>
-                                <p>Access the Swagger UI to test your first endpoint.</p>
-                                <code>/swagger</code>
-                            </div>
-                        </div>
-                    </section>
+            <div class="callout callout-info reveal">
+              <div class="callout-icon"><i class="fas fa-info-circle" aria-hidden="true"></i></div>
+              <div>
+                <div class="callout-title">Module independence</div>
+                <div class="callout-body">Cross-module data is always fetched through the owning module's service interface — never via shared <code>DbContext</code> or direct SQL joins. This keeps each module independently deployable.</div>
+              </div>
+            </div>
+          </section>
 
-                    <section id="overview">
-                        <h2><i class="fas fa-home"></i> Overview</h2>
-                        <p class="subtitle">Welcome to the Task Management API documentation. This comprehensive guide will help you integrate with our powerful REST API for project and task management.</p>
-                        
-                        <div class="callout">
-                            <div class="callout-title">
-                                <i class="fas fa-info-circle"></i> API Base URL
-                            </div>
-                            <code id="baseUrl">/api</code>
-                        </div>
+          <!-- First request -->
+          <section id="quick-start">
+            <h2><i class="fas fa-terminal" aria-hidden="true"></i> First Request</h2>
+            <p class="section-lead">Three requests to get you from zero to your first task.</p>
 
-                        <h3>What is the Task Management API?</h3>
-                        <p>The Task Management API is a modern, production-ready REST API built with .NET 8 and ASP.NET Core following clean architecture principles. It provides comprehensive endpoints for managing projects, tasks, team members, real-time notifications, and user authentication.</p>
-
-                        <h3>Key Features</h3>
-                        <ul>
-                            <li><strong>Project Management:</strong> Create, update, and manage projects with team members</li>
-                            <li><strong>Task Management:</strong> Organize tasks with priorities, dependencies, and time tracking</li>
-                            <li><strong>Real-time Updates:</strong> SignalR integration for live notifications and updates</li>
-                            <li><strong>JWT Authentication:</strong> Secure token-based authentication and authorization</li>
-                            <li><strong>Role-based Access:</strong> Fine-grained permission control with multiple roles</li>
-                            <li><strong>Soft Delete:</strong> Safe data deletion with restoration capabilities</li>
-                            <li><strong>Audit Logging:</strong> Complete audit trail for compliance and tracking</li>
-                            <li><strong>Caching:</strong> Redis-backed caching for optimal performance</li>
-                            <li><strong>Logging:</strong> Comprehensive structured logging with Serilog</li>
-                            <li><strong>Performance Monitoring:</strong> Real-time performance metrics</li>
-                            <li><strong>Error Handling:</strong> Consistent error responses with detailed messages</li>
-                            <li><strong>Pagination:</strong> Efficient data retrieval with pagination support</li>
-                            <li><strong>Docker Support:</strong> Ready for containerized deployment</li>
-                        </ul>
-                    </section>
-
-                    <section id="quick-start">
-                        <h2><i class="fas fa-rocket"></i> Quick Start</h2>
-                        <p>Get up and running with the Task Management API in minutes.</p>
-
-                        <h3>1. Authentication</h3>
-                        <p>First, register a new user or login to get your JWT token:</p>
-                        <div class="docbox docbox-http">
-                            <pre><code>POST /api/auth/register
+            <h3>Register</h3>
+            <div class="code-block reveal">
+              <div class="code-block-header">
+                <span class="code-lang-badge">HTTP</span>
+                <button class="copy-btn"><i class="far fa-copy"></i> Copy</button>
+              </div>
+              <pre><code>POST /api/auth/register
 Content-Type: application/json
 
 {
   "email": "user@example.com",
   "password": "SecurePass123!",
-  "firstName": "John",
+  "firstName": "Jane",
   "lastName": "Doe"
 }</code></pre>
-                        </div>
+            </div>
 
-                        <h3>2. Create a Project</h3>
-                        <p>Create your first project:</p>
-                        <div class="docbox docbox-http">
-                            <pre><code>POST /api/projects
-Authorization: Bearer {token}
+            <h3>Create a Project</h3>
+            <div class="code-block reveal">
+              <div class="code-block-header">
+                <span class="code-lang-badge">HTTP</span>
+                <button class="copy-btn"><i class="far fa-copy"></i> Copy</button>
+              </div>
+              <pre><code>POST /api/projects
+Authorization: Bearer {your-token}
 Content-Type: application/json
 
 {
   "name": "My First Project",
   "description": "A project for managing tasks"
 }</code></pre>
-                        </div>
-
-                        <h3>3. Create a Task</h3>
-                        <p>Add tasks to your project:</p>
-                        <div class="docbox docbox-http">
-                            <pre><code>POST /api/tasks
-Authorization: Bearer {token}
-Content-Type: application/json
-
-{
-  "projectId": "project-id",
-  "title": "Implement feature",
-  "description": "Build the new feature",
-  "priority": "High",
-  "dueDate": "2026-04-15"
-}</code></pre>
-                        </div>
-                    </section>
-
-                    <section id="authentication">
-                        <h2><i class="fas fa-lock"></i> Authentication</h2>
-                        <p>The Task Management API uses JWT (JSON Web Tokens) for authentication. All requests to protected endpoints must include a valid JWT token in the Authorization header.</p>
-
-                        <h3>Getting a Token</h3>
-                        <p>Send your credentials to the login endpoint:</p>
-                        <div class="docbox docbox-http">
-                            <pre><code>POST /api/auth/login
-Content-Type: application/json
-
-{
-  "email": "user@example.com",
-  "password": "SecurePass123!"
-}</code></pre>
-                        </div>
-
-                        <h3>Using the Token</h3>
-                        <p>Include the token in the Authorization header for all subsequent requests:</p>
-                        <div class="docbox docbox-http">
-                            <pre><code>GET /api/projects
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...</code></pre>
-                        </div>
-
-                        <h3>Token Expiration</h3>
-                        <p>Tokens expire after 1 hour. When a token expires, you'll receive a 401 Unauthorized response. Simply login again to get a new token.</p>
-                    </section>
-
-                    <section>
-                        <h2><i class="fas fa-link"></i> Quick Links</h2>
-                        <div class="doc-links">
-                            <a href="api-docs.html" class="doc-link">
-                                <h3><i class="fas fa-code"></i> API Endpoints</h3>
-                                <p>Explore all available endpoints with examples</p>
-                            </a>
-                            <a href="architecture.html" class="doc-link">
-                                <h3><i class="fas fa-sitemap"></i> Architecture</h3>
-                                <p>Understand the system design and structure</p>
-                            </a>
-                            <a href="features.html" class="doc-link">
-                                <h3><i class="fas fa-star"></i> Features</h3>
-                                <p>Learn about key features and capabilities</p>
-                            </a>
-                            <a href="/swagger" target="_blank" class="doc-link">
-                                <h3><i class="fas fa-flask"></i> Swagger UI</h3>
-                                <p>Interactive API documentation and testing</p>
-                            </a>
-                        </div>
-                    </section>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <div class="footer-content">
-                <div class="footer-left">
-                    <p>&copy; <span class="current-year"></span> Task Management API. All rights reserved.</p>
-                </div>
-                <div class="footer-right">
-                    <p>
-                        <a href="terms.html">Terms of Service</a> | 
-                        <a href="license.html">License</a> | 
-                        <a href="/swagger" target="_blank">Swagger UI</a>
-                    </p>
-                </div>
             </div>
-        </footer>
-    </div>
 
-    <script src="js/main.js"></script>
+            <h3>Add a Task</h3>
+            <div class="code-block reveal">
+              <div class="code-block-header">
+                <span class="code-lang-badge">HTTP</span>
+                <button class="copy-btn"><i class="far fa-copy"></i> Copy</button>
+              </div>
+              <pre><code>POST /api/tasks
+Authorization: Bearer {your-token}
+Content-Type: application/json
+
+{
+  "projectId": "your-project-id",
+  "title": "Implement login screen",
+  "priority": "High",
+  "dueDate": "2026-07-01"
+}</code></pre>
+            </div>
+          </section>
+
+          <!-- Authentication -->
+          <section id="authentication">
+            <h2><i class="fas fa-lock" aria-hidden="true"></i> Authentication</h2>
+            <p class="section-lead">All protected endpoints require a JWT Bearer token in the <code>Authorization</code> header.</p>
+
+            <div class="grid-auto-2 reveal" style="margin-bottom:1.5rem;">
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-key" aria-hidden="true"></i></div>
+                <h4>Bearer JWT</h4>
+                <p>Tokens are signed with HMAC-SHA256 and expire after <strong>60 minutes</strong>. Use the refresh flow to obtain a new pair silently.</p>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-user-shield" aria-hidden="true"></i></div>
+                <h4>Role Hierarchy</h4>
+                <p>Three roles control access: <code>Admin</code> has full platform rights, <code>Manager</code> owns projects, <code>Member</code> has read and task-level write access.</p>
+              </div>
+            </div>
+
+            <div class="callout callout-info reveal">
+              <div class="callout-icon"><i class="fas fa-book" aria-hidden="true"></i></div>
+              <div>
+                <div class="callout-title">Full Auth Reference</div>
+                <div class="callout-body">Token issuance, refresh flow, RBAC roles, and example JSON responses are fully documented in the <a href="api-docs.html#auth" style="color:var(--c-primary);text-decoration:none;font-weight:var(--fw-semibold);">API Docs → Authentication</a> section.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Changelog -->
+          <section id="changelog">
+            <h2><i class="fas fa-tag" aria-hidden="true"></i> What's New in v1.2.0</h2>
+            <p class="section-lead">The latest release brings hardened data integrity, structured observability, and a polished documentation site.</p>
+
+            <div class="grid-auto-2 reveal">
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-history" aria-hidden="true"></i></div>
+                <h3>Actor-Stamped Audit Trail</h3>
+                <p>All 14 database entities now carry <code>CreatedBy</code>, <code>UpdatedBy</code>, and <code>DeletedBy</code> fields populated automatically from the JWT subject on every write — zero controller changes required.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-pen-alt" aria-hidden="true"></i></div>
+                <h3>Structured Serilog Logging</h3>
+                <p>Request logging now emits machine-readable JSON events with <code>RequestId</code>, <code>ElapsedMs</code>, status code, and user identity — routable to any sink (file, Seq, Elastic, etc.).</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-database" aria-hidden="true"></i></div>
+                <h3>GenericRepository Improvements</h3>
+                <p>The shared generic repository now uses <code>AsNoTracking()</code> on read paths, compiled LINQ expressions for hot queries, and proper cancellation token propagation throughout all async methods.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-book-open" aria-hidden="true"></i></div>
+                <h3>Documentation Site</h3>
+                <p>A fully-featured documentation site now lives at the root of the API — covering Quick Start, endpoint reference, architecture, and features — all styled with the dark-glass design system.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-compress-arrows-alt" aria-hidden="true"></i></div>
+                <h3>Response Compression</h3>
+                <p>Gzip and Brotli compression added to all JSON responses. List endpoints over 1 KB are automatically compressed — typically reducing wire size by 60–80%.</p>
+              </div>
+              <div class="card step-card">
+                <div class="step-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+                <h3>Rate Limiting Middleware</h3>
+                <p>Sliding-window rate limiter enforces 100 requests/minute per account. Violations return a structured <code>429</code> with <code>Retry-After</code> and <code>X-RateLimit-Remaining</code> headers.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Quick links -->
+          <section>
+            <h2><i class="fas fa-compass" aria-hidden="true"></i> Explore More</h2>
+            <div class="grid-auto-2 reveal">
+              <a href="api-docs.html" class="card quick-link">
+                <h3><i class="fas fa-book" aria-hidden="true"></i> API Endpoints</h3>
+                <p>Complete reference for every route, method, and response schema.</p>
+              </a>
+              <a href="architecture.html" class="card quick-link">
+                <h3><i class="fas fa-sitemap" aria-hidden="true"></i> Architecture</h3>
+                <p>Modular monolith design, Clean Architecture layers, and design patterns.</p>
+              </a>
+              <a href="features.html" class="card quick-link">
+                <h3><i class="fas fa-star" aria-hidden="true"></i> Features</h3>
+                <p>Deep-dive into security, real-time sync, and performance characteristics.</p>
+              </a>
+              <a href="/swagger" target="_blank" rel="noopener" class="card quick-link">
+                <h3><i class="fas fa-flask" aria-hidden="true"></i> Swagger UI</h3>
+                <p>Try any endpoint interactively with live responses in your browser.</p>
+              </a>
+            </div>
+          </section>
+
+        </div><!-- /doc-content -->
+      </div><!-- /doc-layout -->
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; <span class="current-year"></span> Task Management API. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="terms.html">Terms</a>
+          <a href="license.html">License</a>
+          <a href="/swagger" target="_blank" rel="noopener">Swagger UI</a>
+        </nav>
+      </div>
+    </footer>
+
+  </div><!-- /site-wrap -->
+
+  <script src="js/main.js"></script>
 </body>
 </html>
-
-
-
