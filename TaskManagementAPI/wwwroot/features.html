@@ -100,46 +100,46 @@
 
             <div class="grid-auto-2 reveal">
               <div class="card feature-card">
-                <div class="feature-icon"><i class="fas fa-project-diagram" aria-hidden="true"></i></div>
-                <h4>Project Organization</h4>
-                <p>Manage multiple projects with hierarchical structures, custom statuses, and project-scoped permissions.</p>
+                <div class="feature-icon"><i class="fas fa-sitemap" aria-hidden="true"></i></div>
+                <h4>Task Dependency Graph</h4>
+                <p>Model real-world workflows where task B cannot start until task A is complete. Circular dependencies are automatically detected and rejected.</p>
                 <ul class="feature-list">
-                  <li>Multi-project workspaces</li>
-                  <li>Custom project statuses</li>
-                  <li>Project-level RBAC</li>
-                </ul>
-              </div>
-
-              <div class="card feature-card">
-                <div class="feature-icon"><i class="fas fa-tasks" aria-hidden="true"></i></div>
-                <h4>Task Tracking</h4>
-                <p>Organize work with priorities, deadlines, and advanced dependency management built in.</p>
-                <ul class="feature-list">
-                  <li>Nested sub-tasks</li>
-                  <li>Task dependencies</li>
-                  <li>Recurring task schedules</li>
+                  <li>Blocking &amp; blocked-by links</li>
+                  <li>Cycle detection on write</li>
+                  <li>Cascade status propagation</li>
                 </ul>
               </div>
 
               <div class="card feature-card">
                 <div class="feature-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
-                <h4>Time Management</h4>
-                <p>Built-in time tracking and scheduling for precise project monitoring and capacity planning.</p>
+                <h4>Time Tracking</h4>
+                <p>Precise per-task time logging with estimated vs. actual hours — giving project managers accurate capacity data for planning.</p>
                 <ul class="feature-list">
-                  <li>Automatic time logs</li>
-                  <li>Estimated vs. actual hours</li>
-                  <li>Timeline visualization data</li>
+                  <li>Start / stop time entries</li>
+                  <li>Estimated vs. actual delta</li>
+                  <li>Per-user &amp; per-project rollup</li>
                 </ul>
               </div>
 
               <div class="card feature-card">
-                <div class="feature-icon"><i class="fas fa-chart-bar" aria-hidden="true"></i></div>
-                <h4>Reporting</h4>
-                <p>Generate detailed analytics on productivity, progress, and team performance over any period.</p>
+                <div class="feature-icon"><i class="fas fa-exchange-alt" aria-hidden="true"></i></div>
+                <h4>Status State Machine</h4>
+                <p>Tasks move through a defined lifecycle — <code>Todo → InProgress → InReview → Done</code>. Each transition is validated server-side; invalid jumps return a clear error.</p>
                 <ul class="feature-list">
-                  <li>Project health metrics</li>
-                  <li>Team workload reports</li>
-                  <li>JSON / CSV export</li>
+                  <li>Validated transitions only</li>
+                  <li>Backward re-open allowed</li>
+                  <li>Transition timestamp recorded</li>
+                </ul>
+              </div>
+
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-filter" aria-hidden="true"></i></div>
+                <h4>Filtering &amp; Pagination</h4>
+                <p>Every list endpoint supports rich server-side filtering — by status, priority, assignee, date range — with offset-based pagination and configurable page sizes.</p>
+                <ul class="feature-list">
+                  <li>Multi-field filter params</li>
+                  <li>Configurable page size</li>
+                  <li>Consistent sort ordering</li>
                 </ul>
               </div>
             </div>
@@ -272,12 +272,12 @@
               <div class="card step-card">
                 <div class="step-icon"><i class="fas fa-database" aria-hidden="true"></i></div>
                 <h3>Optimized EF Core</h3>
-                <p>Compiled queries, AsNoTracking reads, and split queries prevent N+1 problems and minimize round-trips.</p>
+                <p>Compiled queries, <code>AsNoTracking</code> reads, and split queries prevent N+1 problems and minimize database round-trips.</p>
               </div>
               <div class="card step-card">
                 <div class="step-icon"><i class="fas fa-list-ol" aria-hidden="true"></i></div>
-                <h3>Cursor Pagination</h3>
-                <p>All list endpoints use cursor-based pagination — constant-time retrieval regardless of dataset size.</p>
+                <h3>Safe Pagination</h3>
+                <p>All list endpoints use offset-based pagination with configurable page sizes — predictable, consistent retrieval at any dataset scale.</p>
               </div>
             </div>
 
@@ -294,6 +294,21 @@
                 <div class="stat-value">∞</div>
                 <div class="stat-label">Horizontal scale</div>
               </div>
+            </div>
+          </section>
+
+          <!-- Continue Reading -->
+          <section>
+            <h2><i class="fas fa-arrow-right" aria-hidden="true"></i> Continue Reading</h2>
+            <div class="grid-auto-2 reveal">
+              <a href="architecture.html" class="card quick-link">
+                <h3><i class="fas fa-sitemap" aria-hidden="true"></i> Architecture</h3>
+                <p>Understand the modular monolith design, Clean Architecture layers, and the patterns that connect them.</p>
+              </a>
+              <a href="api-docs.html" class="card quick-link">
+                <h3><i class="fas fa-book" aria-hidden="true"></i> API Reference</h3>
+                <p>Full endpoint listing with request bodies, status codes, and live Swagger access.</p>
+              </a>
             </div>
           </section>
 

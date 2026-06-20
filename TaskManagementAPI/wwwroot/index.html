@@ -192,27 +192,29 @@
               </div>
             </div>
 
-            <h3>What the API provides</h3>
-            <div class="grid-auto-2 reveal" style="margin:1rem 0 2rem;">
-              <div class="card feature-card">
-                <div class="feature-icon"><i class="fas fa-folder-open" aria-hidden="true"></i></div>
-                <h4>Project Management</h4>
-                <p>Create, update, and archive projects with role-based team membership controls.</p>
+            <h3>Project Structure at a Glance</h3>
+            <p>Four self-contained modules share a common infrastructure layer. Each module owns its domain, its database context, and its own migration history — nothing bleeds across boundaries.</p>
+            <div class="code-block reveal" style="margin:1.25rem 0 2rem;">
+              <div class="code-block-header">
+                <span class="code-lang-badge">Shell</span>
               </div>
-              <div class="card feature-card">
-                <div class="feature-icon"><i class="fas fa-tasks" aria-hidden="true"></i></div>
-                <h4>Task Tracking</h4>
-                <p>Granular task lifecycle — priorities, assignees, deadlines, and dependency chains.</p>
-              </div>
-              <div class="card feature-card">
-                <div class="feature-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
-                <h4>Real-time Sync</h4>
-                <p>SignalR hub pushes live updates to connected clients without polling.</p>
-              </div>
-              <div class="card feature-card">
-                <div class="feature-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
-                <h4>JWT Auth & RBAC</h4>
-                <p>Secure Bearer token auth with Admin / Manager / Member role hierarchy.</p>
+              <pre><code>TaskManagementAPI/
+├── Modules/
+│   ├── Users/           # Identity, JWT issuance, RBAC enforcement
+│   ├── Projects/        # Workspaces, membership, soft-delete
+│   ├── Tasks/           # Lifecycle, priorities, time logs
+│   └── Notifications/   # SignalR delivery, paginated inbox
+├── Shared/
+│   ├── Domain/          # BaseEntity · audit fields · value objects
+│   └── Infrastructure/  # GenericRepository · logging middleware
+└── Program.cs           # Composition root · DI wiring</code></pre>
+            </div>
+
+            <div class="callout callout-info reveal">
+              <div class="callout-icon"><i class="fas fa-info-circle" aria-hidden="true"></i></div>
+              <div>
+                <div class="callout-title">Module independence</div>
+                <div class="callout-body">Cross-module data is always fetched through the owning module's service interface — never via shared <code>DbContext</code> or direct SQL joins. This keeps each module independently deployable.</div>
               </div>
             </div>
           </section>
@@ -279,37 +281,25 @@ Content-Type: application/json
             <h2><i class="fas fa-lock" aria-hidden="true"></i> Authentication</h2>
             <p class="section-lead">All protected endpoints require a JWT Bearer token in the <code>Authorization</code> header.</p>
 
+            <div class="grid-auto-2 reveal" style="margin-bottom:1.5rem;">
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-key" aria-hidden="true"></i></div>
+                <h4>Bearer JWT</h4>
+                <p>Tokens are signed with HMAC-SHA256 and expire after <strong>60 minutes</strong>. Use the refresh flow to obtain a new pair silently.</p>
+              </div>
+              <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-user-shield" aria-hidden="true"></i></div>
+                <h4>Role Hierarchy</h4>
+                <p>Three roles control access: <code>Admin</code> has full platform rights, <code>Manager</code> owns projects, <code>Member</code> has read and task-level write access.</p>
+              </div>
+            </div>
+
             <div class="callout callout-info reveal">
-              <div class="callout-icon"><i class="fas fa-info-circle" aria-hidden="true"></i></div>
+              <div class="callout-icon"><i class="fas fa-book" aria-hidden="true"></i></div>
               <div>
-                <div class="callout-title">Token lifetime</div>
-                <div class="callout-body">Access tokens expire after <strong>60 minutes</strong>. Use <code>POST /api/auth/refresh</code> with your refresh token to obtain a new pair without re-entering credentials.</div>
+                <div class="callout-title">Full Auth Reference</div>
+                <div class="callout-body">Token issuance, refresh flow, RBAC roles, and example JSON responses are fully documented in the <a href="api-docs.html#auth" style="color:var(--c-primary);text-decoration:none;font-weight:var(--fw-semibold);">API Docs → Authentication</a> section.</div>
               </div>
-            </div>
-
-            <h3>Login</h3>
-            <div class="code-block reveal">
-              <div class="code-block-header">
-                <span class="code-lang-badge">HTTP</span>
-                <button class="copy-btn"><i class="far fa-copy"></i> Copy</button>
-              </div>
-              <pre><code>POST /api/auth/login
-Content-Type: application/json
-
-{
-  "email": "user@example.com",
-  "password": "SecurePass123!"
-}</code></pre>
-            </div>
-
-            <h3>Use the Token</h3>
-            <div class="code-block reveal">
-              <div class="code-block-header">
-                <span class="code-lang-badge">HTTP</span>
-                <button class="copy-btn"><i class="far fa-copy"></i> Copy</button>
-              </div>
-              <pre><code>GET /api/projects
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...</code></pre>
             </div>
           </section>
 

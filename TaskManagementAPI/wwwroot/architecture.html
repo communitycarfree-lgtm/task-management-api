@@ -111,48 +111,43 @@
           <!-- Modular Monolith -->
           <section id="modular">
             <h2><i class="fas fa-cubes" aria-hidden="true"></i> Modular Structure</h2>
-            <p class="section-lead">Four primary modules, each owning its own domain, database context, and migration history.</p>
+            <p class="section-lead">Four modules, each with a hard boundary: its own <code>DbContext</code>, its own EF Core migration history, and its own DI registration. No shared database joins across module lines.</p>
 
-            <div class="grid-auto-2 reveal">
-              <div class="card feature-card">
-                <div class="feature-icon"><i class="fas fa-user-lock" aria-hidden="true"></i></div>
-                <h4>Users &amp; Auth</h4>
-                <p>Identity management, JWT issuance, token refresh, and RBAC security enforcement.</p>
-                <ul class="feature-list">
-                  <li>Registration &amp; login flows</li>
-                  <li>Role assignment &amp; validation</li>
-                  <li>Password hashing (BCrypt)</li>
-                </ul>
+            <div class="code-block reveal" style="margin-bottom:2rem;">
+              <div class="code-block-header">
+                <span class="code-lang-badge">Shell</span>
               </div>
-              <div class="card feature-card">
-                <div class="feature-icon"><i class="fas fa-folder-open" aria-hidden="true"></i></div>
-                <h4>Projects</h4>
-                <p>Workspace organization, team membership, project-level permissions, and lifecycle management.</p>
-                <ul class="feature-list">
-                  <li>Create / archive projects</li>
-                  <li>Member invitation &amp; removal</li>
-                  <li>Soft-delete with restore</li>
-                </ul>
-              </div>
-              <div class="card feature-card">
-                <div class="feature-icon"><i class="fas fa-tasks" aria-hidden="true"></i></div>
-                <h4>Tasks</h4>
-                <p>Task lifecycle, priorities, assignee tracking, dependencies, and time logging.</p>
-                <ul class="feature-list">
-                  <li>Status state machine</li>
-                  <li>Priority tiers</li>
-                  <li>Dependency graph</li>
-                </ul>
-              </div>
-              <div class="card feature-card">
-                <div class="feature-icon"><i class="fas fa-bell" aria-hidden="true"></i></div>
-                <h4>Notifications</h4>
-                <p>Real-time event delivery via SignalR and historical alert inbox management per user.</p>
-                <ul class="feature-list">
-                  <li>SignalR push delivery</li>
-                  <li>Paginated inbox API</li>
-                  <li>Read / delete controls</li>
-                </ul>
+              <pre><code>Modules/
+├── Users/
+│   ├── Domain/            Entity: ApplicationUser (IdentityUser)
+│   ├── Application/       Services: AuthService, UserService
+│   ├── Infrastructure/    UsersDbContext  ←  own migration history
+│   └── Presentation/      Controllers: AuthController, UsersController
+│
+├── Projects/
+│   ├── Domain/            Entities: Project, ProjectMember
+│   ├── Application/       Services: ProjectService
+│   ├── Infrastructure/    ProjectsDbContext  ←  own migration history
+│   └── Presentation/      Controllers: ProjectsController
+│
+├── Tasks/
+│   ├── Domain/            Entities: TaskItem, TaskDependency, TimeEntry
+│   ├── Application/       Services: TaskService
+│   ├── Infrastructure/    TasksDbContext  ←  own migration history
+│   └── Presentation/      Controllers: TasksController
+│
+└── Notifications/
+    ├── Domain/            Entity: Notification
+    ├── Application/       Services: NotificationService
+    ├── Infrastructure/    NotificationsDbContext  ←  own migration history
+    └── Presentation/      Hubs: NotificationsHub</code></pre>
+            </div>
+
+            <div class="callout callout-warn reveal">
+              <div class="callout-icon"><i class="fas fa-project-diagram" aria-hidden="true"></i></div>
+              <div>
+                <div class="callout-title">Module Communication Rule</div>
+                <div class="callout-body">When the Tasks module needs a user's display name it calls <code>IUserService</code> — defined in Tasks/Application, implemented in Users/Infrastructure. It never reaches into <code>UsersDbContext</code> directly. This is the hard rule that makes the monolith modular.</div>
               </div>
             </div>
           </section>
